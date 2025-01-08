@@ -1,0 +1,41 @@
+{
+  "quizzes": {
+    "security-quiz": {
+      "questions": [
+        {
+          "id": "security-q1",
+          "question": "Est-ce une bonne pratique de cliquer sur un lien dans un email qui vous demande de vérifier vos informations de sécurité ?",
+          "explanation": "Les emails légitimes de sécurité ne vous demanderont jamais de cliquer sur un lien direct. Il est préférable d'accéder au site web directement en tapant l'URL ou en utilisant vos favoris.",
+          "isCorrect": false
+        },
+        {
+          "id": "security-q2",
+          "question": "Si l'adresse email de l'expéditeur contient le nom de votre entreprise, cela signifie-t-il que l'email est sûr ?",
+          "explanation": "Les cybercriminels peuvent facilement usurper (spoofer) une adresse email pour qu'elle ressemble à celle d'une entreprise légitime. Il faut toujours vérifier d'autres indicateurs de sécurité.",
+          "isCorrect": false
+        }
+      ]
+    }
+    ,
+    "hr-quiz": {
+      "questions": [
+        {
+          "id": "hr-q1",
+          "question": "Est-il sécurisé d'ouvrir une pièce jointe d'un email si elle provient d'un collègue que vous connaissez ?",
+          "explanation": "Même si l'email semble provenir d'un collègue, son compte pourrait être compromis. Il est important de vérifier si la pièce jointe est attendue et de scanner tout fichier avant de l'ouvrir.",
+          "isCorrect": false
+        }
+      ]
+    },
+    "password-quiz": {
+      "questions": [
+        {
+          "id": "password-q1",
+          "question": "Est-il sécurisé de partager votre mot de passe avec un collègue ?",
+          "explanation": "Le partage de mot de passe est une pratique risquée. Il est recommandé de créer des comptes distincts pour chaque service.",
+          "isCorrect": false
+        }
+      ]
+    }
+  }
+} 

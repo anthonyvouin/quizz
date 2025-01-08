@@ -5,20 +5,18 @@ import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
 import { useState } from 'react';
 import QuizModal from './QuizModal';
 import EmailView from './EmailView';
-
-interface QuizQuestion {
-  question: string;
-  explanation: string;
-  isCorrect: boolean;
-}
+import emailsData from '../data/emails.json';
+import quizzesData from '../data/quizzes.json';
+import { Question } from '../types';
 
 interface Email {
+  id: string;
   sender: string;
   subject: string;
   preview: string;
   content: string;
   time: string;
-  questions: QuizQuestion[];
+  quizId: string;
 }
 
 export default function GmailInterface() {
@@ -27,76 +25,16 @@ export default function GmailInterface() {
   const [showResult, setShowResult] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
-
-  const quizQuestions: QuizQuestion[] = [
-    {
-      question: "Est-ce une bonne pratique de cliquer sur un lien dans un email qui vous demande de vérifier vos informations de sécurité ?",
-      explanation: "Les emails légitimes de sécurité ne vous demanderont jamais de cliquer sur un lien direct. Il est préférable d'accéder au site web directement en tapant l'URL ou en utilisant vos favoris.",
-      isCorrect: false
-    },
-    {
-      question: "Si l'adresse email de l'expéditeur contient le nom de votre entreprise, cela signifie-t-il que l'email est sûr ?",
-      explanation: "Les cybercriminels peuvent facilement usurper (spoofer) une adresse email pour qu'elle ressemble à celle d'une entreprise légitime. Il faut toujours vérifier d'autres indicateurs de sécurité.",
-      isCorrect: false
-    }
-  ];
-
-  const secondQuizQuestions: QuizQuestion[] = [
-    {
-      question: "Est-il sécurisé d'ouvrir une pièce jointe d'un email si elle provient d'un collègue que vous connaissez ?",
-      explanation: "Même si l'email semble provenir d'un collègue, son compte pourrait être compromis. Il est important de vérifier si la pièce jointe est attendue et de scanner tout fichier avant de l'ouvrir.",
-      isCorrect: false
-    },
- 
-  ];
-
-  const [activeQuestions, setActiveQuestions] = useState<QuizQuestion[]>([]);
-
-  const emails: Email[] = [
-    {
-      sender: "Équipe de sécurité",
-      subject: "Mise à jour importante de sécurité",
-      preview: "Nous avons détecté une activité suspecte sur votre compte...",
-      content: `Cher utilisateur,
-
-Nous avons détecté une activité suspecte sur votre compte. Pour assurer la sécurité de vos données, nous vous demandons de vérifier vos informations de connexion immédiatement.
-
-Veuillez cliquer sur le lien ci-dessous pour confirmer votre identité :
-[Lien de vérification]
-
-Si vous ne procédez pas à cette vérification dans les 24 heures, votre compte sera temporairement suspendu.
-
-Cordialement,
-L'équipe de sécurité`,
-      time: "10:30",
-      questions: quizQuestions
-    },
-    {
-      sender: "Équipe RH",
-      subject: "Documents importants à signer",
-      preview: "Veuillez trouver ci-joint les documents confidentiels à signer rapidement...",
-      content: `Bonjour,
-
-Dans le cadre de la mise à jour de nos dossiers RH, nous vous prions de bien vouloir signer les documents confidentiels en pièce jointe.
-
-Ces documents contiennent des informations importantes concernant votre contrat et doivent être traités en priorité.
-
-Merci de les retourner signés dans les plus brefs délais.
-
-Cordialement,
-L'équipe RH`,
-      time: "11:45",
-      questions: secondQuizQuestions
-    }
-  ];
+  const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
 
   const handleEmailClick = (email: Email) => {
     setSelectedEmail(email);
   };
 
   const handleStartQuiz = () => {
-    if (selectedEmail) {
-      setActiveQuestions(selectedEmail.questions);
+    if (selectedEmail && selectedEmail.quizId) {
+      const quiz = quizzesData.quizzes[selectedEmail.quizId];
+      setActiveQuestions(quiz.questions);
       setShowQuiz(true);
       setSelectedEmail(null);
     }
@@ -194,9 +132,9 @@ L'équipe RH`,
           </div>
 
           <div className="divide-y">
-            {emails.map((email, index) => (
+            {emailsData.emails.map((email) => (
               <EmailItem 
-                key={index}
+                key={email.id}
                 {...email}
                 onClick={() => handleEmailClick(email)}
               />
@@ -229,7 +167,8 @@ L'équipe RH`,
   );
 }
 
-function EmailItem({ sender, subject, preview, time, onClick }: {
+function EmailItem({ id, sender, subject, preview, time, onClick }: {
+  id: string;
   sender: string;
   subject: string;
   preview: string;

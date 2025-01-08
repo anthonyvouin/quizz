@@ -1,0 +1,34 @@
+{
+  "emails": [
+    {
+      "id": "security-alert",
+      "sender": "Équipe de sécurité",
+      "subject": "Mise à jour importante de sécurité",
+      "preview": "Nous avons détecté une activité suspecte sur votre compte...",
+      "content": "Cher utilisateur,\n\nNous avons détecté une activité suspecte sur votre compte. Pour assurer la sécurité de vos données, nous vous demandons de vérifier vos informations de connexion immédiatement.\n\nVeuillez cliquer sur le lien ci-dessous pour confirmer votre identité :\n[Lien de vérification]\n\nSi vous ne procédez pas à cette vérification dans les 24 heures, votre compte sera temporairement suspendu.\n\nCordialement,\nL'équipe de sécurité",
+      "time": "10:30",
+      "quizId": "security-quiz"
+    }, 
+    {
+      "id": "hr-documents",
+      "sender": "Équipe RH",
+      "subject": "Documents importants à signer",
+      "preview": "Veuillez trouver ci-joint les documents confidentiels à signer rapidement...",
+      "content": "Bonjour,\n\nDans le cadre de la mise à jour de nos dossiers RH, nous vous prions de bien vouloir signer les documents confidentiels en pièce jointe.\n\nCes documents contiennent des informations importantes concernant votre contrat et doivent être traités en priorité.\n\nMerci de les retourner signés dans les plus brefs délais.\n\nCordialement,\nL'équipe RH",
+      "time": "11:45",
+      "quizId": "hr-quiz"
+    }, 
+    {
+      "id": "hr-password-change",
+      "sender": "Changer mot de passe",
+      "subject": "Documents importants à signer",
+      "preview": "Veuillez trouver ci-joint les documents confidentiels à signer rapidement...",
+      "content": "Bonjour, votre mot de passe est expiré, veuillez le changer",
+      "time": "11:45",
+      "quizId": "password-quiz"
+    }
+
+
+
+  ]
+} 
