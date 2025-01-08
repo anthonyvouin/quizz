@@ -17,16 +17,7 @@
       ]
     }
     ,
-    "hr-quiz": {
-      "questions": [
-        {
-          "id": "hr-q1",
-          "question": "Est-il sécurisé d'ouvrir une pièce jointe d'un email si elle provient d'un collègue que vous connaissez ?",
-          "explanation": "Même si l'email semble provenir d'un collègue, son compte pourrait être compromis. Il est important de vérifier si la pièce jointe est attendue et de scanner tout fichier avant de l'ouvrir.",
-          "isCorrect": false
-        }
-      ]
-    },
+
     "password-quiz": {
       "questions": [
         {

@@ -9,15 +9,7 @@
       "time": "10:30",
       "quizId": "security-quiz"
     }, 
-    {
-      "id": "hr-documents",
-      "sender": "Équipe RH",
-      "subject": "Documents importants à signer",
-      "preview": "Veuillez trouver ci-joint les documents confidentiels à signer rapidement...",
-      "content": "Bonjour,\n\nDans le cadre de la mise à jour de nos dossiers RH, nous vous prions de bien vouloir signer les documents confidentiels en pièce jointe.\n\nCes documents contiennent des informations importantes concernant votre contrat et doivent être traités en priorité.\n\nMerci de les retourner signés dans les plus brefs délais.\n\nCordialement,\nL'équipe RH",
-      "time": "11:45",
-      "quizId": "hr-quiz"
-    }, 
+    
     {
       "id": "hr-password-change",
       "sender": "Changer mot de passe",

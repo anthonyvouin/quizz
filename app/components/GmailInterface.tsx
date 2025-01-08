@@ -1,13 +1,15 @@
 "use client"
-import { FiMenu, FiSearch, FiHelpCircle, FiSettings, FiGrid, FiMail, FiInbox, FiX } from "react-icons/fi";
+import { FiMenu, FiSearch, FiHelpCircle, FiSettings, FiGrid, FiMail, FiInbox } from "react-icons/fi";
 import { AiOutlineStar, AiOutlineClockCircle } from "react-icons/ai";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
 import { useState } from 'react';
 import QuizModal from './QuizModal';
 import EmailView from './EmailView';
 import emailsData from '../data/emails.json';
-import quizzesData from '../data/quizzes.json';
+import quizzesData from '../data/quizzes.json' assert { type: 'json' };
 import { Question } from '../types';
+import EmailItem from './EmailItem';
+import type { QuizData } from '../types';
 
 interface Email {
   id: string;
@@ -18,6 +20,8 @@ interface Email {
   time: string;
   quizId: string;
 }
+
+const typedQuizData = quizzesData as QuizData;
 
 export default function GmailInterface() {
   const [showQuiz, setShowQuiz] = useState(false);
@@ -33,7 +37,7 @@ export default function GmailInterface() {
 
   const handleStartQuiz = () => {
     if (selectedEmail && selectedEmail.quizId) {
-      const quiz = quizzesData.quizzes[selectedEmail.quizId];
+      const quiz = typedQuizData.quizzes[selectedEmail.quizId];
       setActiveQuestions(quiz.questions);
       setShowQuiz(true);
       setSelectedEmail(null);
@@ -163,40 +167,6 @@ export default function GmailInterface() {
           totalQuestions={activeQuestions.length}
         />
       )}
-    </div>
-  );
-}
-
-function EmailItem({ id, sender, subject, preview, time, onClick }: {
-  id: string;
-  sender: string;
-  subject: string;
-  preview: string;
-  time: string;
-  onClick: () => void;
-}) {
-  return (
-    <div 
-      className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-      onClick={onClick}
-    >
-      <input 
-        type="checkbox" 
-        className="w-4 h-4 mr-4"
-        onClick={(e) => e.stopPropagation()} 
-      />
-      <AiOutlineStar 
-        className="text-gray-400 mr-4"
-        onClick={(e) => e.stopPropagation()}
-      />
-      <div className="flex-grow">
-        <div className="flex items-center gap-2">
-          <span className="font-medium">{sender}</span>
-          <span className="text-gray-600">- {subject}</span>
-        </div>
-        <p className="text-gray-600 text-sm truncate">{preview}</p>
-      </div>
-      <span className="text-sm text-gray-600">{time}</span>
     </div>
   );
 } 
