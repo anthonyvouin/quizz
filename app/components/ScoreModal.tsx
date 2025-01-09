@@ -8,6 +8,16 @@ interface ScoreModalProps {
 }
 
 export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: ScoreModalProps) {
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Quiz de Sécurité Email',
+        text: 'Testez vos connaissances en sécurité des emails avec ce quiz interactif !',
+        url: window.location.href
+      }).catch((error) => console.log('Erreur de partage', error));
+    }
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-lg p-6 max-w-md w-full">
@@ -43,19 +53,35 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
           </p>
         </div>
 
-        <div className="flex gap-4 mt-6">
-          <button
-            onClick={onClose}
-            className="flex-1 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
-          >
-            Fermer
-          </button>
+        <div className="space-y-3 mt-6">
+          <div className="flex gap-4">
+            <button
+              onClick={onClose}
+              className="flex-1 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
+            >
+              Fermer
+            </button>
+            <button
+              onClick={handleShare}
+              className="flex-1 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 flex items-center justify-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+              </svg>
+              Partager
+            </button>
+          </div>
+
           <button
             onClick={onReplay}
-            className="flex-1 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 font-medium"
           >
             Rejouer
           </button>
+
+          <p className="text-center text-sm text-gray-500 mt-4">
+            © 2025 - Conceptualisé par <a href="https://www.linkedin.com/in/anna-giraud" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-500">Anna Giraud</a> et développé par <a href="https://anthony-vouin.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-500">Anthony Vouin</a>
+          </p>
         </div>
       </div>
     </div>
