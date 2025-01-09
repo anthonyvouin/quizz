@@ -12,7 +12,6 @@ interface QuizModalProps {
   userAnswer: boolean | null;
   showResult: boolean;
   onAnswerSubmit: (answer: boolean) => void;
-  onNext: () => void;
   currentQuestion: number;
   totalQuestions: number;
   score: number;
@@ -26,7 +25,6 @@ export default function QuizModal({
   userAnswer, 
   showResult, 
   onAnswerSubmit,
-  onNext,
   currentQuestion,
   totalQuestions,
   score,
@@ -78,7 +76,7 @@ export default function QuizModal({
             </p>
             <p>{question.explanation}</p>
             <button
-              onClick={currentQuestion === totalQuestions ? onClose : onNext}
+              onClick={onClose}
               className="mt-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
             >
               {currentQuestion === totalQuestions ? 'Terminer' : 'Question suivante'}

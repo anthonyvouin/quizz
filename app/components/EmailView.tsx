@@ -1,4 +1,4 @@
-import { FiArrowLeft, FiStar, FiArchive, FiTrash2, FiMail, FiPrinter, FiMoreVertical } from "react-icons/fi";
+import { FiArrowLeft, FiStar, FiArchive, FiTrash2, FiMail, FiPrinter, FiMoreVertical, FiX } from "react-icons/fi";
 import { BiReply, BiRightArrowAlt } from "react-icons/bi";
 
 interface EmailViewProps {
@@ -9,13 +9,38 @@ interface EmailViewProps {
     time: string;
   };
   onClose: () => void;
-  onStartQuiz: () => void;
+  currentQuestion: number;
+  totalQuestions: number;
+  question: any;
+  onAnswerSubmit: (answer: boolean) => void;
+  showResult: boolean;
+  userAnswer: boolean | null;
+  globalScore: number;
+  totalQuestionsAnswered: number;
 }
 
-export default function EmailView({ email, onClose, onStartQuiz }: EmailViewProps) {
+export default function EmailView({ 
+  email, 
+  onClose,
+  currentQuestion,
+  totalQuestions,
+  question,
+  onAnswerSubmit,
+  showResult,
+  userAnswer,
+  globalScore,
+  totalQuestionsAnswered
+}: EmailViewProps) {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col relative">
+        <button 
+          onClick={onClose}
+          className="absolute top-2 right-2 p-2 hover:bg-gray-100 rounded-full z-50"
+        >
+          <FiX className="text-gray-600 text-xl" />
+        </button>
+
         <div className="p-2 border-b flex items-center justify-between">
           <div className="flex items-center gap-2">
             <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full">
@@ -31,12 +56,6 @@ export default function EmailView({ email, onClose, onStartQuiz }: EmailViewProp
               <FiMail className="text-gray-600 text-xl" />
             </button>
           </div>
-          <button 
-            onClick={onStartQuiz}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Répondre aux questions
-          </button>
         </div>
 
         <div className="p-4 border-b">
@@ -73,23 +92,62 @@ export default function EmailView({ email, onClose, onStartQuiz }: EmailViewProp
               </p>
             ))}
           </div>
+          
+          <div className="h-16"></div>
         </div>
 
-        <div className="p-4 border-t flex gap-2">
-          <button className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded flex items-center gap-2">
-            <BiReply className="text-gray-600" />
-            <span>Répondre</span>
-          </button>
-          <button className="px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded flex items-center gap-2">
-            <BiRightArrowAlt className="text-gray-600" />
-            <span>Transférer</span>
-          </button>
-          <button className="p-2 hover:bg-gray-100 rounded-full ml-auto">
-            <FiPrinter className="text-gray-600" />
-          </button>
-          <button className="p-2 hover:bg-gray-100 rounded-full">
-            <FiMoreVertical className="text-gray-600" />
-          </button>
+        <div className="mb-16"></div>
+
+        <div className="absolute bottom-0 left-0 right-0 bg-white border-t py-6">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center mb-4">
+              <div className="bg-blue-100 rounded-lg px-4 py-2">
+                <p className="text-blue-800 font-medium">
+                  Score Global : {globalScore} / {totalQuestionsAnswered} questions
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex-1">
+                <p className="text-sm font-medium mb-2">
+                  Question {currentQuestion} sur {totalQuestions}
+                </p>
+                <p className="text-sm mb-2">{question.question}</p>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => onAnswerSubmit(true)}
+                    disabled={showResult}
+                    className={`px-4 py-2 rounded text-sm font-medium ${
+                      showResult 
+                        ? 'bg-gray-300 cursor-not-allowed'
+                        : 'bg-green-500 text-white hover:bg-green-600'
+                    }`}
+                  >
+                    Vrai
+                  </button>
+                  <button
+                    onClick={() => onAnswerSubmit(false)}
+                    disabled={showResult}
+                    className={`px-4 py-2 rounded text-sm font-medium ${
+                      showResult 
+                        ? 'bg-gray-300 cursor-not-allowed'
+                        : 'bg-red-500 text-white hover:bg-red-600'
+                    }`}
+                  >
+                    Faux
+                  </button>
+                </div>
+                {showResult && (
+                  <div className="mt-2">
+                    <p className={`text-sm ${userAnswer === question.isCorrect ? 'text-green-600' : 'text-red-600'}`}>
+                      {question.explanation}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

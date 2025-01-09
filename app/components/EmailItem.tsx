@@ -1,19 +1,29 @@
 import { AiOutlineStar } from "react-icons/ai";
 
 interface EmailItemProps {
-  id?: string;
+  id: string;
   sender: string;
   subject: string;
   preview: string;
   time: string;
   onClick: () => void;
+  isCompleted?: boolean;
 }
 
-export default function EmailItem({ sender, subject, preview, time, onClick }: EmailItemProps) {
+export default function EmailItem({ 
+  sender, 
+  subject, 
+  preview, 
+  time, 
+  onClick,
+  isCompleted 
+}: EmailItemProps) {
   return (
     <div 
-      className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-      onClick={onClick}  
+      className={`flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+        isCompleted ? 'opacity-50' : ''
+      }`}
+      onClick={onClick}
     >
       <input 
         type="checkbox" 
@@ -35,6 +45,11 @@ export default function EmailItem({ sender, subject, preview, time, onClick }: E
       </div>
       
       <span className="text-sm text-gray-600">{time}</span>
+      {isCompleted && (
+        <span className="text-green-500 text-sm ml-2">
+          ✓ Complété
+        </span>
+      )}
     </div>
   );
 }
