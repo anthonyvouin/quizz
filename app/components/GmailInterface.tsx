@@ -10,6 +10,7 @@ import quizzesData from '../data/quizzes.json' assert { type: 'json' };
 import { Question } from '../types';
 import EmailItem from './EmailItem';
 import type { QuizData } from '../types';
+import IntroModal from "./IntroModal";
 
 interface Email {
   id: string;
@@ -21,9 +22,12 @@ interface Email {
   quizId: string;
 }
 
-const typedQuizData = quizzesData as QuizData;
+const typedQuizData  = quizzesData as QuizData;
 
 export default function GmailInterface() {
+
+  const [showIntro, setShowIntro] = useState(true);
+
   const [showQuiz, setShowQuiz] = useState(false);
   const [userAnswer, setUserAnswer] = useState<boolean | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -49,7 +53,7 @@ export default function GmailInterface() {
     setShowResult(true);
   };
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion  = () => {
     if (currentQuestionIndex < activeQuestions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
       setUserAnswer(null);
@@ -68,6 +72,10 @@ export default function GmailInterface() {
 
   return (
     <div className="h-screen bg-[#f6f8fc] relative">
+        {showIntro && (
+        <IntroModal onClose={() => setShowIntro(false)} />
+      )}
+
       <header className="h-16 px-4 bg-white flex items-center justify-between border-b">
         <div className="flex items-center gap-4">
           <button className="p-3 hover:bg-gray-100 rounded-full">

@@ -17,6 +17,7 @@ interface QuizModalProps {
   totalQuestions: number;
 }
 
+
 export default function QuizModal({ 
   question, 
   onClose, 
