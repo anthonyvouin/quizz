@@ -7,7 +7,7 @@
       "preview": "Nous avons détecté une activité suspecte sur votre compte...",
       "content": "Cher utilisateur,\n\nNous avons détecté une activité suspecte sur votre compte. Pour assurer la sécurité de vos données, nous vous demandons de vérifier vos informations de connexion immédiatement.\n\nVeuillez cliquer sur le lien ci-dessous pour confirmer votre identité :\n[Lien de vérification]\n\nSi vous ne procédez pas à cette vérification dans les 24 heures, votre compte sera temporairement suspendu.\n\nCordialement,\nL'équipe de sécurité",
       "time": "10:30",
-      "quizId": "security-quiz"
+      "questionId": "security-q1"
     },
     {
       "id": "password-update",
@@ -16,7 +16,7 @@
       "preview": "Votre mot de passe expire dans 24h, action requise...",
       "content": "Bonjour,\n\nVotre mot de passe d'entreprise expirera dans 24 heures. Pour maintenir l'accès à votre compte, veuillez mettre à jour votre mot de passe en suivant ces étapes :\n\n1. Cliquez sur ce lien : [Lien de mise à jour]\n2. Entrez votre ancien mot de passe\n3. Choisissez un nouveau mot de passe\n\nRappel : Votre mot de passe doit contenir au moins 8 caractères, incluant des majuscules, des minuscules, des chiffres et des caractères spéciaux.\n\nCordialement,\nService IT",
       "time": "11:45",
-      "quizId": "password-quiz"
+      "questionId": "password-q1"
     }
   ]
 } 

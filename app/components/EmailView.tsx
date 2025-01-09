@@ -9,27 +9,23 @@ interface EmailViewProps {
     time: string;
   };
   onClose: () => void;
-  currentQuestion: number;
-  totalQuestions: number;
   question: any;
   onAnswerSubmit: (answer: boolean) => void;
   showResult: boolean;
   userAnswer: boolean | null;
   globalScore: number;
   totalQuestionsAnswered: number;
+  onNextQuestion: () => void;
 }
 
 export default function EmailView({ 
   email, 
   onClose,
-  currentQuestion,
-  totalQuestions,
   question,
   onAnswerSubmit,
   showResult,
   userAnswer,
-  globalScore,
-  totalQuestionsAnswered
+  onNextQuestion
 }: EmailViewProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -100,19 +96,8 @@ export default function EmailView({
 
         <div className="absolute bottom-0 left-0 right-0 bg-white border-t py-6">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-4">
-              <div className="bg-blue-100 rounded-lg px-4 py-2">
-                <p className="text-blue-800 font-medium">
-                  Score Global : {globalScore} / {totalQuestionsAnswered} questions
-                </p>
-              </div>
-            </div>
-
             <div className="space-y-4">
               <div className="flex-1">
-                <p className="text-sm font-medium mb-2">
-                  Question {currentQuestion} sur {totalQuestions}
-                </p>
                 <p className="text-sm mb-2">{question.question}</p>
                 <div className="flex gap-2">
                   <button
@@ -143,6 +128,12 @@ export default function EmailView({
                     <p className={`text-sm ${userAnswer === question.isCorrect ? 'text-green-600' : 'text-red-600'}`}>
                       {question.explanation}
                     </p>
+                    <button
+                      onClick={onNextQuestion}
+                      className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    >
+                      Continuer
+                    </button>
                   </div>
                 )}
               </div>

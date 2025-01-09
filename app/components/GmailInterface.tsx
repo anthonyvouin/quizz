@@ -20,7 +20,7 @@ interface Email {
   preview: string;
   content: string;
   time: string;
-  quizId: string;
+  questionId: string;
 }
 
 const typedQuizData  = quizzesData as QuizData;
@@ -39,18 +39,18 @@ export default function GmailInterface() {
   const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
   const [completedEmails, setCompletedEmails] = useState<string[]>([]);
   const [showFinalScore, setShowFinalScore] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
 
   const handleEmailClick = (email: Email) => {
     if (completedEmails.includes(email.id)) {
-      alert("Vous avez déjà répondu aux questions de cet email. Passez au suivant !");
+      alert("Vous avez déjà répondu à la question de cet email. Passez au suivant !");
       return;
     }
     
     setSelectedEmail(email);
-    if (email.quizId) {
-      const quiz = typedQuizData.quizzes[email.quizId];
-      setActiveQuestions(quiz.questions);
-      setCurrentQuestionIndex(0);
+    if (email.questionId) {
+      const question = typedQuizData.questions[email.questionId];
+      setCurrentQuestion(question);
     }
   };
 
@@ -70,28 +70,22 @@ export default function GmailInterface() {
     setShowResult(true);
     setTotalQuestionsAnswered(prev => prev + 1);
     
-    if (answer === activeQuestions[currentQuestionIndex].isCorrect) {
+    if (answer === currentQuestion?.isCorrect) {
       setGlobalScore(prev => prev + 1);
     }
+  };
 
-    setTimeout(() => {
-      if (currentQuestionIndex < activeQuestions.length - 1) {
-        setCurrentQuestionIndex(prev => prev + 1);
-        setUserAnswer(null);
-        setShowResult(false);
-      } else {
-        if (selectedEmail) {
-          const newCompletedEmails = [...completedEmails, selectedEmail.id];
-          setCompletedEmails(newCompletedEmails);
-          
-          if (newCompletedEmails.length === emailsData.emails.length) {
-            setShowFinalScore(true);
-          }
-        }
-        resetQuiz();
-        setSelectedEmail(null);
+  const handleNextQuestion = () => {
+    if (selectedEmail) {
+      const newCompletedEmails = [...completedEmails, selectedEmail.id];
+      setCompletedEmails(newCompletedEmails);
+      
+      if (newCompletedEmails.length === emailsData.emails.length) {
+        setShowFinalScore(true);
       }
-    }, 2500);
+    }
+    resetQuiz();
+    setSelectedEmail(null);
   };
 
   const resetQuiz = () => {
@@ -195,23 +189,29 @@ export default function GmailInterface() {
 
       {/* Footer explicatif global */}
       <div className="fixed bottom-0 w-full bg-white border-t py-4 z-20">
-        <p className="text-gray-700 text-center">
-          Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
-        </p>
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <p className="text-gray-700">
+              Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
+            </p>
+            <div className="bg-blue-100 rounded-lg px-4 py-2">
+              <p className="text-blue-800 font-medium">
+                Score Global : {globalScore} / {totalQuestionsAnswered} questions
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {selectedEmail && (
+      {selectedEmail && currentQuestion && (
         <EmailView
           email={selectedEmail}
           onClose={() => setSelectedEmail(null)}
-          currentQuestion={currentQuestionIndex + 1}
-          totalQuestions={activeQuestions.length}
-          question={activeQuestions[currentQuestionIndex]}
+          question={currentQuestion}
           onAnswerSubmit={handleAnswerSubmit}
+          onNextQuestion={handleNextQuestion}
           showResult={showResult}
           userAnswer={userAnswer}
-          globalScore={globalScore}
-          totalQuestionsAnswered={totalQuestionsAnswered}
         />
       )}
 

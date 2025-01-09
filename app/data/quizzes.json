@@ -1,72 +1,14 @@
 {
-  "quizzes": {
-    "security-quiz": {
-      "questions": [
-        {
-          "id": "security-q1",
-          "question": "Est-ce une bonne pratique de cliquer sur un lien dans un email qui vous demande de vérifier vos informations de sécurité ?",
-          "explanation": "Les emails légitimes de sécurité ne vous demanderont jamais de cliquer sur un lien direct. Il est préférable d'accéder au site web directement en tapant l'URL ou en utilisant vos favoris.",
-          "isCorrect": false
-        },
-        {
-          "id": "security-q2",
-          "question": "Si l'adresse email de l'expéditeur contient le nom de votre entreprise, cela signifie-t-il que l'email est sûr ?",
-          "explanation": "Les cybercriminels peuvent facilement usurper (spoofer) une adresse email pour qu'elle ressemble à celle d'une entreprise légitime.",
-          "isCorrect": false
-        },
-        {
-          "id": "security-q3",
-          "question": "Une menace de suspension de compte est-elle une tactique courante de phishing ?",
-          "explanation": "Les emails de phishing utilisent souvent l'urgence et la peur pour vous pousser à agir rapidement sans réfléchir.",
-          "isCorrect": true
-        },
-        {
-          "id": "security-q4",
-          "question": "Devez-vous vérifier l'URL complète d'un lien avant de cliquer dessus ?",
-          "explanation": "Toujours vérifier l'URL complète en survolant le lien avec la souris sans cliquer. Les URLs malveillantes peuvent ressembler à des URLs légitimes.",
-          "isCorrect": true
-        },
-        {
-          "id": "security-q5",
-          "question": "Est-il sécurisé de fournir des informations personnelles via un lien reçu par email ?",
-          "explanation": "Ne jamais fournir d'informations personnelles via un lien reçu par email. Toujours accéder aux sites officiels directement.",
-          "isCorrect": false
-        }
-      ]
+  "questions": {
+    "security-q1": {
+      "question": "Est-ce une bonne pratique de cliquer sur un lien dans un email qui vous demande de vérifier vos informations de sécurité ?",
+      "explanation": "Les emails légitimes de sécurité ne vous demanderont jamais de cliquer sur un lien direct. Il est préférable d'accéder au site web directement en tapant l'URL ou en utilisant vos favoris.",
+      "isCorrect": false
     },
-    "password-quiz": {
-      "questions": [
-        {
-          "id": "password-q1",
-          "question": "Un mot de passe fort doit-il contenir uniquement des lettres et des chiffres ?",
-          "explanation": "Un mot de passe fort doit contenir un mélange de majuscules, minuscules, chiffres et caractères spéciaux pour être plus difficile à deviner.",
-          "isCorrect": false
-        },
-        {
-          "id": "password-q2",
-          "question": "Est-il recommandé de changer régulièrement son mot de passe ?",
-          "explanation": "Changer régulièrement son mot de passe est une bonne pratique de sécurité, surtout pour les comptes sensibles.",
-          "isCorrect": true
-        },
-        {
-          "id": "password-q3",
-          "question": "Pouvez-vous utiliser le même mot de passe pour plusieurs comptes professionnels ?",
-          "explanation": "Utiliser des mots de passe uniques pour chaque compte limite les risques en cas de compromission d'un compte.",
-          "isCorrect": false
-        },
-        {
-          "id": "password-q4",
-          "question": "Un gestionnaire de mots de passe est-il recommandé pour gérer ses mots de passe ?",
-          "explanation": "Un gestionnaire de mots de passe permet de stocker et générer des mots de passe forts de manière sécurisée.",
-          "isCorrect": true
-        },
-        {
-          "id": "password-q5",
-          "question": "La longueur d'un mot de passe est-elle plus importante que sa complexité ?",
-          "explanation": "Un mot de passe long est généralement plus sécurisé qu'un mot de passe court mais complexe, car il est plus difficile à craquer.",
-          "isCorrect": true
-        }
-      ]
+    "password-q1": {
+      "question": "Un mot de passe fort doit-il contenir uniquement des lettres et des chiffres ?",
+      "explanation": "Un mot de passe fort doit contenir un mélange de majuscules, minuscules, chiffres et caractères spéciaux pour être plus difficile à deviner.",
+      "isCorrect": false
     }
   }
 } 
