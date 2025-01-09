@@ -53,11 +53,16 @@ export default function GmailInterface() {
     if (selectedEmail) {
       const newCompletedEmails = [...completedEmails, selectedEmail.id];
       setCompletedEmails(newCompletedEmails);
-      
-      if (newCompletedEmails.length === emailsData.emails.length) {
+    }
+  };
+
+  const handleCloseEmail = () => {
+    if (selectedEmail && completedEmails.includes(selectedEmail.id)) {
+      if (completedEmails.length === emailsData.emails.length) {
         setShowFinalScore(true);
       }
     }
+    setSelectedEmail(null);
   };
 
   return (
@@ -150,7 +155,7 @@ export default function GmailInterface() {
           <div className="flex-grow bg-white flex flex-col">
             <div className="p-2 border-b flex items-center gap-2">
               <button 
-                onClick={() => setSelectedEmail(null)} 
+                onClick={handleCloseEmail}
                 className="p-2 hover:bg-gray-100 rounded-full"
               >
                 <FiArrowLeft className="text-gray-600 text-xl" />
