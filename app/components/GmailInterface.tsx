@@ -172,7 +172,7 @@ export default function GmailInterface() {
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="bg-blue-100 rounded-lg px-4 py-2">
             <p className="text-blue-800 font-medium">
-              Score Global : {globalScore} / {getTotalQuestions()} questions
+              Score Global : {globalScore} / {totalQuestionsAnswered} questions
             </p>
           </div>
 
