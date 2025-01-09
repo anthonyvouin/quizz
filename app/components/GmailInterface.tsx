@@ -34,6 +34,8 @@ export default function GmailInterface() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
+  const [globalScore, setGlobalScore] = useState(0);
+  const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
 
   const handleEmailClick = (email: Email) => {
     setSelectedEmail(email);
@@ -51,6 +53,11 @@ export default function GmailInterface() {
   const handleAnswerSubmit = (answer: boolean) => {
     setUserAnswer(answer);
     setShowResult(true);
+    setTotalQuestionsAnswered(prev => prev + 1);
+    
+    if (answer === activeQuestions[currentQuestionIndex].isCorrect) {
+      setGlobalScore(prev => prev + 1);
+    }
   };
 
   const handleNextQuestion  = () => {
@@ -68,6 +75,12 @@ export default function GmailInterface() {
     setUserAnswer(null);
     setShowResult(false);
     setCurrentQuestionIndex(0);
+  };
+
+  const getTotalQuestions = () => {
+    return Object.values(typedQuizData.quizzes).reduce((total, quiz) => {
+      return total + quiz.questions.length;
+    }, 0);
   };
 
   return (
@@ -155,11 +168,19 @@ export default function GmailInterface() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-white text-center py-4 border-t ">
-        <p className="text-gray-700">
-          Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
-        </p>
-      </div> 
+      <div className="fixed bottom-0 w-full bg-white border-t py-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="bg-blue-100 rounded-lg px-4 py-2">
+            <p className="text-blue-800 font-medium">
+              Score Global : {globalScore} / {getTotalQuestions()} questions
+            </p>
+          </div>
+
+          <p className="text-gray-700 flex-grow text-center">
+            Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
+          </p>
+        </div>
+      </div>
 
       {selectedEmail && (
         <EmailView
@@ -179,6 +200,8 @@ export default function GmailInterface() {
           onNext={handleNextQuestion}
           currentQuestion={currentQuestionIndex + 1}
           totalQuestions={activeQuestions.length}
+          score={globalScore}
+          totalAnswered={totalQuestionsAnswered}
         />
       )}
     </div>

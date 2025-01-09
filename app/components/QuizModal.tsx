@@ -15,6 +15,8 @@ interface QuizModalProps {
   onNext: () => void;
   currentQuestion: number;
   totalQuestions: number;
+  score: number;
+  totalAnswered: number;
 }
 
 
@@ -26,7 +28,9 @@ export default function QuizModal({
   onAnswerSubmit,
   onNext,
   currentQuestion,
-  totalQuestions
+  totalQuestions,
+  score,
+  totalAnswered
 }: QuizModalProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -34,7 +38,10 @@ export default function QuizModal({
         <div className="flex justify-between items-center mb-4">
           <div>
             <h2 className="text-xl font-semibold">Question de Sécurité</h2>
-            <p className="text-sm text-gray-500">Question {currentQuestion} sur {totalQuestions}</p>
+            <div className="text-sm text-gray-500">
+              <p>Question {currentQuestion} sur {totalQuestions}</p>
+              <p>Score Global : {score} bonnes réponses sur {totalAnswered} questions</p>
+            </div>
           </div>
           <button 
             onClick={onClose}
@@ -64,7 +71,10 @@ export default function QuizModal({
         ) : (
           <div className={`p-4 rounded-lg mb-4 ${userAnswer === question.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
             <p className="font-semibold mb-2">
-              {userAnswer === question.isCorrect ? '✅ Correct!' : '❌ Incorrect!'}
+              {userAnswer === question.isCorrect ? 
+                `✅ Correct! | Score Global : ${score}/${totalAnswered}` : 
+                `❌ Incorrect! | Score Global : ${score}/${totalAnswered}`
+              }
             </p>
             <p>{question.explanation}</p>
             <button
