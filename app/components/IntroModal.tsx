@@ -20,7 +20,7 @@ export default function IntroModal({ onClose }: IntroModalProps) {
 
         <div className="space-y-4">
           <p>
-            Bienvenue dans notre simulation de sensibilisation 
+            Bienvenue sur notre simulation de sensibilisation 
             à la sécurité <br />des emails .
           </p>
           
