@@ -76,7 +76,7 @@ export default function GmailInterface() {
         <IntroModal onClose={() => setShowIntro(false)} />
       )}
 
-      <header className="h-16 px-4 bg-white flex items-center justify-between border-b">
+      <div className="h-16 px-4 bg-white flex items-center justify-between border-b">
         <div className="flex items-center gap-4">
           <button className="p-3 hover:bg-gray-100 rounded-full">
             <FiMenu className="text-gray-600 text-xl" />
@@ -108,7 +108,7 @@ export default function GmailInterface() {
             <FiGrid className="text-gray-600 text-xl" />
           </button>
         </div>
-      </header>
+      </div>
 
       <div className="flex h-[calc(100vh-64px)]">
         <div className="w-64 p-4 bg-white">
@@ -154,6 +154,12 @@ export default function GmailInterface() {
           </div>
         </div>
       </div>
+
+      <div className="fixed bottom-0 w-full bg-white text-center py-4 border-t ">
+        <p className="text-gray-700">
+          Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
+        </p>
+      </div> 
 
       {selectedEmail && (
         <EmailView
