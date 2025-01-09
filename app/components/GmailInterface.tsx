@@ -65,6 +65,17 @@ export default function GmailInterface() {
     setSelectedEmail(null);
   };
 
+  const handleReplay = () => {
+    setGlobalScore(0);
+    setTotalQuestionsAnswered(0);
+    setCompletedEmails([]);
+    setShowFinalScore(false);
+    setSelectedEmail(null);
+    setCurrentQuestion(null);
+    setUserAnswer(null);
+    setShowResult(false);
+  };
+
   return (
     <div className="h-screen bg-[#f6f8fc]">
       {showIntro && (
@@ -274,6 +285,7 @@ export default function GmailInterface() {
           score={globalScore}
           totalAnswered={totalQuestionsAnswered}
           onClose={() => setShowFinalScore(false)}
+          onReplay={handleReplay}
         />
       )}
     </div>
