@@ -76,6 +76,28 @@ export default function GmailInterface() {
     setShowResult(false);
   };
 
+  const handleNextEmail = () => {
+    if (!selectedEmail) return;
+    
+    const currentIndex = emailsData.emails.findIndex(email => email.id === selectedEmail.id);
+    const nextIndex = currentIndex + 1;
+    
+    if (nextIndex < emailsData.emails.length) {
+      const nextEmail = emailsData.emails[nextIndex];
+      setSelectedEmail(nextEmail);
+      const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
+      setCurrentQuestion(question);
+      setUserAnswer(null);
+      setShowResult(false);
+    } else {
+      // Si c'était le dernier email, on retourne à la liste
+      setSelectedEmail(null);
+      if (completedEmails.length === emailsData.emails.length) {
+        setShowFinalScore(true);
+      }
+    }
+  };
+
   return (
     <div className="h-screen bg-[#f6f8fc]">
       {showIntro && (
@@ -261,17 +283,25 @@ export default function GmailInterface() {
                 </div>
                 
                 {showResult && (
-                  <div className={`text-center p-4 rounded-lg ${
-                    userAnswer === currentQuestion.isCorrect 
-                      ? 'bg-green-100 text-green-800'
-                      : 'bg-red-100 text-red-800'
-                  }`}>
-                    <p className="font-medium mb-2">
-                      {userAnswer === currentQuestion.isCorrect 
-                        ? '✅ Bonne réponse !' 
-                        : '❌ Mauvaise réponse'}
-                    </p>
-                    <p>{currentQuestion.explanation}</p>
+                  <div className="text-center">
+                    <div className={`p-4 rounded-lg ${
+                      userAnswer === currentQuestion.isCorrect 
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-red-100 text-red-800'
+                    }`}>
+                      <p className="font-medium mb-2">
+                        {userAnswer === currentQuestion.isCorrect 
+                          ? '✅ Bonne réponse !' 
+                          : '❌ Mauvaise réponse'}
+                      </p>
+                      <p>{currentQuestion.explanation}</p>
+                    </div>
+                    <button
+                      onClick={handleNextEmail}
+                      className="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    >
+                      {completedEmails.length === emailsData.emails.length - 1 ? 'Terminer' : 'Email suivant'}
+                    </button>
                   </div>
                 )}
               </div>

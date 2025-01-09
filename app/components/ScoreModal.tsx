@@ -55,12 +55,7 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
 
         <div className="space-y-3 mt-6">
           <div className="flex gap-4">
-            <button
-              onClick={onClose}
-              className="flex-1 py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-600"
-            >
-              Fermer
-            </button>
+       
             <button
               onClick={handleShare}
               className="flex-1 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 flex items-center justify-center gap-2"
