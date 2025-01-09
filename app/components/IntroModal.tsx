@@ -25,14 +25,14 @@ export default function IntroModal({ onClose }: IntroModalProps) {
           </p>
           
           <p>
-            Vous allez recevoir une série de 10 emails simulés. Votre mission est d'identifier 
+            Vous allez recevoir une série de 10 emails simulés. Votre mission est  d&apos;identifier 
             les emails potentiellement dangereux et de répondre correctement aux questions 
             de sécurité associées.
           </p>
 
           <p>
             Pour chaque email, lisez attentivement le contenu et cliquez sur 
-            "Répondre aux questions" pour tester vos connaissances en matière de sécurité.
+            &quot;Répondre aux questions&quot; pour tester vos connaissances en matière de sécurité.
           </p>
         </div>
 
