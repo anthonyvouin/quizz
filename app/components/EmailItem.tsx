@@ -25,31 +25,16 @@ export default function EmailItem({
       }`}
       onClick={onClick}
     >
-      <input 
-        type="checkbox" 
-        className="w-4 h-4 mr-4"
-        onClick={(e) => e.stopPropagation()} 
-      />
-      
-      <AiOutlineStar 
-        className="text-gray-400 mr-4"
-        onClick={(e) => e.stopPropagation()}
-      />
-      
-      <div className="flex-grow">
-        <div className="flex items-center gap-2">
-          <span className="font-medium">{sender}</span>  
-          <span className="text-gray-600">- {subject}</span> 
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center justify-between mb-1">
+          <span className="font-semibold truncate">{sender}</span>
+          <span className="text-sm text-gray-600 whitespace-nowrap ml-2 min-w-[45px] text-right">
+            {time}
+          </span>
         </div>
-        <p className="text-gray-600 text-sm truncate">{preview}</p> 
+        <h3 className="text-sm font-medium truncate">{subject}</h3>
+        <p className="text-sm text-gray-600 truncate">{preview}</p>
       </div>
-      
-      <span className="text-sm text-gray-600">{time}</span>
-      {isCompleted && (
-        <span className="text-green-500 text-sm ml-2">
-          ✓ Complété
-        </span>
-      )}
     </div>
   );
 }

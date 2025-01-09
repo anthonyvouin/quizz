@@ -28,6 +28,7 @@ export default function GmailInterface() {
   const [globalScore, setGlobalScore] = useState(0);
   const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
   const [showFinalScore, setShowFinalScore] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const handleEmailClick = (email: Email) => {
     if (completedEmails.includes(email.id)) {
@@ -104,17 +105,25 @@ export default function GmailInterface() {
         <IntroModal onClose={() => setShowIntro(false)} />
       )}
 
-      <div className="h-16 px-4 bg-white flex items-center justify-between border-b">
-        <div className="flex items-center gap-4">
-          <button className="p-3 hover:bg-gray-100 rounded-full">
+      <div className="h-16 px-2 md:px-4 bg-white flex items-center justify-between border-b">
+        <div className="flex items-center gap-2 md:gap-4">
+          <button 
+            className="p-2 md:p-3 hover:bg-gray-100 rounded-full lg:hidden"
+            onClick={() => setShowSidebar(!showSidebar)}
+          >
             <FiMenu className="text-gray-600 text-xl" />
           </button>
-          <div className="flex items-center gap-2">
-            <span className="text-xl text-gray-700">Service de sécurité</span>
+          <button 
+            className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden lg:block"
+          >
+            <FiMenu className="text-gray-600 text-xl" />
+          </button>
+          <div className="flex items-center">
+            <span className="text-lg md:text-xl text-gray-700">Service de sécurité</span>
           </div>
         </div>
         
-        <div className="flex-grow max-w-2xl mx-4">
+        <div className="hidden md:flex flex-grow max-w-2xl mx-4">
           <div className="flex items-center bg-[#eaf1fb] hover:bg-[#e4ebf8] rounded-full px-4 py-2 w-full">
             <FiSearch className="text-gray-600 mr-3" />
             <input 
@@ -125,127 +134,146 @@ export default function GmailInterface() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button className="p-3 hover:bg-gray-100 rounded-full">
+        <div className="flex items-center gap-1 md:gap-2">
+          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full md:hidden">
+            <FiSearch className="text-gray-600 text-xl" />
+          </button>
+          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
             <FiHelpCircle className="text-gray-600 text-xl" />
           </button>
-          <button className="p-3 hover:bg-gray-100 rounded-full">
+          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
             <FiSettings className="text-gray-600 text-xl" />
           </button>
-          <button className="p-3 hover:bg-gray-100 rounded-full">
+          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
             <FiGrid className="text-gray-600 text-xl" />
           </button>
         </div>
       </div>
 
       <div className="flex h-[calc(100vh-64px)]">
-        {/* Sidebar */}
-        <div className="w-64 p-4 bg-white">
-          <button className="flex items-center gap-4 px-6 py-4 rounded-2xl shadow-md hover:shadow-lg bg-white">
-            <FiMail className="text-gray-600 text-xl" />
-            <span>Nouveau message</span>
-          </button>
+        <div className={`
+          fixed inset-0 z-20 lg:relative lg:z-0
+          ${showSidebar ? 'block' : 'hidden'} lg:block
+        `}>
+          <div 
+            className="absolute inset-0 bg-black bg-opacity-50 lg:hidden"
+            onClick={() => setShowSidebar(false)}
+          />
+          
+          <div className={`
+            absolute left-0 top-0 bottom-0 w-64 p-4 bg-white
+            transform transition-transform duration-200 ease-in-out
+            ${showSidebar ? 'translate-x-0' : '-translate-x-full'}
+            lg:relative lg:transform-none
+          `}>
+            <button className="w-full flex items-center gap-4 px-6 py-4 rounded-2xl shadow-md hover:shadow-lg bg-white">
+              <FiMail className="text-gray-600 text-xl" />
+              <span>Nouveau message</span>
+            </button>
 
-          <div className="mt-4 space-y-1">
-            <div className="flex items-center gap-4 px-6 py-2 rounded-r-full bg-[#d3e3fd] text-[#001d35]">
-              <FiInbox className="text-gray-600 text-xl" />
-              <span>Boîte de réception</span>
-            </div>
-            <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
-              <AiOutlineStar className="text-gray-600" />
-              <span>Messages suivis</span>
-            </div>
-            <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
-              <AiOutlineClockCircle className="text-gray-600" />
-              <span>En attente</span>
+            <div className="mt-4 space-y-1">
+              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full bg-[#d3e3fd] text-[#001d35]">
+                <FiInbox className="text-gray-600 text-xl" />
+                <span>Boîte de réception</span>
+              </div>
+              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
+                <AiOutlineStar className="text-gray-600" />
+                <span>Messages suivis</span>
+              </div>
+              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
+                <AiOutlineClockCircle className="text-gray-600" />
+                <span>En attente</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {!selectedEmail ? (
-          <div className="flex-grow bg-white">
-            <div className="flex items-center px-4 py-2 border-b">
-              <div className="flex items-center gap-4">
-                <input type="checkbox" className="w-4 h-4" />
-                <BsThreeDotsVertical className="text-gray-600" />
-                <BsArchive className="text-gray-600" />
-                <BsTrash className="text-gray-600" />
-              </div>
-            </div>
-
-            <div className="divide-y">
-              {emailsData.emails.map((email) => (
-                <EmailItem 
-                  key={email.id}
-                  {...email}
-                  isCompleted={completedEmails.includes(email.id)}
-                  onClick={() => handleEmailClick(email)}
-                />
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="flex-grow bg-white flex flex-col">
-            <div className="p-2 border-b flex items-center gap-2">
-              <button 
-                onClick={handleCloseEmail}
-                className="p-2 hover:bg-gray-100 rounded-full"
-              >
-                <FiArrowLeft className="text-gray-600 text-xl" />
-              </button>
-              <button className="p-2 hover:bg-gray-100 rounded-full">
-                <FiArchive className="text-gray-600 text-xl" />
-              </button>
-              <button className="p-2 hover:bg-gray-100 rounded-full">
-                <FiTrash2 className="text-gray-600 text-xl" />
-              </button>
-            </div>
-
-            <div className="flex-grow overflow-auto">
-              <div className="p-4 border-b">
-                <h1 className="text-xl font-semibold">{selectedEmail.subject}</h1>
+        <div className="flex-grow bg-white overflow-hidden">
+          {!selectedEmail ? (
+            <div className="h-full flex flex-col">
+              <div className="flex items-center px-2 md:px-4 py-2 border-b sticky top-0 bg-white z-10">
+                <div className="flex items-center gap-2 md:gap-4">
+                  <input type="checkbox" className="w-4 h-4" />
+                  <BsThreeDotsVertical className="text-gray-600" />
+                  <BsArchive className="text-gray-600" />
+                  <BsTrash className="text-gray-600" />
+                </div>
               </div>
 
-              <div className="p-4 border-b flex justify-between items-start">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                    {selectedEmail.sender[0]}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold">{selectedEmail.sender}</span>
-                      <span className="text-sm text-gray-500">
-                        &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;
-                      </span>
+              <div className="divide-y overflow-y-auto h-[calc(100vh-180px)]">
+                {emailsData.emails.map((email) => (
+                  <EmailItem 
+                    key={email.id}
+                    {...email}
+                    isCompleted={completedEmails.includes(email.id)}
+                    onClick={() => handleEmailClick(email)}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex-grow bg-white flex flex-col h-[calc(100vh-180px)] overflow-y-auto">
+              <div className="p-2 border-b sticky top-0 bg-white z-10 flex items-center gap-2">
+                <button 
+                  onClick={handleCloseEmail}
+                  className="p-2 hover:bg-gray-100 rounded-full"
+                >
+                  <FiArrowLeft className="text-gray-600 text-xl" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-full">
+                  <FiArchive className="text-gray-600 text-xl" />
+                </button>
+                <button className="p-2 hover:bg-gray-100 rounded-full">
+                  <FiTrash2 className="text-gray-600 text-xl" />
+                </button>
+              </div>
+
+              <div className="flex-grow overflow-auto">
+                <div className="p-4 border-b">
+                  <h1 className="text-xl font-semibold">{selectedEmail.subject}</h1>
+                </div>
+
+                <div className="p-4 border-b flex justify-between items-start">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                      {selectedEmail.sender[0]}
                     </div>
-                    <div className="text-sm text-gray-500">à moi</div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">{selectedEmail.sender}</span>
+                        <span className="text-sm text-gray-500">
+                          &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;
+                        </span>
+                      </div>
+                      <div className="text-sm text-gray-500">à moi</div>
+                    </div>
                   </div>
+                  <span className="text-sm text-gray-500">{selectedEmail.time}</span>
                 </div>
-                <span className="text-sm text-gray-500">{selectedEmail.time}</span>
-              </div>
 
-              <div className="p-6">
-                <div className="max-w-3xl">
-                  {selectedEmail.content.split('\n').map((paragraph, index) => (
-                    <p key={index} className={`${paragraph.trim() === '' ? 'h-4' : 'mb-4'} text-gray-800`}>
-                      {paragraph}
-                    </p>
-                  ))}
+                <div className="p-6">
+                  <div className="max-w-3xl">
+                    {selectedEmail.content.split('\n').map((paragraph, index) => (
+                      <p key={index} className={`${paragraph.trim() === '' ? 'h-4' : 'mb-4'} text-gray-800`}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-white border-t py-4">
-        <div className="container mx-auto px-4">
+      <div className="fixed bottom-0 w-full bg-white border-t py-2 md:py-4">
+        <div className="container mx-auto px-2 md:px-4">
           {!selectedEmail ? (
-            <div className="flex justify-between items-center">
-              <p className="text-gray-700">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+              <p className="text-sm md:text-base text-gray-700 text-center md:text-left">
                 Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
               </p>
-              <div className="bg-blue-100 rounded-lg px-4 py-2">
+              <div className="bg-blue-100 rounded-lg px-4 py-2 text-center">
                 <p className="text-blue-800 font-medium">
                   Score : {globalScore} / {totalQuestionsAnswered}
                 </p>
