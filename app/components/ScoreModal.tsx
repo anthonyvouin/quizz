@@ -56,7 +56,6 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
 
         <div className="space-y-3 mt-6">
           <div className="flex gap-4">
-       
             <button
               onClick={handleShare}
               className="flex-1 py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 flex items-center justify-center gap-2"
@@ -66,14 +65,17 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
               </svg>
               Partager
             </button>
-          </div>
 
-          <Link
-            href="/guide"
-            className="block w-full py-2 px-4 bg-purple-500 text-white rounded hover:bg-purple-600 font-medium text-center"
-          >
-            Voir notre guide
-          </Link>
+            <Link
+              href="/guide"
+              className="flex-1 py-2 px-4 bg-purple-500 text-white rounded hover:bg-purple-600 flex items-center justify-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              </svg>
+              Guide
+            </Link>
+          </div>
 
           <button
             onClick={onReplay}
