@@ -152,7 +152,7 @@ export default function GmailInterface() {
 
       <div className="flex h-[calc(100vh-64px)]">
         <div className={`
-          fixed inset-0 z-20 lg:relative lg:z-0
+          fixed inset-0 z-20 lg:relative lg:z-0 bg-white
           ${showSidebar ? 'block' : 'hidden'} lg:block
         `}>
           <div 
