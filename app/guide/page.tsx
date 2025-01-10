@@ -9,7 +9,6 @@ export default function GuidePage() {
         </p>
 
         <div className="space-y-12">
-          {/* Section 1: Types de fraudes courantes */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Types de fraudes courantes</h2>
             
@@ -60,7 +59,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Section 2: Comment identifier une fraude */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Comment identifier une tentative de fraude ?</h2>
             
@@ -138,7 +136,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Section 3: Bonnes pratiques */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Les bonnes pratiques de sécurité</h2>
             
@@ -199,7 +196,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Section 4: En cas de piratage */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Que faire en cas de piratage ?</h2>
             
@@ -271,7 +267,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Nouvelle Section: Créer des mots de passe sécurisés */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Créer des mots de passe sécurisés</h2>
             
@@ -326,7 +321,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Nouvelle Section: Outils de protection recommandés */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Outils de protection recommandés</h2>
             
@@ -363,7 +357,6 @@ export default function GuidePage() {
             </div>
           </section>
 
-          {/* Nouvelle Section: Mythes et réalités */}
           <section className="bg-white p-8 rounded-lg shadow-lg">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6">Mythes et réalités sur la sécurité</h2>
             
