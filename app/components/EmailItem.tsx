@@ -1,4 +1,3 @@
-import { AiOutlineStar } from "react-icons/ai";
 
 interface EmailItemProps {
   id: string;

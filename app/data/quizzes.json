@@ -49,6 +49,61 @@
       "question": "Un réseau social vous demandera-t-il de vérifier votre compte via un lien dans un email pour éviter sa suppression ?",
       "explanation": "Non, les réseaux sociaux communiquent généralement ces informations directement sur leur plateforme. Ne cliquez pas sur ces liens, connectez-vous directement au site.",
       "isCorrect": false
+    },
+    "apple-security": {
+      "question": "Est-il normal qu'Apple vous demande de cliquer sur un lien dans un email pour débloquer votre compte ?",
+      "explanation": "Apple ne vous demandera jamais de cliquer sur un lien par email pour débloquer votre compte. Accédez toujours directement à appleid.apple.com.",
+      "isCorrect": false
+    },
+    "netflix-billing": {
+      "question": "Un email de Netflix vous demandant de mettre à jour vos informations de paiement via un lien est-il légitime ?",
+      "explanation": "Netflix vous dirigera toujours vers netflix.com pour mettre à jour vos informations de paiement. Ne cliquez jamais sur des liens dans les emails.",
+      "isCorrect": false
+    },
+    "paypal-login": {
+      "question": "PayPal vous demande de vérifier une connexion suspecte via un lien dans l'email. Que faire ?",
+      "explanation": "Ne cliquez jamais sur les liens. Connectez-vous directement sur paypal.com pour vérifier l'activité de votre compte.",
+      "isCorrect": false
+    },
+    "amazon-purchase": {
+      "question": "Un email d'Amazon vous informe d'une commande que vous n'avez pas faite. Le lien d'annulation est-il sûr ?",
+      "explanation": "Non, accédez directement à votre compte Amazon via le site officiel pour vérifier vos commandes. Les liens dans les emails peuvent être frauduleux.",
+      "isCorrect": false
+    },
+    "linkedin-job": {
+      "question": "Une offre d'emploi avec un salaire extraordinaire demandant vos coordonnées bancaires est-elle légitime ?",
+      "explanation": "Non, les offres d'emploi avec des salaires irréalistes et demandant des informations bancaires sont toujours des arnaques.",
+      "isCorrect": false
+    },
+    "whatsapp-voice": {
+      "question": "Est-il normal de recevoir un email de WhatsApp pour écouter un message vocal ?",
+      "explanation": "Non, WhatsApp n'envoie jamais d'emails pour les messages vocaux. Ces messages sont uniquement disponibles dans l'application.",
+      "isCorrect": false
+    },
+    "google-drive": {
+      "question": "Un email de Google Drive vous invitant à voir un document confidentiel est-il sûr ?",
+      "explanation": "Méfiez-vous des documents 'confidentiels'. Vérifiez l'expéditeur et accédez à Google Drive directement.",
+      "isCorrect": false
+    },
+    "facebook-security": {
+      "question": "Facebook vous envoie un email concernant une connexion suspecte. Faut-il cliquer sur le lien ?",
+      "explanation": "Non, accédez directement à facebook.com pour vérifier la sécurité de votre compte.",
+      "isCorrect": false
+    },
+    "lottery-win-euro": {
+      "question": "Un email d'EuroMillions vous annonce un gain important. Est-ce crédible ?",
+      "explanation": "Les loteries officielles ne contactent jamais les gagnants par email. C'est une arnaque classique.",
+      "isCorrect": false
+    },
+    "antivirus-renewal": {
+      "question": "Une réduction de 70% sur Norton via un lien dans un email est-elle une bonne affaire ?",
+      "explanation": "Les éditeurs d'antivirus ne proposent pas de réductions via des liens dans les emails. Visitez leur site officiel.",
+      "isCorrect": false
+    },
+    "dhl-customs": {
+      "question": "DHL vous demande de payer des frais de douane par email. Est-ce normal ?",
+      "explanation": "Les vrais frais de douane ne sont jamais réclamés par email. Contactez DHL via leur site officiel.",
+      "isCorrect": false
     }
   }
 } 

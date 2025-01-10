@@ -89,6 +89,150 @@
       "content": "Bonjour,\n\nNous avons reçu plusieurs signalements concernant votre compte Instagram.\n\nSi vous pensez qu'il s'agit d'une erreur, veuillez vérifier votre compte en cliquant ici :\n[Vérifier mon compte]\n\nSi vous ne vérifiez pas votre compte dans les 24 heures, il sera définitivement supprimé.\n\nÉquipe Instagram",
       "time": "12:00",
       "questionId": "social-phishing"
+    },
+    {
+      "id": "password-reset",
+      "sender": "Apple ID",
+      "subject": "Votre identifiant Apple a été verrouillé",
+      "preview": "Pour des raisons de sécurité, votre compte a été...",
+      "content": "Cher utilisateur,\n\nNous avons détecté des tentatives de connexion suspectes à votre compte Apple ID. Par mesure de sécurité, votre compte a été temporairement verrouillé.\n\nPour débloquer votre compte, veuillez suivre ce lien :\n[Débloquer mon compte]\n\nSi vous ignorez cette alerte, votre compte sera définitivement bloqué.\n\nÉquipe Sécurité Apple",
+      "time": "10:45",
+      "questionId": "apple-security"
+    },
+    {
+      "id": "netflix-subscription",
+      "sender": "Netflix Service",
+      "subject": "⚠️ Problème de paiement - Action requise",
+      "preview": "Votre abonnement Netflix sera suspendu...",
+      "content": "...",
+      "time": "13:20",
+      "questionId": "netflix-billing"
+    },
+    {
+      "id": "paypal-security",
+      "sender": "PayPal Service",
+      "subject": "🔒 Connexion détectée depuis un nouvel appareil",
+      "preview": "Une nouvelle connexion a été détectée sur votre compte...",
+      "content": "Cher client,\n\nNous avons détecté une connexion depuis un nouvel appareil à Berlin, Allemagne.\n\nSi ce n'était pas vous, sécurisez votre compte immédiatement :\n[Vérifier l'activité]\n\nService Sécurité PayPal",
+      "time": "08:15",
+      "questionId": "paypal-login"
+    },
+    {
+      "id": "amazon-order",
+      "sender": "Amazon Shopping",
+      "subject": "Confirmation de commande - iPhone 14 Pro",
+      "preview": "Votre commande #AMZ-2024-456 d'un montant de 1299€...",
+      "content": "Bonjour,\n\nNous confirmons votre commande d'un iPhone 14 Pro.\nSi vous n'avez pas effectué cet achat, annulez-le immédiatement :\n[Annuler la commande]\n\nAmazon Service Client",
+      "time": "14:22",
+      "questionId": "amazon-purchase"
+    },
+    {
+      "id": "linkedin-job",
+      "sender": "LinkedIn Jobs",
+      "subject": "Offre d'emploi urgente - 5000€/jour",
+      "preview": "Une entreprise souhaite vous recruter immédiatement...",
+      "content": "Bonjour,\n\nUne entreprise internationale souhaite vous recruter.\nSalaire : 5000€/jour en télétravail.\nEnvoyez vos coordonnées bancaires pour commencer :\n[Postuler maintenant]\n\nLinkedIn Recrutement",
+      "time": "11:45",
+      "questionId": "linkedin-scam"
+    },
+    {
+      "id": "whatsapp-voicemail",
+      "sender": "WhatsApp Notification",
+      "subject": "Nouveau message vocal reçu",
+      "preview": "Vous avez un nouveau message vocal de...",
+      "content": "Vous avez reçu un message vocal.\nPour l'écouter, cliquez ici :\n[Écouter le message]\n\nL'équipe WhatsApp",
+      "time": "16:30",
+      "questionId": "whatsapp-voice"
+    },
+    {
+      "id": "google-drive-share",
+      "sender": "Google Drive",
+      "subject": "Document confidentiel partagé avec vous",
+      "preview": "Un document important nécessite votre attention...",
+      "content": "Un document confidentiel a été partagé avec vous.\nPour y accéder, connectez-vous :\n[Voir le document]\n\nGoogle Drive Team",
+      "time": "09:25",
+      "questionId": "google-drive"
+    },
+    {
+      "id": "facebook-login",
+      "sender": "Facebook Security",
+      "subject": "Nouvelle connexion depuis Tokyo",
+      "preview": "Votre compte Facebook a été accédé depuis...",
+      "content": "Une connexion à votre compte a été détectée depuis Tokyo, Japon.\nSi ce n'était pas vous :\n[Sécuriser le compte]\n\nÉquipe Facebook",
+      "time": "15:40",
+      "questionId": "facebook-security"
+    },
+    {
+      "id": "lottery-win-2",
+      "sender": "EuroMillions Official",
+      "subject": "🎉 Félicitations - Gain de 2,000,000€",
+      "preview": "Vous avez été sélectionné parmi...",
+      "content": "Félicitations !\nVous avez gagné 2,000,000€.\nPour recevoir votre gain :\n[Réclamer le prix]\n\nEuroMillions",
+      "time": "12:30",
+      "questionId": "lottery-win-euro"
+    },
+    {
+      "id": "antivirus-expiration",
+      "sender": "Norton Security",
+      "subject": "⚠️ Votre protection expire aujourd'hui",
+      "preview": "Renouvelez maintenant pour rester protégé...",
+      "content": "Votre licence Norton expire dans 24h.\nRenouveler maintenant avec 70% de réduction :\n[Renouveler]\n\nNorton Security",
+      "time": "10:15",
+      "questionId": "antivirus-renewal"
+    },
+    {
+      "id": "dhl-delivery",
+      "sender": "DHL Express",
+      "subject": "Colis en attente de livraison",
+      "preview": "Votre colis DHL nécessite une action...",
+      "content": "Votre colis est prêt à être livré.\nFrais de douane : 3,50€\n[Payer maintenant]\n\nDHL Express",
+      "time": "11:05",
+      "questionId": "dhl-customs"
+    },
+    {
+      "id": "icloud-storage",
+      "sender": "iCloud Storage",
+      "subject": "Votre stockage iCloud est plein",
+      "preview": "Action requise pour éviter la perte de données...",
+      "content": "Votre stockage iCloud est plein.\nMettez à jour vos informations de paiement :\n[Mettre à jour]\n\niCloud Service",
+      "time": "13:45",
+      "questionId": "icloud-payment"
+    },
+    {
+      "id": "job-offer",
+      "sender": "Recrutement International",
+      "subject": "Offre d'emploi - 3000€/semaine",
+      "preview": "Travaillez depuis chez vous...",
+      "content": "Opportunité de travail :\n- 3000€/semaine\n- Travail à domicile\nEnvoyez vos informations :\n[Postuler]\n\nRecrutement International",
+      "time": "14:20",
+      "questionId": "job-scam"
+    },
+    {
+      "id": "windows-update",
+      "sender": "Microsoft Windows",
+      "subject": "Mise à jour critique de sécurité",
+      "preview": "Votre Windows nécessite une mise à jour urgente...",
+      "content": "Mise à jour critique disponible.\nTéléchargez maintenant :\n[Mettre à jour Windows]\n\nMicrosoft Windows Team",
+      "time": "16:15",
+      "questionId": "windows-security"
+    },
+    {
+      "id": "airbnb-refund",
+      "sender": "Airbnb Support",
+      "subject": "Remboursement en attente",
+      "preview": "Votre remboursement de 750€ est disponible...",
+      "content": "Votre remboursement est prêt.\nConfirmez vos coordonnées bancaires :\n[Recevoir le remboursement]\n\nAirbnb Support",
+      "time": "09:50",
+      "questionId": "airbnb-payment"
+    },
+    {
+      "id": "spotify-premium",
+      "sender": "Spotify",
+      "subject": "Votre compte Premium a expiré",
+      "preview": "Renouvelez maintenant avec 50% de réduction...",
+      "content": "Votre Premium a expiré.\nOffre spéciale de renouvellement :\n[Renouveler Premium]\n\nSpotify Team",
+      "time": "15:55",
+      "questionId": "spotify-renewal"
     }
   ]
 } 

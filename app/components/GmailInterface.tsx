@@ -2,7 +2,7 @@
 import { FiMenu, FiSearch, FiHelpCircle, FiSettings, FiGrid, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2 } from "react-icons/fi";
 import { AiOutlineStar, AiOutlineClockCircle } from "react-icons/ai";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailsData from '../data/emails.json';
 import EmailItem from './EmailItem';
 import IntroModal from "./IntroModal";
@@ -29,14 +29,21 @@ export default function GmailInterface() {
   const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
   const [showFinalScore, setShowFinalScore] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [randomizedEmails, setRandomizedEmails] = useState<Email[]>([]);
 
   const handleEmailClick = (email: Email) => {
     if (completedEmails.includes(email.id)) {
       alert("Vous avez déjà répondu à la question de cet email. Passez au suivant !");
       return;
     }
-    setSelectedEmail(email);
+    
     const question = quizzesData.questions[email.questionId as keyof typeof quizzesData.questions];
+    if (!question) {
+      console.error(`Question non trouvée pour l'email: ${email.id}`);
+      return;
+    }
+    
+    setSelectedEmail(email);
     setCurrentQuestion(question);
     setUserAnswer(null);
     setShowResult(false);
@@ -67,6 +74,8 @@ export default function GmailInterface() {
   };
 
   const handleReplay = () => {
+    const newRandomEmails = getRandomEmails(emailsData.emails);
+    setRandomizedEmails(newRandomEmails);
     setGlobalScore(0);
     setTotalQuestionsAnswered(0);
     setCompletedEmails([]);
@@ -80,24 +89,45 @@ export default function GmailInterface() {
   const handleNextEmail = () => {
     if (!selectedEmail) return;
     
-    const currentIndex = emailsData.emails.findIndex(email => email.id === selectedEmail.id);
+    const currentIndex = randomizedEmails.findIndex(email => email.id === selectedEmail.id);
     const nextIndex = currentIndex + 1;
     
-    if (nextIndex < emailsData.emails.length) {
-      const nextEmail = emailsData.emails[nextIndex];
-      setSelectedEmail(nextEmail);
+    if (nextIndex < randomizedEmails.length) {
+      const nextEmail = randomizedEmails[nextIndex];
       const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
+      if (!question) {
+        console.error(`Question non trouvée pour l'email: ${nextEmail.id}`);
+        return;
+      }
+      
+      setSelectedEmail(nextEmail);
       setCurrentQuestion(question);
       setUserAnswer(null);
       setShowResult(false);
     } else {
-      // Si c'était le dernier email, on retourne à la liste
       setSelectedEmail(null);
-      if (completedEmails.length === emailsData.emails.length) {
+      if (completedEmails.length === randomizedEmails.length) {
         setShowFinalScore(true);
       }
     }
   };
+
+  const getRandomEmails = (allEmails: Email[], count: number = 10) => {
+    const validEmails = allEmails.filter(email => 
+      quizzesData.questions[email.questionId as keyof typeof quizzesData.questions]
+    );
+    
+    const shuffled = [...validEmails]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, count);
+    
+    return shuffled;
+  };
+
+  useEffect(() => {
+    const selectedEmails = getRandomEmails(emailsData.emails);
+    setRandomizedEmails(selectedEmails);
+  }, []);
 
   return (
     <div className="h-screen bg-[#f6f8fc]">
@@ -201,7 +231,7 @@ export default function GmailInterface() {
               </div>
 
               <div className="divide-y overflow-y-auto h-[calc(100vh-180px)]">
-                {emailsData.emails.map((email) => (
+                {randomizedEmails.map((email) => (
                   <EmailItem 
                     key={email.id}
                     {...email}
@@ -328,7 +358,7 @@ export default function GmailInterface() {
                       onClick={handleNextEmail}
                       className="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                     >
-                      {completedEmails.length === emailsData.emails.length - 1 ? 'Terminer' : 'Email suivant'}
+                      {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Email suivant'}
                     </button>
                   </div>
                 )}
