@@ -1,4 +1,5 @@
 import { FiX } from "react-icons/fi";
+import Link from "next/link";
 
 interface ScoreModalProps {
   score: number;
@@ -66,6 +67,13 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
               Partager
             </button>
           </div>
+
+          <Link
+            href="/guide"
+            className="block w-full py-2 px-4 bg-purple-500 text-white rounded hover:bg-purple-600 font-medium text-center"
+          >
+            Voir notre guide
+          </Link>
 
           <button
             onClick={onReplay}
