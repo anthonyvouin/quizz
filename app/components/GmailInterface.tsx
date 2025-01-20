@@ -350,7 +350,7 @@ export default function GmailInterface() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-blue-800 flex">
+      <div className="fixed bottom-0    w-full bg-blue-800 flex">
         <div className="flex-1 py-4 px-4 md:px-8">
           {!selectedEmail ? (
             <div className="flex flex-col items-start max-w-4xl mx-auto">
@@ -358,34 +358,36 @@ export default function GmailInterface() {
               <p className="text-white text-sm">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
             </div>
           ) : (
-            <div className="flex flex-col items-center gap-4">
-              <p className="text-white font-medium text-center">
-                {currentQuestion?.question}
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <div className="flex gap-4">
-                  <button 
-                    onClick={() => handleAnswerSubmit(true)}
-                    disabled={showResult}
-                    className={`px-6 py-2 rounded-full font-medium flex items-center gap-2 ${
-                      showResult
-                        ? 'bg-gray-300 cursor-not-allowed'
-                        : 'bg-success-050 text-success-900 hover:bg-success-050/90'
-                    }`}
-                  >
-                    ✓ Le mail est sûr
-                  </button>
-                  <button 
-                    onClick={() => handleAnswerSubmit(false)}
-                    disabled={showResult}
-                    className={`px-6 py-2 rounded-full font-medium flex items-center gap-2 ${
-                      showResult
-                        ? 'bg-gray-300 cursor-not-allowed'
-                        : 'bg-error-100 text-error-900 hover:bg-error-100/90'
-                    }`}
-                  >
-                    ✕ Le mail est frauduleux
-                  </button>
+            <div className="  flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-2 sm:gap-4">
+                <p className="text-white font-medium text-sm sm:text-base text-center">
+                  {currentQuestion?.question}
+                </p>
+                <div className="flex flex-col items-center gap-2 sm:gap-4">
+                  <div className="flex gap-2 sm:gap-4">
+                    <button 
+                      onClick={() => handleAnswerSubmit(true)}
+                      disabled={showResult}
+                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center gap-2 ${
+                        showResult
+                          ? 'bg-gray-300 cursor-not-allowed'
+                          : 'bg-success-050 text-success-900 hover:bg-success-050/90'
+                      }`}
+                    >
+                      ✓ Le mail est sûr
+                    </button>
+                    <button 
+                      onClick={() => handleAnswerSubmit(false)}
+                      disabled={showResult}
+                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center gap-2 ${
+                        showResult
+                          ? 'bg-gray-300 cursor-not-allowed'
+                          : 'bg-error-100 text-error-900 hover:bg-error-100/90'
+                      }`}
+                    >
+                      ✕ Le mail est frauduleux
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -407,7 +409,7 @@ export default function GmailInterface() {
               userAnswer === currentQuestion.isCorrect 
                 ? 'bg-success-050'
                 : 'bg-error-050'
-            }`}>
+            } text-xs sm:text-sm`}>
               {!showResultText && (
                 <div className="flex flex-col items-center">
                   <div className="w-32 h-32 transition-transform duration-300">
