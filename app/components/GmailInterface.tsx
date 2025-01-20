@@ -198,6 +198,12 @@ export default function GmailInterface() {
     }
   }, [showResult]);
 
+  useEffect(() => {
+    if (showFinalScore) {
+      setShowResult(false);
+    }
+  }, [showFinalScore]);
+
   return (
     <div className="h-screen bg-[#f6f8fc]">
       {showIntro && (
