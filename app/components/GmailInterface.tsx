@@ -438,8 +438,13 @@ export default function GmailInterface() {
                     </h2>
                     <p className="text-gray-700">{currentQuestion.explanation}</p>
                     <div className="mt-6 p-4 rounded-lg">
-                      <h3 className="text-lg font-medium mb-2">👉 Ce qu'il faut faire</h3>
-                      <p className="text-gray-700">{currentQuestion.whatToDo}</p>
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <span>👉</span>
+                          <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
+                        </div>
+                        <p className="text-gray-700 ml-7">{currentQuestion.whatToDo}</p>
+                      </div>
                     </div>
                   </div>
                 )}
