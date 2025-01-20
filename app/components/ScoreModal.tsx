@@ -71,65 +71,70 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
 
   return (
     <div className="fixed inset-0 bg-[#00000080] flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg p-8 w-full max-w-[600px]">
-        <div className="flex justify-center mb-6">
+      <div className="bg-white rounded-lg p-4 sm:p-8 w-full max-w-[600px] mx-auto">
+        <div className="flex justify-center mb-4 sm:mb-6">
           <Image 
             src="/Logo Good or Bad mail.com.svg" 
             alt="Good or Bad Mail Logo" 
-            width={150} 
-            height={60}
-            className="h-auto"
+            width={120}
+            height={48}
+            className="h-auto w-auto sm:w-[150px]"
           />
         </div>
 
-        <h2 className="text-3xl font-bold text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2 sm:mb-4">
           Félicitations !
         </h2>
         <p className="text-center mb-2">Tu as obtenu le score de</p>
-        <p className="text-blue-500 text-6xl font-bold text-center mb-6">
+        <p className="text-blue-500 text-5xl sm:text-6xl font-bold text-center mb-4 sm:mb-6">
           {score}/10
         </p>
 
-        <div className="space-y-2 mb-8">
-          <p className="whitespace-pre-line">
+        <div className="space-y-2 mb-6 sm:mb-8">
+          <p className="whitespace-pre-line text-sm sm:text-base">
             {content.message}
           </p>
         </div>
 
-        {content.subtitle && <p className="mb-4">{content.subtitle}</p>}
-        <ul className="list-disc pl-6 mb-8 space-y-2">
+        {content.subtitle && (
+          <p className="mb-3 sm:mb-4 text-sm sm:text-base">
+            {content.subtitle}
+          </p>
+        )}
+        
+        <ul className="list-disc pl-6 mb-6 sm:mb-8 space-y-2 text-sm sm:text-base">
           {content.listItems.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
 
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
             <button 
               onClick={handleShare}
-              className="bg-blue-400 text-white py-3 px-4 rounded-[50px] font-medium flex items-center justify-center gap-2"
+              className="bg-blue-400 text-white py-2 sm:py-3 px-4 rounded-[50px] font-medium flex items-center justify-center gap-2 text-sm sm:text-base"
             >
-              <FiShare2 className="w-5 h-5" />
+              <FiShare2 className="w-4 h-4 sm:w-5 sm:h-5" />
               Partage le mini-jeu
             </button>
             <Link 
               href="/guide"
-              className="bg-blue-400 text-white py-3 px-4 rounded-[50px] font-medium text-center flex items-center justify-center gap-2"
+              className="bg-blue-400 text-white py-2 sm:py-3 px-4 rounded-[50px] font-medium text-center flex items-center justify-center gap-2 text-sm sm:text-base"
             >
-              <HiOutlineBookOpen className="w-5 h-5" />
+              <HiOutlineBookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
               Guide & conseils officiels
             </Link>
           </div>
           
-          <div className="space-y-4 w-full">
+          <div className="space-y-3 sm:space-y-4 w-full">
             <button
               onClick={onReplay}
-              className="w-full bg-blue-500 text-white py-3 rounded-[50px] font-medium"
+              className="w-full bg-blue-500 text-white py-2 sm:py-3 rounded-[50px] font-medium text-sm sm:text-base"
             >
               Rejoue
             </button>
 
-            <p className="text-center text-sm w-full">
+            <p className="text-center text-xs sm:text-sm w-full">
               © 2025 - Conceptualisé par <span className="font-bold">Anna Giraud</span> et développé par <span className="font-bold">Anthony Vouin</span>
             </p>
           </div>
