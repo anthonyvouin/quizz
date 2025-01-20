@@ -21,7 +21,6 @@ interface Email {
 }
 
 const MAX_QUESTIONS = 10;
-const ANIMATION_DURATION = 2500;
 const ANIMATION_TEXT_DELAY = 1800;
 const EXPLANATION_DELAY = 3500;
 
@@ -417,7 +416,11 @@ export default function GmailInterface() {
                     showAnimationText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}>
                     {showAnimationText && (
-                      <p className="text-xl font-medium mt-4">
+                      <p className={`text-xl font-medium mt-4 ${
+                        userAnswer === currentQuestion.isCorrect 
+                          ? 'text-green-800'
+                          : 'text-red-800'
+                      }`}>
                         {userAnswer === currentQuestion.isCorrect 
                           ? 'Bonne réponse, le mail était sûr !'
                           : 'Mauvaise réponse, le mail était frauduleux !'}
@@ -430,20 +433,43 @@ export default function GmailInterface() {
                 showResultText ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
               }`}>
                 {showResultText && (
-                  <div className="space-y-4">
-                    <h2 className="text-xl font-medium text-center mb-6">
+                  <div className={`space-y-4 ${
+                    userAnswer === currentQuestion.isCorrect 
+                      ? 'text-green-800'
+                      : 'text-red-800'
+                  }`}>
+                    <h2 className="text-xl font-medium mb-6 flex items-center gap-2">
+                      <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                       {userAnswer === currentQuestion.isCorrect 
-                        ? 'Bonne réponse' 
-                        : 'Mauvaise réponse'}
+                        ? 'Bonne réponse, le mail était sûr !'
+                        : 'Mauvaise réponse, le mail était frauduleux !'}
                     </h2>
-                    <p className="text-gray-700">{currentQuestion.explanation}</p>
+                    <ul className="list-disc pl-5">
+                      <li>Le mail d'expéditeur ne correspond pas à {selectedEmail?.sender.split(' ')[0]}</li>
+                    </ul>
+                    {selectedEmail && (
+                      <div className="flex items-center gap-2 bg-white p-2 rounded-lg shadow-md text-black">
+                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                          {selectedEmail.sender[0]}
+                        </div>
+                        <div>
+                          <span className="font-semibold">{selectedEmail.sender}</span>
+                          <span className="text-sm"> &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;</span>
+                          <div className="text-sm">à moi</div>
+                        </div>
+                      </div>
+                    )}
+                    <ul className="list-disc pl-5">
+                      <li>Le mail joue sur le sentiment d'urgence. Fait attention, plus on te presse de faire une action, moins tu prends le temps de vérifier.</li>
+                    </ul>
+                    <p>{currentQuestion.explanation}</p>
                     <div className="mt-6 p-4 rounded-lg">
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
                           <span>👉</span>
                           <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
                         </div>
-                        <p className="text-gray-700 ml-7">{currentQuestion.whatToDo}</p>
+                        <p className="ml-7">{currentQuestion.whatToDo}</p>
                       </div>
                     </div>
                   </div>
@@ -461,7 +487,7 @@ export default function GmailInterface() {
                 }`}>
                   <button
                     onClick={handleNextEmail}
-                    className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full transition-colors duration-200 hover:bg-gray-50"
+                    className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full transition-colors duration-200 "
                   >
                     {selectedEmail && 
                      randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
