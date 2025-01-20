@@ -293,24 +293,24 @@ export default function GmailInterface() {
                   <button 
                     onClick={() => handleAnswerSubmit(true)}
                     disabled={showResult}
-                    className={`px-6 py-2 rounded-lg font-medium ${
+                    className={`px-6 py-2 rounded-full font-medium flex items-center gap-2 ${
                       showResult
                         ? 'bg-gray-300 cursor-not-allowed'
-                        : 'bg-green-500 text-white hover:bg-green-600'
+                        : 'bg-success-050 text-success-900 hover:bg-success-050/90'
                     }`}
                   >
-                    Vrai
+                    ✓ Le mail est sûr
                   </button>
                   <button 
                     onClick={() => handleAnswerSubmit(false)}
                     disabled={showResult}
-                    className={`px-6 py-2 rounded-lg font-medium ${
+                    className={`px-6 py-2 rounded-full font-medium flex items-center gap-2 ${
                       showResult
                         ? 'bg-gray-300 cursor-not-allowed'
-                        : 'bg-red-500 text-white hover:bg-red-600'
+                        : 'bg-error-100 text-error-900 hover:bg-error-100/90'
                     }`}
                   >
-                    Faux
+                    ✕ Le mail est frauduleux
                   </button>
                 </div>
                 
