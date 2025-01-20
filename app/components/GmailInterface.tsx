@@ -313,29 +313,6 @@ export default function GmailInterface() {
                     ✕ Le mail est frauduleux
                   </button>
                 </div>
-                
-                {showResult && (
-                  <div className="text-center">
-                    <div className={`p-4 rounded-lg ${
-                      userAnswer === currentQuestion.isCorrect 
-                        ? 'bg-green-100 text-green-800'
-                        : 'bg-red-100 text-red-800'
-                    }`}>
-                      <p className="font-medium mb-2">
-                        {userAnswer === currentQuestion.isCorrect 
-                          ? '✅ Bonne réponse !' 
-                          : '❌ Mauvaise réponse'}
-                      </p>
-                      <p>{currentQuestion.explanation}</p>
-                    </div>
-                    <button
-                      onClick={handleNextEmail}
-                      className="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-400"
-                    >
-                      {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Email suivant'}
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
           )}
@@ -346,6 +323,39 @@ export default function GmailInterface() {
           </p>
         </div>
       </div>
+
+      {showResult && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg max-w-2xl w-full mx-4 overflow-hidden">
+            <div className={`p-6 ${
+              userAnswer === currentQuestion.isCorrect 
+                ? 'bg-success-050'
+                : 'bg-error-050'
+            }`}>
+              <p className="font-medium text-xl mb-4">
+                {userAnswer === currentQuestion.isCorrect 
+                  ? '✓ Bonne réponse !' 
+                  : '✕ Mauvaise réponse'}
+              </p>
+              <div className="space-y-4">
+                <p className="text-gray-700">{currentQuestion.explanation}</p>
+              </div>
+            </div>
+            <div className={`p-4 flex justify-center ${
+              userAnswer === currentQuestion.isCorrect 
+                ? 'bg-success-050'
+                : 'bg-error-050'
+            }`}>
+              <button
+                onClick={handleNextEmail}
+                className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full hover:bg-gray-50"
+              >
+                {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Lire le mail suivant'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showFinalScore && (
         <ScoreModal
