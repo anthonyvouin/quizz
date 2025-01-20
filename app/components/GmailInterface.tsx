@@ -69,7 +69,7 @@ export default function GmailInterface() {
 
   const handleCloseEmail = () => {
     if (selectedEmail && completedEmails.includes(selectedEmail.id)) {
-      if (completedEmails.length === emailsData.emails.length) {
+      if (completedEmails.length === randomizedEmails.length) {
         setShowFinalScore(true);
       }
     }
