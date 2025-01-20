@@ -1,6 +1,5 @@
 "use client"
-import { FiMenu, FiSearch, FiHelpCircle, FiSettings, FiGrid, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2 } from "react-icons/fi";
-import { AiOutlineStar, AiOutlineClockCircle } from "react-icons/ai";
+import { FiMenu, FiSearch, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2 } from "react-icons/fi";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
 import { useState, useEffect } from 'react';
 import emailsData from '../data/emails.json';
@@ -8,6 +7,8 @@ import EmailItem from './EmailItem';
 import IntroModal from "./IntroModal";
 import quizzesData from '../data/quizzes.json';
 import ScoreModal from './ScoreModal';
+import Image from 'next/image';
+
 interface Email {
   id: string;
   sender: string;
@@ -135,67 +136,51 @@ export default function GmailInterface() {
         <IntroModal onClose={() => setShowIntro(false)} />
       )}
 
-      <div className="h-16 px-2 md:px-4 bg-white flex items-center justify-between border-b">
-        <div className="flex items-center gap-2 md:gap-4">
+      <div className="h-14 sm:h-16 px-2 md:px-4 bg-white flex items-center justify-between border-b">
+        <div className="flex items-center gap-2 min-w-[100px] sm:min-w-[120px]">
           <button 
-            className="p-2 md:p-3 hover:bg-gray-100 rounded-full lg:hidden"
-            onClick={() => setShowSidebar(!showSidebar)}
+            onClick={() => setShowSidebar(!showSidebar)} 
+            className="p-1.5 hover:bg-gray-100 rounded-full block lg:hidden"
           >
-            <FiMenu className="text-gray-600 text-xl" />
+            <FiMenu className="w-5 h-5 text-gray-600" />
           </button>
-          <button 
-            className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden lg:block"
-          >
-            <FiMenu className="text-gray-600 text-xl" />
-          </button>
-          <div className="flex items-center">
-            <span className="text-lg md:text-xl text-gray-700">Service de sécurité</span>
-          </div>
+          <Image 
+            src="/Logo Good or Bad mail.com.svg"
+            alt="Good or Bad Mail Logo"
+            width={32}
+            height={26}
+            className="h-auto w-[60px] sm:w-[80px]"
+          />
         </div>
         
-        <div className="hidden md:flex flex-grow max-w-2xl mx-4">
-          <div className="flex items-center bg-[#eaf1fb] hover:bg-[#e4ebf8] rounded-full px-4 py-2 w-full">
-            <FiSearch className="text-gray-600 mr-3" />
+        <div className="flex-grow max-w-xs sm:max-w-md md:max-w-2xl mx-3 sm:mx-4">
+          <div className="flex items-center bg-[#f1f3f4] hover:bg-gray-100 rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 w-full">
+            <FiSearch className="text-gray-600 mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
             <input 
               type="text" 
-              placeholder="Rechercher dans les messages" 
-              className="bg-transparent outline-none w-full"
+              placeholder="Rechercher"
+              className="bg-transparent outline-none w-full text-sm sm:text-base placeholder:text-gray-500"
             />
           </div>
         </div>
 
-        <div className="flex items-center gap-1 md:gap-2">
-          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full md:hidden">
-            <FiSearch className="text-gray-600 text-xl" />
-          </button>
-          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
-            <FiHelpCircle className="text-gray-600 text-xl" />
-          </button>
-          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
-            <FiSettings className="text-gray-600 text-xl" />
-          </button>
-          <button className="p-2 md:p-3 hover:bg-gray-100 rounded-full hidden md:block">
-            <FiGrid className="text-gray-600 text-xl" />
-          </button>
+        <div className="w-[100px] sm:w-[120px] invisible">
+          <div className="w-full"></div>
         </div>
       </div>
 
       <div className="flex h-[calc(100vh-64px)]">
         <div className={`
-          fixed inset-0 z-20 lg:relative lg:z-0 bg-white
-          ${showSidebar ? 'block' : 'hidden'} lg:block
+          fixed inset-0 z-20 bg-black bg-opacity-50 lg:hidden
+          ${showSidebar ? 'block' : 'hidden'}
+        `} onClick={() => setShowSidebar(false)} />
+
+        <div className={`
+          fixed left-0 top-0 bottom-0 w-64 bg-white z-30 transform transition-transform duration-200 ease-in-out
+          ${showSidebar ? 'translate-x-0' : '-translate-x-full'}
+          lg:relative lg:transform-none lg:z-0
         `}>
-          <div 
-            className="absolute inset-0 bg-black bg-opacity-50 lg:hidden"
-            onClick={() => setShowSidebar(false)}
-          />
-          
-          <div className={`
-            absolute left-0 top-0 bottom-0 w-64 p-4 bg-white
-            transform transition-transform duration-200 ease-in-out
-            ${showSidebar ? 'translate-x-0' : '-translate-x-full'}
-            lg:relative lg:transform-none
-          `}>
+          <div className="p-4">
             <button className="w-full flex items-center gap-4 px-6 py-4 rounded-2xl shadow-md hover:shadow-lg bg-white">
               <FiMail className="text-gray-600 text-xl" />
               <span>Nouveau message</span>
@@ -205,14 +190,6 @@ export default function GmailInterface() {
               <div className="flex items-center gap-4 px-6 py-2 rounded-r-full bg-[#d3e3fd] text-[#001d35]">
                 <FiInbox className="text-gray-600 text-xl" />
                 <span>Boîte de réception</span>
-              </div>
-              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
-                <AiOutlineStar className="text-gray-600" />
-                <span>Messages suivis</span>
-              </div>
-              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full hover:bg-gray-100">
-                <AiOutlineClockCircle className="text-gray-600" />
-                <span>En attente</span>
               </div>
             </div>
           </div>
