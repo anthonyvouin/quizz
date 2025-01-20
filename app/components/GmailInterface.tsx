@@ -1,7 +1,7 @@
 "use client"
 import { FiMenu, FiSearch, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2, FiRefreshCw } from "react-icons/fi";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import emailsData from '../data/emails.json';
 import EmailItem from './EmailItem';
 import IntroModal from "./IntroModal";
@@ -20,6 +20,9 @@ interface Email {
   questionId: string;
 }
 
+const MAX_QUESTIONS = 10;
+const ANIMATION_DURATION = 3000;
+
 export default function GmailInterface() {
   const [showIntro, setShowIntro] = useState(true);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
@@ -34,69 +37,72 @@ export default function GmailInterface() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [randomizedEmails, setRandomizedEmails] = useState<Email[]>([]);
 
-  const handleEmailClick = (email: Email) => {
+  const getRemainingEmails = useCallback(() => {
+    return randomizedEmails.filter(email => !completedEmails.includes(email.id));
+  }, [randomizedEmails, completedEmails]);
+
+  const isLastEmail = useCallback(() => {
+    return getRemainingEmails().length <= 1;
+  }, [getRemainingEmails]);
+
+  const resetQuestionStates = useCallback(() => {
+    setUserAnswer(null);
+    setShowResult(false);
+    setShowResultText(false);
+  }, []);
+
+  const handleEmailClick = useCallback((email: Email) => {
     if (completedEmails.includes(email.id)) {
-      alert("Vous avez déjà répondu à la question de cet email. Passez au suivant !");
+      alert("Vous avez déjà répondu à la question de cet email. Choisissez-en un autre !");
       return;
     }
-    
+
+    if (completedEmails.length >= MAX_QUESTIONS) {
+      setShowFinalScore(true);
+      return;
+    }
+
     const question = quizzesData.questions[email.questionId as keyof typeof quizzesData.questions];
     if (!question) {
       console.error(`Question non trouvée pour l'email: ${email.id}`);
       return;
     }
-    
+
     setSelectedEmail(email);
     setCurrentQuestion(question);
-    setUserAnswer(null);
-    setShowResult(false);
-  };
+    resetQuestionStates();
+  }, [completedEmails, resetQuestionStates]);
 
-  const handleAnswerSubmit = (answer: boolean) => {
+  const handleAnswerSubmit = useCallback((answer: boolean) => {
+    if (!currentQuestion || !selectedEmail) return;
+
     setUserAnswer(answer);
     setShowResult(true);
     setTotalQuestionsAnswered(prev => prev + 1);
-    
+
     if (answer === currentQuestion.isCorrect) {
       setGlobalScore(prev => prev + 1);
     }
-    
-    if (selectedEmail) {
-      const newCompletedEmails = [...completedEmails, selectedEmail.id];
-      setCompletedEmails(newCompletedEmails);
-    }
-  };
 
-  const handleCloseEmail = () => {
-    const remainingEmails = randomizedEmails.filter(email => !completedEmails.includes(email.id));
-    
-    if (remainingEmails.length <= 1 && selectedEmail && completedEmails.includes(selectedEmail.id)) {
-      setSelectedEmail(null);
+    setCompletedEmails(prev => [...prev, selectedEmail.id]);
+  }, [currentQuestion, selectedEmail]);
+
+  const handleCloseEmail = useCallback(() => {
+    if (isLastEmail() && selectedEmail && completedEmails.includes(selectedEmail.id)) {
       setShowFinalScore(true);
-    } else {
-      setSelectedEmail(null);
     }
-  };
-
-  const handleReplay = () => {
-    const newRandomEmails = getRandomEmails(emailsData.emails);
-    setRandomizedEmails(newRandomEmails);
-    setGlobalScore(0);
-    setTotalQuestionsAnswered(0);
-    setCompletedEmails([]);
-    setShowFinalScore(false);
     setSelectedEmail(null);
     setCurrentQuestion(null);
-    setUserAnswer(null);
-    setShowResult(false);
-  };
+    resetQuestionStates();
+  }, [isLastEmail, selectedEmail, completedEmails, resetQuestionStates]);
 
-  const handleNextEmail = () => {
-    const remainingEmails = randomizedEmails.filter(email => !completedEmails.includes(email.id));
-    
+
+  const handleNextEmail = useCallback(() => {
+    const remainingEmails = getRemainingEmails();
+
     if (remainingEmails.length === 0) {
-      setSelectedEmail(null);
       setShowFinalScore(true);
+      setSelectedEmail(null);
       return;
     }
 
@@ -106,23 +112,21 @@ export default function GmailInterface() {
       if (question) {
         setSelectedEmail(nextEmail);
         setCurrentQuestion(question);
-        setUserAnswer(null);
-        setShowResult(false);
+        resetQuestionStates();
       }
       return;
     }
 
     const currentIndex = randomizedEmails.findIndex(email => email.id === selectedEmail.id);
-    
     let nextEmail = null;
-    
+
     for (let i = currentIndex + 1; i < randomizedEmails.length; i++) {
       if (!completedEmails.includes(randomizedEmails[i].id)) {
         nextEmail = randomizedEmails[i];
         break;
       }
     }
-    
+
     if (!nextEmail) {
       for (let i = 0; i < currentIndex; i++) {
         if (!completedEmails.includes(randomizedEmails[i].id)) {
@@ -137,35 +141,47 @@ export default function GmailInterface() {
       if (question) {
         setSelectedEmail(nextEmail);
         setCurrentQuestion(question);
-        setUserAnswer(null);
-        setShowResult(false);
+        resetQuestionStates();
       }
+    } else {
+      setShowFinalScore(true);
+      setSelectedEmail(null);
     }
-  };
+  }, [selectedEmail, randomizedEmails, completedEmails, getRemainingEmails, resetQuestionStates]);
 
-  const getRandomEmails = (allEmails: Email[], count: number = 10) => {
+  const handleReplay = useCallback(() => {
+    const newRandomEmails = getRandomEmails(emailsData.emails);
+    setRandomizedEmails(newRandomEmails);
+    setGlobalScore(0);
+    setTotalQuestionsAnswered(0);
+    setCompletedEmails([]);
+    setShowFinalScore(false);
+    setSelectedEmail(null);
+    setCurrentQuestion(null);
+    resetQuestionStates();
+  }, [resetQuestionStates]);
+
+  const getRandomEmails = useCallback((allEmails: Email[], count: number = MAX_QUESTIONS) => {
     const validEmails = allEmails.filter(email => 
       quizzesData.questions[email.questionId as keyof typeof quizzesData.questions]
     );
     
-    const shuffled = [...validEmails]
+    return [...validEmails]
       .sort(() => Math.random() - 0.5)
       .slice(0, count);
-    
-    return shuffled;
-  };
+  }, []);
 
   useEffect(() => {
     const selectedEmails = getRandomEmails(emailsData.emails);
     setRandomizedEmails(selectedEmails);
-  }, []);
+  }, [getRandomEmails]);
 
   useEffect(() => {
     if (showResult) {
       setShowResultText(false);
       const timer = setTimeout(() => {
         setShowResultText(true);
-      }, 3000);
+      }, ANIMATION_DURATION);
       return () => clearTimeout(timer);
     }
   }, [showResult]);
