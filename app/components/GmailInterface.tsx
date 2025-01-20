@@ -90,29 +90,43 @@ export default function GmailInterface() {
   };
 
   const handleNextEmail = () => {
-    if (!selectedEmail) return;
-    
-    const currentIndex = randomizedEmails.findIndex(email => email.id === selectedEmail.id);
-    const nextIndex = currentIndex + 1;
-    
-    if (nextIndex < randomizedEmails.length) {
-      const nextEmail = randomizedEmails[nextIndex];
-      const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
-      if (!question) {
-        console.error(`Question non trouvée pour l'email: ${nextEmail.id}`);
-        return;
-      }
-      
-      setSelectedEmail(nextEmail);
-      setCurrentQuestion(question);
-      setUserAnswer(null);
-      setShowResult(false);
-    } else {
+    if (completedEmails.length === randomizedEmails.length) {
       setSelectedEmail(null);
-      if (completedEmails.length === randomizedEmails.length) {
-        setShowFinalScore(true);
-      }
+      setShowFinalScore(true);
+      return;
     }
+
+    const currentIndex = selectedEmail 
+      ? randomizedEmails.findIndex(email => email.id === selectedEmail.id)
+      : -1;
+
+    let nextIndex = currentIndex;
+    let hasLooped = false;
+
+    do {
+      nextIndex = (nextIndex + 1) % randomizedEmails.length;
+      
+      if (nextIndex === 0) {
+        if (hasLooped) break;
+        hasLooped = true;
+      }
+
+      const nextEmail = randomizedEmails[nextIndex];
+      
+      if (!completedEmails.includes(nextEmail.id)) {
+        const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
+        if (question) {
+          setSelectedEmail(nextEmail);
+          setCurrentQuestion(question);
+          setUserAnswer(null);
+          setShowResult(false);
+          return;
+        }
+      }
+    } while (nextIndex !== currentIndex);
+
+    setSelectedEmail(null);
+    setShowFinalScore(true);
   };
 
   const getRandomEmails = (allEmails: Email[], count: number = 10) => {
