@@ -68,12 +68,14 @@ export default function GmailInterface() {
   };
 
   const handleCloseEmail = () => {
-    if (selectedEmail && completedEmails.includes(selectedEmail.id)) {
-      if (completedEmails.length === randomizedEmails.length) {
-        setShowFinalScore(true);
-      }
+    const remainingEmails = randomizedEmails.filter(email => !completedEmails.includes(email.id));
+    
+    if (remainingEmails.length <= 1 && selectedEmail && completedEmails.includes(selectedEmail.id)) {
+      setSelectedEmail(null);
+      setShowFinalScore(true);
+    } else {
+      setSelectedEmail(null);
     }
-    setSelectedEmail(null);
   };
 
   const handleReplay = () => {
@@ -90,43 +92,55 @@ export default function GmailInterface() {
   };
 
   const handleNextEmail = () => {
-    if (completedEmails.length === randomizedEmails.length) {
+    const remainingEmails = randomizedEmails.filter(email => !completedEmails.includes(email.id));
+    
+    if (remainingEmails.length === 0) {
       setSelectedEmail(null);
       setShowFinalScore(true);
       return;
     }
 
-    const currentIndex = selectedEmail 
-      ? randomizedEmails.findIndex(email => email.id === selectedEmail.id)
-      : -1;
-
-    let nextIndex = currentIndex;
-    let hasLooped = false;
-
-    do {
-      nextIndex = (nextIndex + 1) % randomizedEmails.length;
-      
-      if (nextIndex === 0) {
-        if (hasLooped) break;
-        hasLooped = true;
+    if (!selectedEmail) {
+      const nextEmail = remainingEmails[0];
+      const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
+      if (question) {
+        setSelectedEmail(nextEmail);
+        setCurrentQuestion(question);
+        setUserAnswer(null);
+        setShowResult(false);
       }
+      return;
+    }
 
-      const nextEmail = randomizedEmails[nextIndex];
-      
-      if (!completedEmails.includes(nextEmail.id)) {
-        const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
-        if (question) {
-          setSelectedEmail(nextEmail);
-          setCurrentQuestion(question);
-          setUserAnswer(null);
-          setShowResult(false);
-          return;
+    const currentIndex = randomizedEmails.findIndex(email => email.id === selectedEmail.id);
+    
+    let nextEmail = null;
+    
+    for (let i = currentIndex + 1; i < randomizedEmails.length; i++) {
+      if (!completedEmails.includes(randomizedEmails[i].id)) {
+        nextEmail = randomizedEmails[i];
+        break;
+      }
+    }
+    
+    if (!nextEmail) {
+      for (let i = 0; i < currentIndex; i++) {
+        if (!completedEmails.includes(randomizedEmails[i].id)) {
+          nextEmail = randomizedEmails[i];
+          break;
         }
       }
-    } while (nextIndex !== currentIndex);
+    }
 
-    setSelectedEmail(null);
-    setShowFinalScore(true);
+    if (nextEmail) {
+      const question = quizzesData.questions[nextEmail.questionId as keyof typeof quizzesData.questions];
+      if (question) {
+        setSelectedEmail(nextEmail);
+        setCurrentQuestion(question);
+        setUserAnswer(null);
+        setShowResult(false);
+      }
+    }
   };
 
   const getRandomEmails = (allEmails: Email[], count: number = 10) => {
@@ -391,7 +405,10 @@ export default function GmailInterface() {
                   onClick={handleNextEmail}
                   className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full hover:bg-gray-50"
                 >
-                  {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Lire le mail suivant'}
+                  {selectedEmail && 
+                   randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
+                    ? 'Terminer' 
+                    : 'Lire le mail suivant'}
                 </button>
               </div>
             )}
