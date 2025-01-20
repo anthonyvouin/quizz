@@ -391,8 +391,8 @@ export default function GmailInterface() {
             </div>
           )}
         </div>
-        <div className="bg-white w-[200px] flex items-center justify-center">
-          <p className="text-blue-800 font-medium">
+        <div className="bg-white w-1/3 md:w-1/6 flex items-center justify-center">
+          <p className="text-blue-800 font-medium text-sm">
             Score : {globalScore} / {totalQuestionsAnswered}
           </p>
         </div>
