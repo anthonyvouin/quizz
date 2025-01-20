@@ -8,6 +8,7 @@ import IntroModal from "./IntroModal";
 import quizzesData from '../data/quizzes.json';
 import ScoreModal from './ScoreModal';
 import Image from 'next/image';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 interface Email {
   id: string;
@@ -25,6 +26,7 @@ export default function GmailInterface() {
   const [currentQuestion, setCurrentQuestion] = useState<any>(null);
   const [userAnswer, setUserAnswer] = useState<boolean | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [showResultText, setShowResultText] = useState(false);
   const [completedEmails, setCompletedEmails] = useState<string[]>([]);
   const [globalScore, setGlobalScore] = useState(0);
   const [totalQuestionsAnswered, setTotalQuestionsAnswered] = useState(0);
@@ -129,6 +131,16 @@ export default function GmailInterface() {
     const selectedEmails = getRandomEmails(emailsData.emails);
     setRandomizedEmails(selectedEmails);
   }, []);
+
+  useEffect(() => {
+    if (showResult) {
+      setShowResultText(false);
+      const timer = setTimeout(() => {
+        setShowResultText(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showResult]);
 
   return (
     <div className="h-screen bg-[#f6f8fc]">
@@ -332,27 +344,43 @@ export default function GmailInterface() {
                 ? 'bg-success-050'
                 : 'bg-error-050'
             }`}>
-              <p className="font-medium text-xl mb-4">
-                {userAnswer === currentQuestion.isCorrect 
-                  ? '✓ Bonne réponse !' 
-                  : '✕ Mauvaise réponse'}
-              </p>
-              <div className="space-y-4">
-                <p className="text-gray-700">{currentQuestion.explanation}</p>
+              {!showResultText && (
+                <div className="flex justify-center">
+                  <div className="w-32 h-32" >
+                    <DotLottieReact
+                      src={userAnswer === currentQuestion.isCorrect 
+                        ? "https://lottie.host/b8e404b8-53eb-4268-a373-6ea22dd34e25/Ln7tc65xTZ.lottie"
+                        : "https://lottie.host/8bb3a2ef-b825-42c4-9c78-53eefa64b9bd/4AuZ1AwQXt.lottie"}
+                      autoplay
+                    />
+                  </div>
+                </div>
+              )}
+              {showResultText && (
+                <div className="space-y-4">
+                  <h2 className="text-xl font-medium text-center mb-6">
+                    {userAnswer === currentQuestion.isCorrect 
+                      ? 'Bonne réponse' 
+                      : 'Mauvaise réponse'}
+                  </h2>
+                  <p className="text-gray-700">{currentQuestion.explanation}</p>
+                </div>
+              )}
+            </div>
+            {showResultText && (
+              <div className={`p-4 flex justify-center ${
+                userAnswer === currentQuestion.isCorrect 
+                  ? 'bg-success-050'
+                  : 'bg-error-050'
+              }`}>
+                <button
+                  onClick={handleNextEmail}
+                  className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full hover:bg-gray-50"
+                >
+                  {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Lire le mail suivant'}
+                </button>
               </div>
-            </div>
-            <div className={`p-4 flex justify-center ${
-              userAnswer === currentQuestion.isCorrect 
-                ? 'bg-success-050'
-                : 'bg-error-050'
-            }`}>
-              <button
-                onClick={handleNextEmail}
-                className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full hover:bg-gray-50"
-              >
-                {completedEmails.length === randomizedEmails.length - 1 ? 'Terminer' : 'Lire le mail suivant'}
-              </button>
-            </div>
+            )}
           </div>
         </div>
       )}
