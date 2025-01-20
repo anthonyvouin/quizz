@@ -1,5 +1,5 @@
 "use client"
-import { FiMenu, FiSearch, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2 } from "react-icons/fi";
+import { FiMenu, FiSearch, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2, FiRefreshCw } from "react-icons/fi";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
 import { useState, useEffect } from 'react';
 import emailsData from '../data/emails.json';
@@ -181,14 +181,17 @@ export default function GmailInterface() {
           lg:relative lg:transform-none lg:z-0
         `}>
           <div className="p-4">
-            <button className="w-full flex items-center gap-4 px-6 py-4 rounded-2xl shadow-md hover:shadow-lg bg-white">
-              <FiMail className="text-gray-600 text-xl" />
-              <span>Nouveau message</span>
+            <button 
+              onClick={handleReplay}
+              className="w-full flex items-center gap-4 px-6 py-4 rounded-2xl shadow-md hover:shadow-lg bg-white"
+            >
+              <FiRefreshCw className="text-gray-600 text-m" />
+              <span>Redémarrer la partie</span>
             </button>
 
             <div className="mt-4 space-y-1">
               <div className="flex items-center gap-4 px-6 py-2 rounded-r-full bg-[#d3e3fd] text-[#001d35]">
-                <FiInbox className="text-gray-600 text-xl" />
+                <FiInbox className="text-gray-600 text-m" />
                 <span>Boîte de réception</span>
               </div>
             </div>
