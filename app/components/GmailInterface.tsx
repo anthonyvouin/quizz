@@ -21,7 +21,9 @@ interface Email {
 }
 
 const MAX_QUESTIONS = 10;
-const ANIMATION_DURATION = 3000;
+const ANIMATION_DURATION = 2500;
+const ANIMATION_TEXT_DELAY = 1800;
+const EXPLANATION_DELAY = 3500;
 
 export default function GmailInterface() {
   const [showIntro, setShowIntro] = useState(true);
@@ -36,6 +38,7 @@ export default function GmailInterface() {
   const [showFinalScore, setShowFinalScore] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [randomizedEmails, setRandomizedEmails] = useState<Email[]>([]);
+  const [showAnimationText, setShowAnimationText] = useState(false);
 
   const getRemainingEmails = useCallback(() => {
     return randomizedEmails.filter(email => !completedEmails.includes(email.id));
@@ -179,10 +182,20 @@ export default function GmailInterface() {
   useEffect(() => {
     if (showResult) {
       setShowResultText(false);
-      const timer = setTimeout(() => {
+      setShowAnimationText(false);
+      
+      const animationTimer = setTimeout(() => {
+        setShowAnimationText(true);
+      }, ANIMATION_TEXT_DELAY);
+      
+      const textTimer = setTimeout(() => {
         setShowResultText(true);
-      }, ANIMATION_DURATION);
-      return () => clearTimeout(timer);
+      }, EXPLANATION_DELAY);
+      
+      return () => {
+        clearTimeout(animationTimer);
+        clearTimeout(textTimer);
+      };
     }
   }, [showResult]);
 
@@ -381,16 +394,18 @@ export default function GmailInterface() {
       </div>
 
       {showResult && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg max-w-2xl w-full mx-4 overflow-hidden">
-            <div className={`p-6 ${
+        <div className="fixed inset-0 bg-black transition-opacity duration-300 bg-opacity-50 flex items-center justify-center z-50">
+          <div className={`bg-white rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-300 ${
+            showResult ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}>
+            <div className={`p-6 transition-colors duration-300 ${
               userAnswer === currentQuestion.isCorrect 
                 ? 'bg-success-050'
                 : 'bg-error-050'
             }`}>
               {!showResultText && (
-                <div className="flex justify-center">
-                  <div className="w-32 h-32" >
+                <div className="flex flex-col items-center">
+                  <div className="w-32 h-32 transition-transform duration-300">
                     <DotLottieReact
                       src={userAnswer === currentQuestion.isCorrect 
                         ? "https://lottie.host/b8e404b8-53eb-4268-a373-6ea22dd34e25/Ln7tc65xTZ.lottie"
@@ -398,36 +413,55 @@ export default function GmailInterface() {
                       autoplay
                     />
                   </div>
+                  <div className={`transition-all duration-300 transform ${
+                    showAnimationText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}>
+                    {showAnimationText && (
+                      <p className="text-xl font-medium mt-4">
+                        {userAnswer === currentQuestion.isCorrect 
+                          ? 'Bonne réponse, le mail était sûr !'
+                          : 'Mauvaise réponse, le mail était frauduleux !'}
+                      </p>
+                    )}
+                  </div>
                 </div>
               )}
+              <div className={`transition-all duration-500 ${
+                showResultText ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+              }`}>
+                {showResultText && (
+                  <div className="space-y-4">
+                    <h2 className="text-xl font-medium text-center mb-6">
+                      {userAnswer === currentQuestion.isCorrect 
+                        ? 'Bonne réponse' 
+                        : 'Mauvaise réponse'}
+                    </h2>
+                    <p className="text-gray-700">{currentQuestion.explanation}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={`transition-all duration-300 ${
+              showResultText ? 'opacity-100' : 'opacity-0'
+            }`}>
               {showResultText && (
-                <div className="space-y-4">
-                  <h2 className="text-xl font-medium text-center mb-6">
-                    {userAnswer === currentQuestion.isCorrect 
-                      ? 'Bonne réponse' 
-                      : 'Mauvaise réponse'}
-                  </h2>
-                  <p className="text-gray-700">{currentQuestion.explanation}</p>
+                <div className={`p-4 flex justify-center ${
+                  userAnswer === currentQuestion.isCorrect 
+                    ? 'bg-success-050'
+                    : 'bg-error-050'
+                }`}>
+                  <button
+                    onClick={handleNextEmail}
+                    className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full transition-colors duration-200 hover:bg-gray-50"
+                  >
+                    {selectedEmail && 
+                     randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
+                      ? 'Terminer' 
+                      : 'Lire le mail suivant'}
+                  </button>
                 </div>
               )}
             </div>
-            {showResultText && (
-              <div className={`p-4 flex justify-center ${
-                userAnswer === currentQuestion.isCorrect 
-                  ? 'bg-success-050'
-                  : 'bg-error-050'
-              }`}>
-                <button
-                  onClick={handleNextEmail}
-                  className="px-8 py-3 bg-white text-blue-500 font-medium rounded-full hover:bg-gray-50"
-                >
-                  {selectedEmail && 
-                   randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
-                    ? 'Terminer' 
-                    : 'Lire le mail suivant'}
-                </button>
-              </div>
-            )}
           </div>
         </div>
       )}
