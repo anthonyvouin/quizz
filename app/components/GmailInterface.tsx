@@ -276,11 +276,11 @@ export default function GmailInterface() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 w-full bg-white border-t py-2 md:py-4">
+      <div className="fixed bottom-0 w-full bg-blue-800 border-t py-2 md:py-4">
         <div className="container mx-auto px-2 md:px-4">
           {!selectedEmail ? (
             <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-              <p className="text-sm md:text-base text-gray-700 text-center md:text-left">
+              <p className="text-sm md:text-base text-white text-center md:text-left">
                 Cliquez sur un email pour commencer le quiz. Lisez attentivement chaque email et répondez aux questions pour tester vos connaissances en sécurité.
               </p>
               <div className="bg-blue-100 rounded-lg px-4 py-2 text-center">
@@ -291,7 +291,7 @@ export default function GmailInterface() {
             </div>
           ) : (
             <div className="flex flex-col items-center gap-4">
-              <p className="text-gray-800 font-medium text-center">
+              <p className="text-white font-medium text-center">
                 {currentQuestion?.question}
               </p>
               <div className="flex flex-col items-center gap-4">
