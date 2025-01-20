@@ -350,51 +350,58 @@ export default function GmailInterface() {
         </div>
       </div>
 
-      <div className="fixed bottom-0    w-full bg-blue-800 flex">
-        <div className="flex-1 py-4 px-4 md:px-8">
-          {!selectedEmail ? (
-            <div className="flex flex-col items-start max-w-4xl mx-auto">
-              <p className="text-white font-medium text-lg">Clique sur un mail pour commencer le quiz ✉️</p>
-              <p className="text-white text-sm">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
-            </div>
-          ) : (
-            <div className="  flex flex-col items-center gap-4">
-              <div className="flex flex-col items-center gap-2 sm:gap-4">
-                <p className="text-white font-medium text-sm sm:text-base text-center">
-                  {currentQuestion?.question}
-                </p>
+      <div className="fixed bottom-0 w-full">
+        <div className="bg-blue-800 flex">
+          <div className="flex-1 py-4 px-4 md:px-8">
+            {!selectedEmail ? (
+              <div className="flex flex-col items-start max-w-4xl mx-auto">
+                <p className="text-white font-medium text-lg">Clique sur un mail pour commencer le quiz ✉️</p>
+                <p className="text-white text-sm">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col items-center gap-2 sm:gap-4">
-                  <div className="flex gap-2 sm:gap-4">
-                    <button 
-                      onClick={() => handleAnswerSubmit(true)}
-                      disabled={showResult}
-                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center gap-2 ${
-                        showResult
-                          ? 'bg-gray-300 cursor-not-allowed'
-                          : 'bg-success-050 text-success-900 hover:bg-success-050/90'
-                      }`}
-                    >
-                      ✓ Le mail est sûr
-                    </button>
-                    <button 
-                      onClick={() => handleAnswerSubmit(false)}
-                      disabled={showResult}
-                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center gap-2 ${
-                        showResult
-                          ? 'bg-gray-300 cursor-not-allowed'
-                          : 'bg-error-100 text-error-900 hover:bg-error-100/90'
-                      }`}
-                    >
-                      ✕ Le mail est frauduleux
-                    </button>
+                  <p className="text-white font-medium text-sm sm:text-base text-center">
+                    {currentQuestion?.question}
+                  </p>
+                  <div className="flex flex-col items-center gap-2 sm:gap-4">
+                    <div className="flex gap-2 sm:gap-4">
+                      <button 
+                        onClick={() => handleAnswerSubmit(true)}
+                        disabled={showResult}
+                        className={`w-[160px] sm:w-[200px] px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center justify-center gap-2 ${
+                          showResult
+                            ? 'bg-gray-300 cursor-not-allowed'
+                            : 'bg-success-050 text-success-900 hover:bg-success-050/90'
+                        }`}
+                      >
+                        <span>✓ Le mail<br className="sm:hidden" /> est sûr</span>
+                      </button>
+                      <button 
+                        onClick={() => handleAnswerSubmit(false)}
+                        disabled={showResult}
+                        className={`w-[160px] sm:w-[200px] px-3 py-1 sm:px-4 sm:py-2 rounded-full font-medium text-xs sm:text-sm flex items-center justify-center gap-2 ${
+                          showResult
+                            ? 'bg-gray-300 cursor-not-allowed'
+                            : 'bg-error-100 text-error-900 hover:bg-error-100/90'
+                        }`}
+                      >
+                        <span>✕ Le mail<br className="sm:hidden" /> est frauduleux</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+          <div className="hidden md:flex bg-white w-1/3 md:w-1/6 items-center justify-center">
+            <p className="text-blue-800 font-medium text-sm">
+              Score : {globalScore} / {totalQuestionsAnswered}
+            </p>
+          </div>
         </div>
-        <div className="bg-white w-1/3 md:w-1/6 flex items-center justify-center">
-          <p className="text-blue-800 font-medium text-sm">
+        <div className="md:hidden bg-white w-full py-3 border-t">
+          <p className="text-blue-800 font-medium text-sm text-center">
             Score : {globalScore} / {totalQuestionsAnswered}
           </p>
         </div>
