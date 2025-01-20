@@ -2,3 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue-500: #13409E;  
+  --blue-400: #3571E3; 
+  --blue-800: #031347;  
+  --blue-050: #E3EAFF;  
+
+  --success-050: #CFFFC3;  
+  --success-900: #14532D;  
+
+  --error-050: #FEF2F2; 
+  --error-100: #FF8585; 
+  --error-900: #7F1D1D;  
+
+  --grey-050: #D5D8DB; 
+}
+
+.bg-blue-500 { background-color: var(--blue-500); }
+.bg-blue-400 { background-color: var(--blue-400); }
+.bg-blue-800 { background-color: var(--blue-800); }
+.bg-blue-050 { background-color: var(--blue-050); }
+
+.bg-success-050 { background-color: var(--success-050); }
+.bg-success-900 { background-color: var(--success-900); }
+
+.bg-error-050 { background-color: var(--error-050); }
+.bg-error-100 { background-color: var(--error-100); }
+.bg-error-900 { background-color: var(--error-900); }
+
+.bg-grey-050 { background-color: var(--grey-050); }
+
