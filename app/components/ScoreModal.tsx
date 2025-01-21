@@ -70,7 +70,7 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
   };
 
   return (
-    <div className="fixed inset-0 bg-[#00000080] flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-[#00000080] backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-lg p-4 sm:p-8 w-full max-w-[600px] mx-auto">
         <div className="flex justify-center mb-4 sm:mb-6">
           <Image 
