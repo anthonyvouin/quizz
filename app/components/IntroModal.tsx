@@ -6,7 +6,7 @@ interface IntroModalProps {
 
 export default function IntroModal({ onClose }: IntroModalProps) {
   return (
-    <div className="fixed inset-0 bg-[#00000080] flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-[#00000080] backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-lg p-8 w-full max-w-[600px] sm:max-w-[700px] md:max-w-[800px]">
         <div className="flex justify-center mb-6">
           <Image 
