@@ -372,7 +372,7 @@ export default function GmailInterface() {
                   <span className="text-sm text-gray-500">{selectedEmail.time}</span>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 pb-20 sm:pb-6">
                   <div className="max-w-3xl">
                     {selectedEmail.content.split('\n').map((paragraph, index) => (
                       <p key={index} className={`${paragraph.trim() === '' ? 'h-4' : 'mb-4'} text-gray-800`}>
