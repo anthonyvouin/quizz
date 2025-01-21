@@ -22,7 +22,7 @@ interface Email {
 
 const MAX_QUESTIONS = 10;
 const ANIMATION_TEXT_DELAY = 1800;
-const EXPLANATION_DELAY = 2500;
+const EXPLANATION_DELAY =   2500;
 
 export default function GmailInterface() {
   const [showIntro, setShowIntro] = useState(true);
@@ -264,7 +264,7 @@ export default function GmailInterface() {
             </button>
 
             <div className="mt-4 space-y-1">
-              <div className="flex items-center gap-4 px-6 py-2 rounded-r-full bg-[#d3e3fd] text-[#001d35]">
+              <div className="flex items-center gap-4 px-6 py-2 rounded-2xl bg-[#d3e3fd] text-[#001d35]">
                 <FiInbox className="text-gray-600 text-m" />
                 <span>Boîte de réception</span>
               </div>
