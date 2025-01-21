@@ -356,8 +356,8 @@ export default function GmailInterface() {
           <div className="flex-1 py-4">
             {!selectedEmail ? (
               <div className="flex flex-col items-start">
-                <p className="text-white font-medium text-lg">Clique sur un mail pour commencer le quiz ✉️</p>
-                <p className="text-white text-sm">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
+                <p className="text-white font-medium text-lg mb-2 px-4 sm:px-0">Clique sur un mail pour commencer le quiz ✉️</p>
+                <p className="text-white text-sm mt-1 px-4 sm:px-0">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
               </div>
             ) : (
               <div className="flex flex-col items-center gap-4">
@@ -402,7 +402,7 @@ export default function GmailInterface() {
           </div>
         </div>
         <div className="md:hidden bg-white w-full py-3 border-t">
-          <p className=" font-bold text-blue-800 text-m text-center">
+          <p className="font-bold text-blue-800 text-m text-center">
             Score : {globalScore} / {totalQuestionsAnswered}
           </p>
         </div>
