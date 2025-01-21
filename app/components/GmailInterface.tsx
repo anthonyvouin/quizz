@@ -368,7 +368,7 @@ export default function GmailInterface() {
                       <div className="text-sm text-gray-500">à moi</div>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-500">{selectedEmail.time}</span>
+                  <span className="text-xs sm:text-sm text-gray-500 min-w-[60px] text-right">{selectedEmail.time}</span>
                 </div>
 
                 <div className="p-6 pb-20 sm:pb-6">
