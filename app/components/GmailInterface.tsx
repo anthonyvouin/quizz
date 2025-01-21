@@ -375,7 +375,7 @@ export default function GmailInterface() {
                             : 'bg-success-050 text-success-900 hover:bg-success-050/90'
                         }`}
                       >
-                        <span>✓ Le mail<br className="sm:hidden" /> est sûr</span>
+                        <span className="flex items-center gap-2"><span className="text-xl font-bold">✓</span> Le mail<br className="sm:hidden" /> est sûr</span>
                       </button>
                       <button 
                         onClick={() => handleAnswerSubmit(false)}
@@ -386,7 +386,7 @@ export default function GmailInterface() {
                             : 'bg-error-100 text-error-900 hover:bg-error-100/90'
                         }`}
                       >
-                        <span>✕ Le mail<br className="sm:hidden" /> est frauduleux</span>
+                        <span className="flex items-center gap-2"><span className="text-xl font-bold">✕</span> Le mail<br className="sm:hidden" /> est frauduleux</span>
                       </button>
                     </div>
                   </div>
