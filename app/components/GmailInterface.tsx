@@ -552,22 +552,26 @@ export default function GmailInterface() {
       {showFinalScore && (
         <>
           {globalScore === MAX_QUESTIONS && showConfetti && (
-            <Confetti
-              width={windowSize.width}
-              height={windowSize.height}
-              numberOfPieces={500}
-              recycle={true}
-              tweenDuration={8000}
-              gravity={0.15}
-              colors={['#3571E3', '#13409E', '#031347', '#E3EAFF']}
-            />
+            <div className="fixed inset-0 z-[45]">
+              <Confetti
+                width={windowSize.width}
+                height={windowSize.height}
+                numberOfPieces={500}
+                recycle={true}
+                tweenDuration={8000}
+                gravity={0.15}
+                colors={['#3571E3', '#13409E', '#031347', '#E3EAFF']}
+              />
+            </div>
           )}
-          <ScoreModal
-            score={globalScore}
-            totalAnswered={totalQuestionsAnswered}
-            onClose={() => setShowFinalScore(false)}
-            onReplay={handleReplay}
-          />
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <ScoreModal
+              score={globalScore}
+              totalAnswered={totalQuestionsAnswered}
+              onClose={() => setShowFinalScore(false)}
+              onReplay={handleReplay}
+            />
+          </div>
         </>
       )}
     </div>
