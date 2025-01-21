@@ -22,22 +22,22 @@ export default function IntroModal({ onClose }: IntroModalProps) {
           Bienvenue sur good or bad mail
         </h2>
 
-        <p className="text-xs sm:text-sm text-center mb-8">
+        <p className="text-xl sm:text-sm text-center mb-8">
           Le mini-jeu qui t'apprend à repérer le vrai du faux dans ta boite mail 🕵️
         </p>
 
         <div className="bg-blue-800 text-white p-4 rounded-xl mb-4">
-          <p className="font-medium italic">Ta mission (si tu l'acceptes) :</p>
+          <p className="font-medium ">Ta mission (si tu l'acceptes) :</p>
           <p className="whitespace-normal">Ouvre 10 mails et décide en un clin d'œil s'ils sont fiables ou non.</p>
         </div>
 
-        <p className="text-xs sm:text-sm mb-4">
+        <p className="text-m  mb-4">
           À la fin, découvre <span className="font-bold">ton score sur 10</span> et vois si tu es prêt à détecter les 
           arnaqueurs comme un pro... ou si tu as encore besoin de quelques astuces (on 
           t'en donne des simples pour t'améliorer facilement).
         </p>
 
-        <p className="text-xs sm:text-sm font-bold mb-4">
+        <p className="text-s sm:text-sm font-bold mb-4">
           Prêt à te lancer ? Allez, que le tri commence ! ✉️
         </p>
 
