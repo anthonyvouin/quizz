@@ -395,13 +395,13 @@ export default function GmailInterface() {
             )}
           </div>
           <div className="hidden md:flex bg-white w-1/3 md:w-1/6 items-center justify-center">
-            <p className="text-blue-800 font-medium text-sm">
+            <p className=" font-bold text-blue-800 text-m">
               Score : {globalScore} / {totalQuestionsAnswered}
             </p>
           </div>
         </div>
         <div className="md:hidden bg-white w-full py-3 border-t">
-          <p className="text-blue-800 font-medium text-sm text-center">
+          <p className=" font-bold text-blue-800 text-m text-center">
             Score : {globalScore} / {totalQuestionsAnswered}
           </p>
         </div>
