@@ -334,19 +334,18 @@ export default function GmailInterface() {
             </div>
           ) : (
             <div className="flex-grow bg-white flex flex-col h-[calc(100vh-180px)] overflow-y-auto">
-              <div className="p-2 border-b sticky top-0 bg-white z-10 flex items-center gap-2">
-                <button 
-                  onClick={handleCloseEmail}
-                  className="p-2 hover:bg-gray-100 rounded-full"
-                >
-                  <FiArrowLeft className="text-gray-600 text-xl" />
-                </button>
-                <button className="p-2 hover:bg-gray-100 rounded-full">
-                  <FiArchive className="text-gray-600 text-xl" />
-                </button>
-                <button className="p-2 hover:bg-gray-100 rounded-full">
-                  <FiTrash2 className="text-gray-600 text-xl" />
-                </button>
+              <div className="flex items-center px-2 md:px-4 py-2 border-b sticky top-0 bg-white z-10">
+                <div className="flex items-center gap-2 md:gap-4">
+                  <button 
+                    onClick={handleCloseEmail}
+                    className="p-2 hover:bg-gray-100 rounded-full"
+                  >
+                    <FiArrowLeft className="text-gray-600" />
+                  </button>
+                  <BsThreeDotsVertical className="text-gray-600" />
+                  <BsArchive className="text-gray-600" />
+                  <BsTrash className="text-gray-600" />
+                </div>
               </div>
 
               <div className="flex-grow overflow-auto">
