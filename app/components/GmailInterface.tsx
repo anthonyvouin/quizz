@@ -210,8 +210,8 @@ export default function GmailInterface() {
         <IntroModal onClose={() => setShowIntro(false)} />
       )}
 
-      <div className="h-14 sm:h-16 px-2 md:px-4 bg-white flex items-center justify-between border-b">
-        <div className="flex items-center gap-2 min-w-[100px] sm:min-w-[120px]">
+      <div className="h-14 sm:h-16 bg-white flex items-center border-b">
+        <div className="flex items-center gap-2 min-w-[100px] sm:min-w-[120px] pl-4">
           <button 
             onClick={() => setShowSidebar(!showSidebar)} 
             className="p-1.5 hover:bg-gray-100 rounded-full block lg:hidden"
@@ -227,18 +227,20 @@ export default function GmailInterface() {
           />
         </div>
         
-        <div className="flex-grow max-w-xs sm:max-w-md md:max-w-2xl mx-3 sm:mx-4">
-          <div className="flex items-center bg-[#f1f3f4] hover:bg-gray-100 rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 w-full">
-            <FiSearch className="text-gray-600 mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <input 
-              type="text" 
-              placeholder="Rechercher"
-              className="bg-transparent outline-none w-full text-sm sm:text-base placeholder:text-gray-500"
-            />
+        <div className="flex-1 flex">
+          <div className="hidden lg:block w-40"></div>
+          <div className="flex-1">
+            <div className="flex items-center bg-[#f1f3f4] hover:bg-gray-100 rounded-lg px-4 py-2 w-full lg:w-[calc(100%-576px)]">
+              <FiSearch className="text-gray-600 mr-3 w-5 h-5 flex-shrink-0" />
+              <input 
+                type="text" 
+                placeholder="Rechercher"
+                className="bg-transparent outline-none w-full text-sm sm:text-base placeholder:text-gray-500"
+              />
+            </div>
           </div>
         </div>
-
-        <div className="w-[100px] sm:w-[120px] invisible">
+        <div className="w-[100px] sm:w-[120px] invisible lg:w-72">
           <div className="w-full"></div>
         </div>
       </div>
