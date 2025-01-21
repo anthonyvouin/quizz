@@ -468,7 +468,7 @@ export default function GmailInterface() {
                     />
                   </div>
                   <div className={`transform ${showAnimationText ? 'opacity-100' : 'opacity-0'}`}>
-                    <p className={`text-xl font-medium mt-4 ${
+                    <p className={`text-xl font-medium mt-4 text-center ${
                       userAnswer === currentQuestion.isCorrect 
                         ? 'text-green-800'
                         : 'text-red-800'
