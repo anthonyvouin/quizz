@@ -22,7 +22,7 @@ interface Email {
 
 const MAX_QUESTIONS = 10;
 const ANIMATION_TEXT_DELAY = 1800;
-const EXPLANATION_DELAY = 3500;
+const EXPLANATION_DELAY = 2500;
 
 export default function GmailInterface() {
   const [showIntro, setShowIntro] = useState(true);
