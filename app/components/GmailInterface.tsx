@@ -352,9 +352,10 @@ export default function GmailInterface() {
 
       <div className="fixed bottom-0 w-full">
         <div className="bg-blue-800 flex">
-          <div className="flex-1 py-4 px-4 md:px-8">
+          <div className="hidden lg:block w-72"></div>
+          <div className="flex-1 py-4">
             {!selectedEmail ? (
-              <div className="flex flex-col items-start max-w-4xl mx-auto">
+              <div className="flex flex-col items-start">
                 <p className="text-white font-medium text-lg">Clique sur un mail pour commencer le quiz ✉️</p>
                 <p className="text-white text-sm">Lit attentivement chaque email et devine si le mail est sûr ou frauduleux.</p>
               </div>
@@ -408,18 +409,18 @@ export default function GmailInterface() {
       </div>
 
       {showResult && (
-        <div className="fixed inset-0 bg-black transition-opacity duration-300 bg-opacity-50 flex items-center justify-center z-50">
-          <div className={`bg-white rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-300 ${
-            showResult ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-all duration-500">
+          <div className={`bg-transparent rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-500 ease-out ${
+            showResult ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}>
-            <div className={`p-6 transition-colors duration-300 ${
+            <div className={`p-6 transition-all duration-500 ease-out ${
               userAnswer === currentQuestion.isCorrect 
                 ? 'bg-success-050'
                 : 'bg-error-050'
             } text-xs sm:text-sm`}>
               {!showResultText && (
-                <div className="flex flex-col items-center">
-                  <div className="w-32 h-32 transition-transform duration-300">
+                <div className="flex flex-col items-center bg-transparent">
+                  <div className="w-32 h-32 transition-all duration-500 ease-out transform">
                     <DotLottieReact
                       src={userAnswer === currentQuestion.isCorrect 
                         ? "https://lottie.host/b8e404b8-53eb-4268-a373-6ea22dd34e25/Ln7tc65xTZ.lottie"
@@ -427,7 +428,7 @@ export default function GmailInterface() {
                       autoplay
                     />
                   </div>
-                  <div className={`transition-all duration-300 transform ${
+                  <div className={`transition-all duration-500 ease-out transform ${
                     showAnimationText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}>
                     {showAnimationText && (
@@ -444,7 +445,7 @@ export default function GmailInterface() {
                   </div>
                 </div>
               )}
-              <div className={`transition-all duration-500 ${
+              <div className={`transition-all duration-700 ease-out ${
                 showResultText ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
               }`}>
                 {showResultText && (

@@ -1,4 +1,3 @@
-
 interface EmailItemProps {
   id: string;
   sender: string;
@@ -19,12 +18,12 @@ export default function EmailItem({
 }: EmailItemProps) {
   return (
     <div 
-      className={`flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+      className={`flex items-center px-4 md:px-8 py-2 hover:bg-gray-100 cursor-pointer ${
         isCompleted ? 'opacity-50' : ''
       }`}
       onClick={onClick}
     >
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 pl-0">
         <div className="flex items-center justify-between mb-1">
           <span className="font-semibold truncate">{sender}</span>
           <span className="text-sm text-gray-600 whitespace-nowrap ml-2 min-w-[45px] text-right">
