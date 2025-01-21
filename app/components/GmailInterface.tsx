@@ -457,7 +457,7 @@ export default function GmailInterface() {
                   <div className="w-32 h-32 transition-all duration-500 ease-out transform">
                     <DotLottieReact
                       src={userAnswer === currentQuestion.isCorrect 
-                        ? "https://lottie.host/b8e404b8-53eb-4268-a373-6ea22dd34e25/Ln7tc65xTZ.lottie"
+                        ? "https://lottie.host/ff04965a-2edb-4f93-80ef-01eb70b5bab9/SABZwP6GPK.lottie"
                         : "https://lottie.host/8bb3a2ef-b825-42c4-9c78-53eefa64b9bd/4AuZ1AwQXt.lottie"}
                       autoplay
                     />
