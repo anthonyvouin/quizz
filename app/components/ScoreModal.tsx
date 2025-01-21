@@ -135,7 +135,7 @@ export default function ScoreModal({ score, totalAnswered, onClose, onReplay }: 
             </button>
 
             <p className="text-center text-xs sm:text-sm w-full">
-              © 2025 - Conceptualisé par <span className="font-bold">Anna Giraud</span> et développé par <span className="font-bold">Anthony Vouin</span>
+              © 2025 - Conceptualisé par <a href="https://www.linkedin.com/in/anna-giraud" target="_blank" rel="noopener noreferrer" className="font-bold">Anna Giraud</a> et développé par <a href="https://anthony-vouin.com" target="_blank" rel="noopener noreferrer" className="font-bold">Anthony Vouin</a>
             </p>
           </div>
         </div>

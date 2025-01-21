@@ -31,7 +31,7 @@ export default function IntroModal({ onClose }: IntroModalProps) {
           <p className="whitespace-normal">Ouvre 10 mails et décide en un clin d'œil s'ils sont fiables ou non.</p>
         </div>
 
-        <p className="text-m  mb-4">
+        <p className="text-s mb-4">
           À la fin, découvre <span className="font-bold">ton score sur 10</span> et vois si tu es prêt à détecter les 
           arnaqueurs comme un pro... ou si tu as encore besoin de quelques astuces (on 
           t'en donne des simples pour t'améliorer facilement).
@@ -47,6 +47,7 @@ export default function IntroModal({ onClose }: IntroModalProps) {
         >
           C'est parti pour trier !
         </button>
+   
       </div>
     </div>
   );
