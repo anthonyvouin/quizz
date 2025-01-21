@@ -453,13 +453,13 @@ export default function GmailInterface() {
                       ? 'text-green-800'
                       : 'text-red-800'
                   }`}>
-                    <h2 className="text-xl font-medium mb-6 flex items-center gap-2">
+                    <h2 className="font-bold text-xl  mb-6 flex items-center gap-2">
                       <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                       {userAnswer === currentQuestion.isCorrect 
                         ? 'Bonne réponse, le mail était sûr !'
                         : 'Mauvaise réponse, le mail était frauduleux !'}
                     </h2>
-                    <ul className="list-disc pl-5">
+                    <ul className="text-me list-disc pl-5 text-lg">
                       <li>Le mail d'expéditeur ne correspond pas à {selectedEmail?.sender.split(' ')[0]}</li>
                     </ul>
                     {selectedEmail && (
@@ -475,14 +475,14 @@ export default function GmailInterface() {
                       </div>
                     )}
                    
-                    <p>{currentQuestion.explanation}</p>
-                    <div className="mt-6 p-4 rounded-lg">
+                    <p className="text-lg">{currentQuestion.explanation}</p>
+                    <div className="mt-6">
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
                           <span>👉</span>
                           <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
                         </div>
-                        <p className="ml-7">{currentQuestion.whatToDo}</p>
+                        <p className="ml-7 text-lg">{currentQuestion.whatToDo}</p>
                       </div>
                     </div>
                   </div>
