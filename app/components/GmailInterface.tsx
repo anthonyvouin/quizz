@@ -9,6 +9,7 @@ import quizzesData from '../data/quizzes.json';
 import ScoreModal from './ScoreModal';
 import Image from 'next/image';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import Confetti from 'react-confetti';
 
 interface Email {
   id: string;
@@ -38,6 +39,11 @@ export default function GmailInterface() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [randomizedEmails, setRandomizedEmails] = useState<Email[]>([]);
   const [showAnimationText, setShowAnimationText] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0
+  });
 
   const getRemainingEmails = useCallback(() => {
     return randomizedEmails.filter(email => !completedEmails.includes(email.id));
@@ -201,8 +207,34 @@ export default function GmailInterface() {
   useEffect(() => {
     if (showFinalScore) {
       setShowResult(false);
+      if (globalScore === MAX_QUESTIONS) {
+        setShowConfetti(true);
+        setTimeout(() => {
+          setShowConfetti(false);
+        }, 8000);
+      }
     }
-  }, [showFinalScore]);
+  }, [showFinalScore, globalScore]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      handleResize();
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    };
+  }, []);
 
   return (
     <div className="h-screen bg-[#f6f8fc]">
@@ -518,12 +550,25 @@ export default function GmailInterface() {
       )}
 
       {showFinalScore && (
-        <ScoreModal
-          score={globalScore}
-          totalAnswered={totalQuestionsAnswered}
-          onClose={() => setShowFinalScore(false)}
-          onReplay={handleReplay}
-        />
+        <>
+          {globalScore === MAX_QUESTIONS && showConfetti && (
+            <Confetti
+              width={windowSize.width}
+              height={windowSize.height}
+              numberOfPieces={500}
+              recycle={true}
+              tweenDuration={8000}
+              gravity={0.15}
+              colors={['#3571E3', '#13409E', '#031347', '#E3EAFF']}
+            />
+          )}
+          <ScoreModal
+            score={globalScore}
+            totalAnswered={totalQuestionsAnswered}
+            onClose={() => setShowFinalScore(false)}
+            onReplay={handleReplay}
+          />
+        </>
       )}
     </div>
   );
