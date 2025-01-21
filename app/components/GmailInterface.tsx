@@ -359,7 +359,7 @@ export default function GmailInterface() {
                       {selectedEmail.sender[0]}
                     </div>
                     <div className="min-w-0">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
                         <span className="font-semibold truncate">{selectedEmail.sender}</span>
                         <span className="text-xs sm:text-sm text-gray-500 truncate">
                           &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;
