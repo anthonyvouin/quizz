@@ -321,7 +321,7 @@ export default function GmailInterface() {
                 </div>
               </div>
 
-              <div className="divide-y overflow-y-auto h-[calc(100vh-180px)] custom-scrollbar">
+              <div className="divide-y overflow-y-auto h-[calc(100vh-280px)] sm:h-[calc(100vh-180px)] custom-scrollbar">
                 {randomizedEmails.map((email) => (
                   <EmailItem 
                     key={email.id}
