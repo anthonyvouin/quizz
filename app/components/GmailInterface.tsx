@@ -298,7 +298,10 @@ export default function GmailInterface() {
             </button>
 
             <div className="mt-4 space-y-1">
-              <div className="flex items-center gap-4 px-6 py-2 rounded-2xl bg-[#d3e3fd] text-[#001d35]">
+              <div 
+                onClick={handleCloseEmail}
+                className="flex items-center gap-4 px-6 py-2 rounded-2xl bg-[#d3e3fd] text-[#001d35] cursor-pointer hover:bg-[#c3d7f7]"
+              >
                 <FiInbox className="text-gray-600 text-m" />
                 <span>Boîte de réception</span>
               </div>
