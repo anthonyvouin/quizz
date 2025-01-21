@@ -262,7 +262,7 @@ export default function GmailInterface() {
         <div className="flex-1 flex">
           <div className="hidden lg:block w-40"></div>
           <div className="flex-1">
-            <div className="flex items-center bg-[#f1f3f4] hover:bg-gray-100 rounded-lg px-4 py-2 w-full lg:w-[calc(100%-576px)]">
+            <div className="hidden lg:flex items-center bg-[#f1f3f4] hover:bg-gray-100 rounded-lg px-4 py-2 w-full lg:w-[calc(100%-576px)]">
               <FiSearch className="text-gray-600 mr-3 w-5 h-5 flex-shrink-0" />
               <input 
                 type="text" 
