@@ -338,7 +338,7 @@ export default function GmailInterface() {
                 <div className="flex items-center gap-2 md:gap-4">
                   <button 
                     onClick={handleCloseEmail}
-                    className="p-2 hover:bg-gray-100 rounded-full"
+                    className="hover:bg-gray-100 rounded-full"
                   >
                     <FiArrowLeft className="text-gray-600" />
                   </button>
