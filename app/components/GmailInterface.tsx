@@ -354,21 +354,21 @@ export default function GmailInterface() {
                 </div>
 
                 <div className="p-4 border-b flex justify-between items-start">
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="flex items-start gap-3 min-w-0">
+                    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                       {selectedEmail.sender[0]}
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold">{selectedEmail.sender}</span>
-                        <span className="text-sm text-gray-500">
+                    <div className="min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                        <span className="font-semibold truncate">{selectedEmail.sender}</span>
+                        <span className="text-xs sm:text-sm text-gray-500 truncate">
                           &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;
                         </span>
                       </div>
                       <div className="text-sm text-gray-500">à moi</div>
                     </div>
                   </div>
-                  <span className="text-xs sm:text-sm text-gray-500 min-w-[60px] text-right">{selectedEmail.time}</span>
+                  <span className="text-xs sm:text-sm text-gray-500 ml-2 whitespace-nowrap">{selectedEmail.time}</span>
                 </div>
 
                 <div className="p-6 pb-20 sm:pb-6">
