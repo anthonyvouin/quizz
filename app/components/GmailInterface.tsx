@@ -22,8 +22,8 @@ interface Email {
 }
 
 const MAX_QUESTIONS = 10;
-const ANIMATION_TEXT_DELAY = 1800;
-const EXPLANATION_DELAY =   2500;
+const ANIMATION_TEXT_DELAY = 1500;
+const EXPLANATION_DELAY = 3500;
 
 export default function GmailInterface() {
   const [showIntro, setShowIntro] = useState(true);
@@ -443,18 +443,20 @@ export default function GmailInterface() {
       </div>
 
       {showResult && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-all duration-500">
-          <div className={`bg-transparent rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-500 ease-out ${
-            showResult ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-all duration-700 ease-in-out">
+          <div className={`bg-transparent rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-1000 ease-in-out ${
+            showResult ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-4'
           }`}>
-            <div className={`p-6 transition-all duration-500 ease-out ${
+            <div className={`p-6 transition-all duration-1000 ease-in-out transform ${
               userAnswer === currentQuestion.isCorrect 
                 ? 'bg-success-050'
                 : 'bg-error-050'
             } text-xs sm:text-sm`}>
-              {!showResultText && (
+              <div className={`transition-all duration-1000 ease-in-out transform ${
+                !showResultText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'
+              }`}>
                 <div className="flex flex-col items-center bg-transparent">
-                  <div className="w-32 h-32 transition-all duration-500 ease-out transform">
+                  <div className="w-32 h-32">
                     <DotLottieReact
                       src={userAnswer === currentQuestion.isCorrect 
                         ? "https://lottie.host/ff04965a-2edb-4f93-80ef-01eb70b5bab9/SABZwP6GPK.lottie"
@@ -462,88 +464,77 @@ export default function GmailInterface() {
                       autoplay
                     />
                   </div>
-                  <div className={`transition-all duration-500 ease-out transform ${
-                    showAnimationText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}>
-                    {showAnimationText && (
-                      <p className={`text-xl font-medium mt-4 ${
-                        userAnswer === currentQuestion.isCorrect 
-                          ? 'text-green-800'
-                          : 'text-red-800'
-                      }`}>
-                        {userAnswer === currentQuestion.isCorrect 
-                          ? 'Bonne réponse, le mail était sûr !'
-                          : 'Mauvaise réponse, le mail était frauduleux !'}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-              <div className={`transition-all duration-700 ease-out ${
-                showResultText ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
-              }`}>
-                {showResultText && (
-                  <div className={`space-y-4 ${
-                    userAnswer === currentQuestion.isCorrect 
-                      ? 'text-green-800'
-                      : 'text-red-800'
-                  }`}>
-                    <h2 className="font-bold text-xl  mb-6 flex items-center gap-2">
-                      <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
+                  <div className={`transform ${showAnimationText ? 'opacity-100' : 'opacity-0'}`}>
+                    <p className={`text-xl font-medium mt-4 ${
+                      userAnswer === currentQuestion.isCorrect 
+                        ? 'text-green-800'
+                        : 'text-red-800'
+                    }`}>
                       {userAnswer === currentQuestion.isCorrect 
                         ? 'Bonne réponse, le mail était sûr !'
                         : 'Mauvaise réponse, le mail était frauduleux !'}
-                    </h2>
-                    <ul className="text-me list-disc pl-5 text-lg">
-                      <li>Le mail d'expéditeur ne correspond pas à {selectedEmail?.sender.split(' ')[0]}</li>
-                    </ul>
-                    {selectedEmail && (
-                      <div className="flex items-center gap-2 bg-white p-2 rounded-lg shadow-md text-black">
-                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                          {selectedEmail.sender[0]}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={`transition-all duration-1000 ease-in-out transform origin-top ${
+                showResultText ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-95'
+              }`}>
+                {showResultText && (
+                  <>
+                    <div className={`space-y-4 ${
+                      userAnswer === currentQuestion.isCorrect 
+                        ? 'text-green-800'
+                        : 'text-red-800'
+                    }`}>
+                      <h2 className="font-bold text-xl  mb-6 flex items-center gap-2">
+                        <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
+                        {userAnswer === currentQuestion.isCorrect 
+                          ? 'Bonne réponse, le mail était sûr !'
+                          : 'Mauvaise réponse, le mail était frauduleux !'}
+                      </h2>
+                      <ul className="text-me list-disc pl-5 text-lg">
+                        <li>Le mail d'expéditeur ne correspond pas à {selectedEmail?.sender.split(' ')[0]}</li>
+                      </ul>
+                      {selectedEmail && (
+                        <div className="flex items-center gap-2 bg-white p-2 rounded-lg shadow-md text-black">
+                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                            {selectedEmail.sender[0]}
+                          </div>
+                          <div>
+                            <span className="font-semibold">{selectedEmail.sender}</span>
+                            <span className="text-sm"> &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;</span>
+                            <div className="text-sm">à moi</div>
+                          </div>
                         </div>
-                        <div>
-                          <span className="font-semibold">{selectedEmail.sender}</span>
-                          <span className="text-sm"> &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;</span>
-                          <div className="text-sm">à moi</div>
+                      )}
+                     
+                      <p className="text-lg">{currentQuestion.explanation}</p>
+                      <div className="mt-6">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center gap-2">
+                            <span>👉</span>
+                            <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
+                          </div>
+                          <p className="ml-7 text-lg">{currentQuestion.whatToDo}</p>
                         </div>
-                      </div>
-                    )}
-                   
-                    <p className="text-lg">{currentQuestion.explanation}</p>
-                    <div className="mt-6">
-                      <div className="flex flex-col gap-2">
-                        <div className="flex items-center gap-2">
-                          <span>👉</span>
-                          <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
-                        </div>
-                        <p className="ml-7 text-lg">{currentQuestion.whatToDo}</p>
                       </div>
                     </div>
-                  </div>
+                    <div className="mt-6">
+                      <button
+                        onClick={handleNextEmail}
+                        className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full w-full transition-all duration-500 ease-in-out "
+                      >
+                        {selectedEmail && 
+                         randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
+                          ? 'Terminer' 
+                          : 'Lire le mail suivant'}
+                      </button>
+                    </div>
+                  </>
                 )}
               </div>
-            </div>
-            <div className={`transition-all duration-300 ${
-              showResultText ? 'opacity-100' : 'opacity-0'
-            }`}>
-              {showResultText && (
-                <div className={`p-4 flex justify-center ${
-                  userAnswer === currentQuestion.isCorrect 
-                    ? 'bg-success-050'
-                    : 'bg-error-050'
-                }`}>
-                  <button
-                    onClick={handleNextEmail}
-                    className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full w-full transition-colors duration-200 "
-                  >
-                    {selectedEmail && 
-                     randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
-                      ? 'Terminer' 
-                      : 'Lire le mail suivant'}
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         </div>
