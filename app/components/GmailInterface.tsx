@@ -474,9 +474,7 @@ export default function GmailInterface() {
                         </div>
                       </div>
                     )}
-                    <ul className="list-disc pl-5">
-                      <li>Le mail joue sur le sentiment d'urgence. Fait attention, plus on te presse de faire une action, moins tu prends le temps de vérifier.</li>
-                    </ul>
+                   
                     <p>{currentQuestion.explanation}</p>
                     <div className="mt-6 p-4 rounded-lg">
                       <div className="flex flex-col gap-2">
