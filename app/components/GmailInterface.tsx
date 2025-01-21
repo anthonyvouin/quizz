@@ -1,5 +1,5 @@
 "use client"
-import { FiMenu, FiSearch, FiMail, FiInbox, FiArrowLeft, FiArchive, FiTrash2, FiRefreshCw } from "react-icons/fi";
+import { FiMenu, FiSearch,  FiInbox, FiArrowLeft, FiArchive, FiTrash2, FiRefreshCw } from "react-icons/fi";
 import { BsThreeDotsVertical, BsArchive, BsTrash } from "react-icons/bs";
 import { useState, useEffect, useCallback } from 'react';
 import emailsData from '../data/emails.json';
@@ -502,7 +502,7 @@ export default function GmailInterface() {
                 }`}>
                   <button
                     onClick={handleNextEmail}
-                    className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full transition-colors duration-200 "
+                    className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full w-full transition-colors duration-200 "
                   >
                     {selectedEmail && 
                      randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
