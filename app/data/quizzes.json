@@ -5,6 +5,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Hostinger : il finit par @svnhgklsfh.de et non @hostinger.com.\n\n• Le nom utilisé n'est pas un prénom mais \"Christine Coaching\".\n\n• Le mail joue sur le sentiment d'urgence. Même si tu possèdes ce nom de domaine ou cette adresse mail, ces informations sont publiques. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
       "isCorrect": false,
       "whatToDo": "• En cas de doute, accède directement à la plateforme (en l'occurrence Hostinger) via leur site officiel et accède à ton tableau de bord.\n\n• Contacte le support officiel.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
+    },
+    "urssaf-message": {
+      "question": "Est-ce un message officiel de l'urssaf ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à l'Urssaf de ma région.\n\n• Même si des erreurs sur le logo et la description sont à noter, ce genre d'erreur est possible même pour un organisme officiel.",
+      "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
     }
   }
 }

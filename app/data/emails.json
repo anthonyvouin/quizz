@@ -9,6 +9,16 @@
       "image": "/hostinger.png",
       "time": "11:26",
       "questionId": "hostinger-security"
+    },
+    {
+      "id": "urssaf-message",
+      "sender": "dcl.normandie@urssaf.fr",
+      "subject": "Message de votre Urssaf",
+      "preview": "autoentrepreneur.urssaf.fr/portail/accueil.html Cordialement. Merci de ne pas r&eacute;pondre &agrave",
+      "content": "{{IMAGE}}\n\nBonjour,\n\nVous avez reçu un message dans votre espace personnel. Nous vous invitons à le consulter dans la rubrique « Ma messagerie », sous rubrique « Messages reçus ».\n\nCliquez sur le lien pour vous connecter à votre espace en ligne : {{https://www.autoentrepreneur.urssaf.fr/portail/accueil.html}}\n\nCordialement.\n\nMerci de ne pas répondre à ce message qui est généré automatiquement.\n\nPour votre sécurité, ne répondez jamais à un courriel vous demandant votre numéro de carte bancaire.",
+      "image": "/urssaf.png",
+      "time": "8:53",
+      "questionId": "urssaf-message"
     }
   ]
 } 
