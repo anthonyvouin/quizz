@@ -22,6 +22,15 @@
 
       "time": "8:53",
       "questionId": "urssaf-message"
+    },
+    {
+      "id": "bug-comptabilite",
+      "sender": "alfredobrien14@gmail.com",
+      "subject": "Re:prestation",
+      "preview": "Suite à un bug informatique survenu sur notre logiciel de comptabilité",
+      "content": "Bonjour madame,\n\nJ'espère que vous allez bien.\n\nSuite à un bug informatique survenu sur notre logiciel de comptabilité, 2600 euros ont été virés sur votre compte bancaire par erreur au lieu de 600 euros. Notre comptable vient de s'en rendre compte car les 2600 euros étaient la facture qu'on devrait envoyer à notre gestionnaire de communauté. Nos avoirs étant déjà débité, je suis tout confus !\n\nJe vous présente mes sincères excuses.\n\nPour nous aider, vous allez posséder à l'ajout de notre RIB dans vos bénéficiaires afin de nous effectuée un virement de la différence après réception des2600€.\n\nDans l'attente de vos lire.\n\nTrès sincèrement",
+      "time": "9:41",
+      "questionId": "bug-comptabilite"
     }
   ]
 } 
