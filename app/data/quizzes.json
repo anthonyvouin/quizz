@@ -23,6 +23,12 @@
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à Max PICCININI.\n\n• Malgré son accroche \"dépasser les 10K€ de revenus par mois\", tous les voyants sont au vert pour attester que c'est bel et bien l'équipe de Max PICCININI qui l'a envoyé.",
       "whatToDo": "• Si tu t'es inscrit à un événement de Max PICCININI, il est normal de recevoir ses mails. Tu es libre de répondre ou non au mail."
+    },
+    "gendarmerie-convocation": {
+      "question": "Dois-je me renseigner et télécharger la pièce jointe ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la gendarmerie nationale.\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
+      "isCorrect": false,
+      "whatToDo": "• Ne télécharge jamais une pièce jointe sur ce type de mail.\n• Supprime ce mail"
     }
   }
 }
