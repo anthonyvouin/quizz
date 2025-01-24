@@ -20,6 +20,8 @@ interface Email {
   time: string;
   questionId: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 const MAX_QUESTIONS = 10;
@@ -241,12 +243,12 @@ export default function GmailInterface() {
     return content.split('\n\n').map((paragraph, index) => {
       if (paragraph.includes('{{IMAGE}}')) {
         return selectedEmail?.image ? (
-          <div key={index} className="my-4 flex justify-center">
+          <div key={index} className="my-4">
             <Image 
               src={selectedEmail.image} 
               alt="Email image"
-              width={400}
-              height={200}
+              width={selectedEmail.imageWidth || 200}
+              height={selectedEmail.imageHeight || 100}
               className="rounded-lg"
             />
           </div>
