@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface EmailItemProps {
   id: string;
   sender: string;
@@ -6,6 +8,11 @@ interface EmailItemProps {
   time: string;
   onClick: () => void;
   isCompleted?: boolean;
+  attachment?: {
+    name: string;
+    type: string;
+    icon: string;
+  };
 }
 
 export default function EmailItem({ 
@@ -14,7 +21,8 @@ export default function EmailItem({
   preview, 
   time, 
   onClick,
-  isCompleted 
+  isCompleted,
+  attachment
 }: EmailItemProps) {
   return (
     <div 
@@ -30,7 +38,18 @@ export default function EmailItem({
             {time}
           </span>
         </div>
-        <h3 className="text-sm font-medium truncate">{subject}</h3>
+        <div className="flex items-center gap-2">
+          {attachment && (
+            <Image 
+              src={attachment.icon}
+              alt="Attachment"
+              width={16}
+              height={16}
+              className="object-contain flex-shrink-0"
+            />
+          )}
+          <h3 className="text-sm font-medium truncate">{subject}</h3>
+        </div>
         <p className="text-sm text-gray-600 truncate">{preview}</p>
       </div>
     </div>

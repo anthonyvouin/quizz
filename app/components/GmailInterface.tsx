@@ -22,6 +22,11 @@ interface Email {
   image?: string;
   imageWidth?: number;
   imageHeight?: number;
+  attachment?: {
+    name: string;
+    type: string;
+    icon: string;
+  };
 }
 
 const MAX_QUESTIONS = 10;
@@ -256,6 +261,21 @@ export default function GmailInterface() {
       if (paragraph.includes('{{IMAGE}}')) {
         return selectedEmail?.image ? (
           <div key={index} className="my-4">
+            {selectedEmail.attachment && (
+              <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
+                <Image 
+                  src={selectedEmail.attachment.icon}
+                  alt="Attachment icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+                <div>
+                  <p className="font-medium text-sm text-gray-900">{selectedEmail.attachment.name}</p>
+                  <p className="text-xs text-gray-500">Cliquez pour ouvrir</p>
+                </div>
+              </div>
+            )}
             <Image 
               src={selectedEmail.image} 
               alt="Email image"
@@ -399,6 +419,7 @@ export default function GmailInterface() {
                     {...email}
                     isCompleted={completedEmails.includes(email.id)}
                     onClick={() => handleEmailClick(email)}
+                    attachment={email.attachment}
                   />
                 ))}
               </div>
