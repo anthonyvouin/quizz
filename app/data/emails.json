@@ -59,6 +59,15 @@
         "type": "pdf",
         "icon": "/trombone.png"
       }
+    },
+    {
+      "id": "amazon-security",
+      "sender": "support-client@amazon-verification.net",
+      "subject": "Votre compte Amazon a été bloqué pour des raisons de sécurité",
+      "preview": "Nous avons détecté des connexions inhabituelles sur votre compte. Veuillez vérifier vos informations pour réactiver votre compte",
+      "content": "Cher(e) client(e),\n\nNous avons remarqué des connexions inhabituelles sur votre compte Amazon. Par mesure de sécurité, nous avons temporairement désactivé votre compte.\n\nPour confirmer que vous êtes le propriétaire du compte, veuillez cliquer sur le lien ci-dessous et suivre les instructions :\n\n{{Réactiver mon compte}}\n\nSi aucune action n'est entreprise dans les 48 heures, votre compte sera définitivement bloqué.\n\nMerci de votre compréhension.\n\n{{small}}L'équipe Amazon Sécurité{{small}}",
+      "time": "16:18",
+      "questionId": "amazon-security"
     }
   ]
 } 

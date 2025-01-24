@@ -29,6 +29,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la gendarmerie nationale.\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
       "isCorrect": false,
       "whatToDo": "• Ne télécharge jamais une pièce jointe sur ce type de mail.\n• Supprime ce mail"
+    },
+    "amazon-security": {
+      "question": "Dois-je réactiver mon compte Amazon en cliquant sur le lien ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Amazon : il finit par @amazon-verification.net et non @amazon.com.\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.\n• Il n'y a aucune personnalisation : le message s'adresse à un \"client\" générique.",
+      "isCorrect": false,
+      "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n• Connecte-toi directement à ton compte Amazon via le site officiel pour vérifier tout problème éventuel.\n• Signale le mail à Amazon à l'adresse stop-spoofing@amazon.com.\n• Supprime ce mail"
     }
   }
 }
