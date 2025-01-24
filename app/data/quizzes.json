@@ -17,6 +17,12 @@
       "isCorrect": false,
       "explanation": "• Même si tu eu contact avec ce client, c'est potentiellement une arnaque. Les chèques ne sont pas un moyen de paiement pouvant être vérifié tout de suite.",
       "whatToDo": "• Contacte ton client autrement que par mail pour vérifier qu'il est bien à l'origine de l'envoi de ce mail.\n\n• Attends la validation et l'authentification du chèque avant de le rembourser.\n\n• Demande l'avis à ton banquier.\n\n• Enregistre chaque échange envers ce \"client\" en vue de porter plainte."
+    },
+    "max-piccinini": {
+      "question": "J'ai participé à un événement de Max PICCININI (célèbre coach francophone), puis-je répondre \"oui\" à ce mail ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à Max PICCININI.\n\n• Malgré son accroche \"dépasser les 10K€ de revenus par mois\", tous les voyants sont au vert pour attester que c'est bel et bien l'équipe de Max PICCININI qui l'a envoyé.",
+      "whatToDo": "• Si tu t'es inscrit à un événement de Max PICCININI, il est normal de recevoir ses mails. Tu es libre de répondre ou non au mail."
     }
   }
 }

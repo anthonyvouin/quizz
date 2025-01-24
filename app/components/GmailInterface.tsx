@@ -240,7 +240,19 @@ export default function GmailInterface() {
   }, []);
 
   const renderEmailContent = (content: string) => {
+    let isSmallText = false;
+
     return content.split('\n\n').map((paragraph, index) => {
+      if (paragraph.includes('{{small}}')) {
+        isSmallText = true;
+        paragraph = paragraph.replace('{{small}}', '');
+      }
+
+      if (paragraph.includes('{{small}}')) {
+        isSmallText = false;
+        paragraph = paragraph.replace('{{small}}', '');
+      }
+
       if (paragraph.includes('{{IMAGE}}')) {
         return selectedEmail?.image ? (
           <div key={index} className="my-4">
@@ -258,10 +270,11 @@ export default function GmailInterface() {
       if (paragraph.includes('{{')) {
         const parts = paragraph.split(/(\{\{.*?\}\})/);
         return (
-          <p key={index} className="mb-4">
+          <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
             {parts.map((part, i) => {
               if (part.startsWith('{{') && part.endsWith('}}')) {
                 const linkText = part.slice(2, -2);
+                if (linkText === 'small') return null;
                 return (
                   <span 
                     key={i} 
@@ -282,7 +295,7 @@ export default function GmailInterface() {
         return (
           <div key={index} className="mb-4">
             {paragraph.split('\n').map((line, lineIndex) => (
-              <p key={lineIndex} className="mb-1">
+              <p key={lineIndex} className={`mb-1 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
                 {line}
               </p>
             ))}
@@ -290,7 +303,7 @@ export default function GmailInterface() {
         );
       }
 
-      return <p key={index} className="mb-4">{paragraph}</p>;
+      return <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>{paragraph}</p>;
     });
   };
 

@@ -19,7 +19,6 @@
       "preview": "autoentrepreneur.urssaf.fr/portail/accueil.html Cordialement. Merci de ne pas r&eacute;pondre &agrave",
       "content": "{{IMAGE}}\n\nBonjour,\n\nVous avez reçu un message dans votre espace personnel. Nous vous invitons à le consulter dans la rubrique « Ma messagerie », sous rubrique « Messages reçus ».\n\nCliquez sur le lien pour vous connecter à votre espace en ligne : {{https://www.autoentrepreneur.urssaf.fr/portail/accueil.html}}\n\nCordialement.\n\nMerci de ne pas répondre à ce message qui est généré automatiquement.\n\nPour votre sécurité, ne répondez jamais à un courriel vous demandant votre numéro de carte bancaire.",
       "image": "/urssaf.png",
-
       "time": "8:53",
       "questionId": "urssaf-message"
     },
@@ -31,6 +30,18 @@
       "content": "Bonjour madame,\n\nJ'espère que vous allez bien.\n\nSuite à un bug informatique survenu sur notre logiciel de comptabilité, 2600 euros ont été virés sur votre compte bancaire par erreur au lieu de 600 euros. Notre comptable vient de s'en rendre compte car les 2600 euros étaient la facture qu'on devrait envoyer à notre gestionnaire de communauté. Nos avoirs étant déjà débité, je suis tout confus !\n\nJe vous présente mes sincères excuses.\n\nPour nous aider, vous allez posséder à l'ajout de notre RIB dans vos bénéficiaires afin de nous effectuée un virement de la différence après réception des2600€.\n\nDans l'attente de vos lire.\n\nTrès sincèrement",
       "time": "9:41",
       "questionId": "bug-comptabilite"
+    },
+    {
+      "id": "max-piccinini",
+      "sender": "contact@maxpiccinini.com",
+      "subject": "Êtes-vous intéressé par une session stratégique offerte Christine ?",
+      "preview": "Ici la Team Max Piccinini. Êtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?",
+      "content": "Bonjour Christine,\n\nIci la Team Max Piccinini.\n\nÊtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?\n\nQuelques places viennent de se libérer pour réserver un appel stratégique avec nous, et faire un bilan de votre entreprise.\n\nVoulez-vous profiter de cet appel offert ?\n\nRépondez-nous \"Oui\" à cet email et nous reviendrons vers vous très rapidement !\n\n{{IMAGE}}\n\n{{small}}Max Piccinini\nEntrepreneur & Coach d'Excellence\nAuteur Best-seller du livre \"{{Réussite Maximum}}\"\n\nMax Piccinini Coaching DMCC, Jewellery & Gemplex, DMCC, Jumeirah Lakes Tower, Dubai,Emirats Arabes Unis{{small}}\n\n{{small}}{{Gérer vos préférences}} pour choisir les communications que vous souhaitez recevoir.\n\nSi vous ne souhaitez plus recevoir de communications de notre part, vous pouvez vous {{désabonner}}.{{small}}",
+      "image": "/max-piccinini.png",
+      "imageWidth": 400,
+      "imageHeight": 200,   
+      "time": "8:15",
+      "questionId": "max-piccinini"
     }
   ]
 } 
