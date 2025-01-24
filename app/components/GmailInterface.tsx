@@ -19,6 +19,7 @@ interface Email {
   content: string;
   time: string;
   questionId: string;
+  image?: string;
 }
 
 const MAX_QUESTIONS = 10;
@@ -236,6 +237,61 @@ export default function GmailInterface() {
     };
   }, []);
 
+  const renderEmailContent = (content: string) => {
+    return content.split('\n\n').map((paragraph, index) => {
+      if (paragraph.includes('{{IMAGE}}')) {
+        return selectedEmail?.image ? (
+          <div key={index} className="my-4 flex justify-center">
+            <Image 
+              src={selectedEmail.image} 
+              alt="Email image"
+              width={400}
+              height={200}
+              className="rounded-lg"
+            />
+          </div>
+        ) : null;
+      }
+
+      if (paragraph.includes('{{')) {
+        const parts = paragraph.split(/(\{\{.*?\}\})/);
+        return (
+          <p key={index} className="mb-4">
+            {parts.map((part, i) => {
+              if (part.startsWith('{{') && part.endsWith('}}')) {
+                const linkText = part.slice(2, -2);
+                return (
+                  <span 
+                    key={i} 
+                    className="text-blue-500 underline cursor-pointer"
+                  >
+                    {linkText}
+                  </span>
+                );
+              }
+              return <span key={i}>{part}</span>;
+            })}
+          </p>
+        );
+      }
+
+      // Gérer les listes avec puces
+      if (paragraph.includes('•')) {
+        return (
+          <div key={index} className="mb-4">
+            {paragraph.split('\n').map((line, lineIndex) => (
+              <p key={lineIndex} className="mb-1">
+                {line}
+              </p>
+            ))}
+          </div>
+        );
+      }
+
+      return <p key={index} className="mb-4">{paragraph}</p>;
+    });
+  };
+
   return (
     <div className="h-screen bg-[#f6f8fc]">
       {showIntro && (
@@ -362,7 +418,7 @@ export default function GmailInterface() {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
                         <span className="font-semibold truncate">{selectedEmail.sender}</span>
                         <span className="text-xs sm:text-sm text-gray-500 truncate">
-                          &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;
+                          &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}&gt;
                         </span>
                       </div>
                       <div className="text-sm text-gray-500">à moi</div>
@@ -373,11 +429,7 @@ export default function GmailInterface() {
 
                 <div className="p-6 pb-20 sm:pb-6">
                   <div className="max-w-3xl">
-                    {selectedEmail.content.split('\n').map((paragraph, index) => (
-                      <p key={index} className={`${paragraph.trim() === '' ? 'h-4' : 'mb-4'} text-gray-800`}>
-                        {paragraph}
-                      </p>
-                    ))}
+                    {renderEmailContent(selectedEmail.content)}
                   </div>
                 </div>
               </div>
@@ -490,36 +542,24 @@ export default function GmailInterface() {
                         ? 'text-green-800'
                         : 'text-red-800'
                     }`}>
-                      <h2 className="font-bold text-xl  mb-6 flex items-center gap-2">
+                      <h2 className="font-bold text-xl mb-6 flex items-center gap-2">
                         <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                         {userAnswer === currentQuestion.isCorrect 
                           ? 'Bonne réponse, le mail était sûr !'
                           : 'Mauvaise réponse, le mail était frauduleux !'}
                       </h2>
-                      <ul className="text-me list-disc pl-5 text-lg">
-                        <li>Le mail d'expéditeur ne correspond pas à {selectedEmail?.sender.split(' ')[0]}</li>
-                      </ul>
-                      {selectedEmail && (
-                        <div className="flex items-center gap-2 bg-white p-2 rounded-lg shadow-md text-black">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                            {selectedEmail.sender[0]}
-                          </div>
-                          <div>
-                            <span className="font-semibold">{selectedEmail.sender}</span>
-                            <span className="text-sm"> &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}@entreprise.com&gt;</span>
-                            <div className="text-sm">à moi</div>
-                          </div>
-                        </div>
-                      )}
-                     
-                      <p className="text-lg">{currentQuestion.explanation}</p>
+                      <div className="text-lg whitespace-pre-line">
+                        {currentQuestion.explanation}
+                      </div>
                       <div className="mt-6">
                         <div className="flex flex-col gap-2">
                           <div className="flex items-center gap-2">
                             <span>👉</span>
                             <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
                           </div>
-                          <p className="ml-7 text-lg">{currentQuestion.whatToDo}</p>
+                          <div className="ml-7 text-lg whitespace-pre-line">
+                            {currentQuestion.whatToDo}
+                          </div>
                         </div>
                       </div>
                     </div>
