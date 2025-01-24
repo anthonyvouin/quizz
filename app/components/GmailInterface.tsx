@@ -10,24 +10,9 @@ import ScoreModal from './ScoreModal';
 import Image from 'next/image';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Confetti from 'react-confetti';
+import { Email } from '../types';
 
-interface Email {
-  id: string;
-  sender: string;
-  subject: string;
-  preview: string;
-  content: string;
-  time: string;
-  questionId: string;
-  image?: string;
-  imageWidth?: number;
-  imageHeight?: number;
-  attachment?: {
-    name: string;
-    type: string;
-    icon: string;
-  };
-}
+
 
 const MAX_QUESTIONS = 10;
 const ANIMATION_TEXT_DELAY = 1500;

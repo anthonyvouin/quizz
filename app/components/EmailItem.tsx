@@ -1,19 +1,5 @@
 import Image from "next/image";
-
-interface EmailItemProps {
-  id: string;
-  sender: string;
-  subject: string;
-  preview: string;
-  time: string;
-  onClick: () => void;
-  isCompleted?: boolean;
-  attachment?: {
-    name: string;
-    type: string;
-    icon: string;
-  };
-}
+import { EmailItemProps } from "../types";
 
 export default function EmailItem({ 
   sender, 
