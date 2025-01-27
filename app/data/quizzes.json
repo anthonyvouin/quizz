@@ -35,6 +35,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Amazon : il finit par @amazon-verification.net et non @amazon.com.\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.\n• Il n'y a aucune personnalisation : le message s'adresse à un \"client\" générique.",
       "isCorrect": false,
       "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n• Connecte-toi directement à ton compte Amazon via le site officiel pour vérifier tout problème éventuel.\n• Signale le mail à Amazon à l'adresse stop-spoofing@amazon.com.\n• Supprime ce mail"
+    },
+    "airfrance-annulation": {
+      "question": "J'ai un vol de prévu, dois-je cliquer sur le lien pour échanger mes billets ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Air France : il ne finit pas par airfrance mais gov65816.com.\n• Le texte \"Ce mail a été certifié par Google\" a été rajouté dans le mail et non par Google.",
+      "isCorrect": false,
+      "whatToDo": "• En cas de doute, accède directement à la plateforme via leur site officiel et accède à ton compte.\n• Contacte le support officiel.\n• Ne clique jamais sur un lien sur ce type de mail.\n• Supprime ce mail"
     }
   }
 }
