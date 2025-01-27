@@ -188,6 +188,8 @@
       "time": "00:20",
       "contentAlignment": "center",
       "imageAlignment": "left",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f3f4f6",
       "questionId": "impots-remboursement"
     }
   ]

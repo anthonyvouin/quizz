@@ -23,6 +23,8 @@ export type Email = {
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
   contentAlignment?: 'left' | 'center' | 'right';
+  backgroundColor?: string;
+  containerBackgroundColor?: string;
   time: string;
   questionId: string;
   attachment?: {

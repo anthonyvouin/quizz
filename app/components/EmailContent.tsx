@@ -7,6 +7,7 @@ interface EmailContentProps {
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
   contentAlignment?: 'left' | 'center' | 'right';
+  backgroundColor?: string;
   attachment?: {
     name: string;
     type: string;
@@ -21,6 +22,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
   imageHeight = 100,
   imageAlignment = 'left',
   contentAlignment = 'left',
+  backgroundColor,
   attachment
 }) => {
   const renderParagraph = (paragraph: string, index: number, isSmallText: boolean) => {
@@ -159,7 +161,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
 
   const renderContent = () => {
     let isSmallText = false;
-    return (
+    const contentElements = (
       <>
         {attachment && (
           <div key="attachment">
@@ -191,6 +193,17 @@ const EmailContent: React.FC<EmailContentProps> = ({
         })}
       </>
     );
+
+    // Si une couleur de fond est définie, on wrap le contenu
+    if (backgroundColor) {
+      return (
+        <div style={{ backgroundColor }} className="p-6 rounded-lg">
+          {contentElements}
+        </div>
+      );
+    }
+
+    return contentElements;
   };
 
   return (

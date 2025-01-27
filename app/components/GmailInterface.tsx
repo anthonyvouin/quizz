@@ -343,11 +343,11 @@ export default function GmailInterface() {
               </div>
 
               <div className="flex-grow overflow-auto">
-                <div className="p-4 border-b">
+                <div className="p-4 border-b bg-white">
                   <h1 className="text-xl font-semibold">{selectedEmail.subject}</h1>
                 </div>
 
-                <div className="p-4 border-b flex justify-between items-start">
+                <div className="p-4 border-b flex justify-between items-start bg-white">
                   <div className="flex items-start gap-3 min-w-0">
                     <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                       {selectedEmail.sender[0]}
@@ -365,7 +365,7 @@ export default function GmailInterface() {
                   <span className="text-xs sm:text-sm text-gray-500 ml-2 whitespace-nowrap">{selectedEmail.time}</span>
                 </div>
 
-                <div className="p-6 pb-20 sm:pb-6">
+                <div className="p-6 pb-20 sm:pb-6" style={{ backgroundColor: selectedEmail.containerBackgroundColor || 'white' }}>
                   <EmailContent 
                     content={selectedEmail.content}
                     image={selectedEmail.image}
@@ -373,6 +373,7 @@ export default function GmailInterface() {
                     imageHeight={selectedEmail.imageHeight}
                     imageAlignment={selectedEmail.imageAlignment}
                     contentAlignment={selectedEmail.contentAlignment}
+                    backgroundColor={selectedEmail.backgroundColor}
                     attachment={selectedEmail.attachment}
                   />
                 </div>
