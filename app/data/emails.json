@@ -159,6 +159,21 @@
       "time": "13:35",
       "questionId": "amende-stationnement",
       "contentAlignment": "center"
+    },
+    {
+      "id": "sncf-suppression",
+      "name": "SNCF",
+      "sender": "nepasrepondre@infos.sncf.com",
+      "subject": "IMPORTANT SNCF - Suppression de votre train 6908 du 18/03",
+      "preview": "Si vous ne prévisualisez pas cet email, cliquez ici SNCF Bonjour, Votre train 6908 du 18/03 est supprimé en raison d'un mouvement social.",
+      "content": "{{IMAGE}}\n\nBonjour,\n\nVotre train 6908 du 18/03 au départ de GRENOBLE à destination de PARIS GARE DE LYON est supprimé en raison d'un mouvement social inorganisationnel.\n\nNous vous proposons les alternatives suivantes :\n\n• Échanger sans frais vers un autre billet en consultant les mêmes gares de départ et d'arrivée\n• Annuler votre billet, avant départ, pour un solde de remboursement\n\nPour cela, rendez-vous sur SNCF Connect ou auprès de votre agence de voyages agréée SNCF.\n\nNous vous prions de nous excuser pour ce désagrément.\n\nL'équipe SNCF VOYAGEURS",
+      "image": "/sncf.png",
+      "imageWidth": 100,
+      "imageAlignment": "left",
+      "contentAlignment": "center",
+      "imageHeight": 50,
+      "time": "20:05",
+      "questionId": "sncf-suppression"
     }
   ]
 } 

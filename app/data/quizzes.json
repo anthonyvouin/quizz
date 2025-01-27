@@ -71,6 +71,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel du gouvernement, malgré les termes qui paraissent officiel. Le seul mail pouvant adresser un mail de contravention en France fini par @antai.fr\n\n• Le mail joue sur le sentiment d'urgence. Même si tu as une amende en attente cela peut être une coïncidence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
       "whatToDo": "• En France, le site pour payer ses amendes est www.amendes.gouv.fr ou www.stationnement.gouv.fr.\n\n• Il est rare de recevoir une amende par mail, cependant c'est possible dans les cas suivants :\n\n• si tu as donné ton mail à l'agent qui t'a verbalisé ;\n\n• ou si la personne qui t'a prêté la voiture t'a désigné comme étant l'auteur de l'infraction et a transmis ton mail à l'Agence nationale de traitement automatisé des infractions.\n\n• Supprime ce mail.",
       "isCorrect": false
+    },
+    "sncf-suppression": {
+      "question": "J'ai réservé mon train auprès de la SNCF, est-ce que l'information est véridique ?",
+      "explanation": "• Le mail d'expéditeur correspond bien à la SNCF.\n\n• Le mail ne demande pas d'informations sensibles et renvoie vers les canaux officiels (SNCF Connect ou agence agréée).\n\n• Les alternatives proposées sont cohérentes avec les pratiques habituelles de la SNCF en cas de suppression de train.",
+      "isCorrect": true,
+      "whatToDo": "• Suivre les alternatives proposées pour changer son billet.\n\n• En cas de doute, accéder directement à la plateforme via leur site officiel ou leur application officielle."
     }
   }
 }
