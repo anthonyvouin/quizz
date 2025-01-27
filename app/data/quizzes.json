@@ -47,6 +47,18 @@
       "explanation": "- Si tu ne connais pas la personne, il n'y a pas de raison de télécharger la facture.\n- Le mail joue sur le sentiment d'urgence, fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.\n- L'heure d'envoi est suspecte.",
       "whatToDo": "- Ne télécharge jamais de pièce jointe dont tu n'es pas sûr de l'origine.",
       "isCorrect": false
+    },
+    "yellow-pages": {
+      "question": "Dois-je télécharger la pièce jointe ?",
+      "explanation": "- Le mail d'expéditeur n'est pas un mail officiel des pages jaunes : il finit par @libresec.net très loin des pages jaunes ou yellow pages.\n- Le mail est en anglais alors que les pages jaunes sont un service français.",
+      "whatToDo": "- Ne télécharge pas la pièce jointe.\n- Supprime ce mail.",
+      "isCorrect": false
+    },
+    "societe-generale": {
+      "question": "Dois-je activer mon pass sécurité ?",
+      "explanation": "- Le mail d'expéditeur n'est pas un mail officiel de la Société Générale : il finit par @support-sociale-generale.com.\n- Le logo de l'entreprise n'est pas le bon.\n- Le mail joue sur la peur d'être arnaqué, il faut d'autant plus renforcé sa vigilance quand ce sujet est abordé.",
+      "whatToDo": "- Ne clique jamais sur un lien sur ce type de mail.\n- Si tu veux te renseigner sur un véritable service de sécurité de ta banque, consulte directement ton banquier ou la plateforme de ta banque.\n- Supprime ce mail.",
+      "isCorrect": false
     }
   }
 }

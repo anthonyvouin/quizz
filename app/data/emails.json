@@ -105,6 +105,34 @@
         "type": "pdf",
         "icon": "/trombone.png"
       }
+    },
+    {
+      "id": "yellow-pages",
+      "name": "Yellow Pages Web",
+      "sender": "register@libresec.net",
+      "subject": "Your Yellow Pages Web registration",
+      "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "content": "Hello,\n\nTo whom it might concern,\n\nIn order to have your company inserted in the Yellow Pages Web for 2024/2025, please complete the attached document and send it to us.\n\nAny file format is accepted.\n\nYELLOW PAGES WEB\n\nP.O.BOX 3079\n\n3502 GB UTRECHT\n\nTHE NETHERLANDS\n\nTel/Fax: +31303100126\n\nYou can attach the completed pdf in a reply to this email.\n\nUpdating is free of charge.\n\nunsubscribe",
+      "time": "13:01",
+      "questionId": "yellow-pages",
+      "attachment": {
+        "name": "YPform.pdf",
+        "type": "pdf",
+        "icon": "/trombone.png"
+      }
+    },
+    {
+      "id": "societe-generale",
+      "name": "Société Générale",
+      "sender": "societegenerale@support-sociale-generale.com",
+      "subject": "Protégez-vous des arnaques",
+      "preview": "Découvrez le Pass Sécurité Afin de prévenir l'utilisation frauduleuse des cartes bancaires sur internet",
+      "content": "{{IMAGE}}\n\nDécouvrez le Pass Sécurité\n\nAfin de prévenir l'utilisation frauduleuse des cartes bancaires sur Internet, la Société Générale est dotée d'un dispositif de contrôle des paiements. Ce service est entièrement gratuit.\n\nNotre système a détecté que vous n'avez pas encore activé le {{Pass Sécurité}}.\n\nCliquez ici pour activer ce service",
+      "image": "/societe-generale.png",
+      "imageWidth": 200,
+      "imageHeight": 100,
+      "time": "10:27",
+      "questionId": "societe-generale"
     }
   ]
 } 

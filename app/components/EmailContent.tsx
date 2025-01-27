@@ -29,6 +29,20 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </p>
       );
     }
+    if (paragraph === 'Découvrez le Pass Sécurité') {
+        return (
+          <p key={index} className="mb-4 text-red-500 font-bold">
+            {paragraph}
+          </p>
+        );
+      }
+      if (paragraph === 'Cliquez ici pour activer ce service') {
+        return (
+          <p key={index} className="mb-4  bg-blue-500 text-white p-3 rounded-md text-center max-w-md mx-auto cursor-pointer">
+            {paragraph}
+          </p>
+        );
+      }
 
     if (paragraph.includes('{{IMAGE}}')) {
       return (
