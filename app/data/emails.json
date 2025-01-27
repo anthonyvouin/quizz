@@ -9,6 +9,7 @@
       "image": "/hostinger.png",
       "imageWidth": 400,
       "imageHeight": 200,
+      "imageAlignment": "center",
       "time": "11:26",
       "questionId": "hostinger-security"
     },
@@ -36,7 +37,7 @@
       "sender": "contact@maxpiccinini.com",
       "subject": "Êtes-vous intéressé par une session stratégique offerte Christine ?",
       "preview": "Ici la Team Max Piccinini. Êtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?",
-      "content": "Bonjour Christine,\n\nIci la Team Max Piccinini.\n\nÊtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?\n\nQuelques places viennent de se libérer pour réserver un appel stratégique avec nous, et faire un bilan de votre entreprise.\n\nVoulez-vous profiter de cet appel offert ?\n\nRépondez-nous \"Oui\" à cet email et nous reviendrons vers vous très rapidement !\n\n{{IMAGE}}\n\n{{small}}Max Piccinini\nEntrepreneur & Coach d'Excellence\nAuteur Best-seller du livre \"{{Réussite Maximum}}\"\n\nMax Piccinini Coaching DMCC, Jewellery & Gemplex, DMCC, Jumeirah Lakes Tower, Dubai,Emirats Arabes Unis{{small}}\n\n{{small}}{{Gérer vos préférences}} pour choisir les communications que vous souhaitez recevoir.\n\nSi vous ne souhaitez plus recevoir de communications de notre part, vous pouvez vous {{désabonner}}.{{small}}",
+      "content": "Bonjour Christine,\n\nIci la Team Max Piccinini.\n\nÊtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?\n\nQuelques places viennent de se libérer pour réserver un appel stratégique avec nous, et faire un bilan de votre entreprise.\n\nVoulez-vous profiter de cet appel offert ?\n\nRépondez-nous \"Oui\" à cet email et nous reviendrons vers vous très rapidement !\n\n{{IMAGE}}\n\n{{small}}Max Piccinini\nEntrepreneur & Coach d'Excellence\nAuteur Best-seller du livre \"{{Réussite Maximum}}\"Max Piccinini Coaching DMCC, Jewellery & Gemplex, DMCC, Jumeirah Lakes Tower, Dubai,Emirats Arabes Unis{{small}}\n\n{{small}}{{Gérer vos préférences}} pour choisir les communications que vous souhaitez recevoir.\n\nSi vous ne souhaitez plus recevoir de communications de notre part, vous pouvez vous {{désabonner}}.{{small}}",
       "image": "/max-piccinini.png",
       "imageWidth": 400,
       "imageHeight": 200,   

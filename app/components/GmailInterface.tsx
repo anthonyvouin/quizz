@@ -151,7 +151,7 @@ export default function GmailInterface() {
   }, [selectedEmail, randomizedEmails, completedEmails, getRemainingEmails, resetQuestionStates]);
 
   const handleReplay = useCallback(() => {
-    const newRandomEmails = getRandomEmails(emailsData.emails);
+    const newRandomEmails = getRandomEmails(emailsData.emails as Email[]);
     setRandomizedEmails(newRandomEmails);
     setGlobalScore(0);
     setTotalQuestionsAnswered(0);
@@ -173,7 +173,7 @@ export default function GmailInterface() {
   }, []);
 
   useEffect(() => {
-    const selectedEmails = getRandomEmails(emailsData.emails);
+    const selectedEmails = getRandomEmails(emailsData.emails as Email[]);
     setRandomizedEmails(selectedEmails);
   }, [getRandomEmails]);
 
@@ -261,13 +261,18 @@ export default function GmailInterface() {
                 </div>
               </div>
             )}
-            <Image 
-              src={selectedEmail.image} 
-              alt="Email image"
-              width={selectedEmail.imageWidth || 200}
-              height={selectedEmail.imageHeight || 100}
-              className="rounded-lg"
-            />
+            <div className={`flex ${
+              selectedEmail.imageAlignment === 'center' ? 'justify-center' :
+              selectedEmail.imageAlignment === 'right' ? 'justify-end' : 'justify-start'
+            }`}>
+              <Image 
+                src={selectedEmail.image} 
+                alt="Email image"
+                width={selectedEmail.imageWidth || 200}
+                height={selectedEmail.imageHeight || 100}
+                className="rounded-lg"
+              />
+            </div>
           </div>
         ) : null;
       }

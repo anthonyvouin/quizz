@@ -22,6 +22,7 @@ export interface Email {
   image?: string;
   imageWidth?: number;
   imageHeight?: number;
+  imageAlignment?: 'left' | 'center' | 'right';
   attachment?: {
     name: string;
     type: string;
