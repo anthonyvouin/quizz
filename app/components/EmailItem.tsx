@@ -3,7 +3,6 @@ import { EmailItemProps } from "../types";
 
 export default function EmailItem({ 
   name,
-  sender,
   subject,
   preview,
   time,

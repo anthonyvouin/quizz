@@ -372,6 +372,7 @@ export default function GmailInterface() {
                     imageWidth={selectedEmail.imageWidth}
                     imageHeight={selectedEmail.imageHeight}
                     imageAlignment={selectedEmail.imageAlignment}
+                    contentAlignment={selectedEmail.contentAlignment}
                     attachment={selectedEmail.attachment}
                   />
                 </div>

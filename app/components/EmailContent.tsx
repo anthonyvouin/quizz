@@ -6,6 +6,7 @@ interface EmailContentProps {
   imageWidth?: number;
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
+  contentAlignment?: 'left' | 'center' | 'right';
   attachment?: {
     name: string;
     type: string;
@@ -19,14 +20,17 @@ const EmailContent: React.FC<EmailContentProps> = ({
   imageWidth = 200,
   imageHeight = 100,
   imageAlignment = 'left',
+  contentAlignment = 'left',
   attachment
 }) => {
   const renderParagraph = (paragraph: string, index: number, isSmallText: boolean) => {
     if (paragraph === 'Ce mail a été certifié par Google') {
       return (
-        <p key={index} className="mb-4 bg-green-800 text-white p-3 rounded-md w-full">
-          {paragraph}
-        </p>
+        <div key={index}>
+          <p className="mb-4 bg-green-800 text-white p-3 rounded-md w-full max-w-2xl">
+            {paragraph}
+          </p>
+        </div>
       );
     }
     if (paragraph === 'Découvrez le Pass Sécurité') {
@@ -38,22 +42,22 @@ const EmailContent: React.FC<EmailContentProps> = ({
       }
       if (paragraph === 'Cliquez ici pour activer ce service') {
         return (
-          <p key={index} className="mb-4  bg-blue-500 text-white p-3 rounded-md text-center max-w-md mx-auto cursor-pointer">
-            {paragraph}
-          </p>
+          <div key={index}>
+            <p className="mb-4  bg-blue-500 text-white p-3 rounded-md text-center max-w-md mx-auto cursor-pointer">
+              {paragraph}
+            </p>
+          </div>
         );
       }
       if (paragraph === 'Répondre au sondage') {
         return (
-          <p key={index} className="mb-4 bg-cyan-500 text-white px-4 py-2 rounded-md text-center w-52 cursor-pointer hover:bg-cyan-600">
-            {paragraph}
-          </p>
+          <div key={index}>
+            <p className="mb-4 bg-cyan-500 text-white px-4 py-2 rounded-md w-52 cursor-pointer">
+              {paragraph}
+            </p>
+          </div>
         );
       }
-
-      
-
-
 
     if (paragraph.includes('{{IMAGE}}')) {
       return (
@@ -124,17 +128,19 @@ const EmailContent: React.FC<EmailContentProps> = ({
     return (
       <>
         {attachment && (
-          <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
-            <Image 
-              src={attachment.icon}
-              alt="Attachment icon"
-              width={20}
-              height={20}
-              className="object-contain"
-            />
-            <div>
-              <p className="font-medium text-sm text-gray-900">{attachment.name}</p>
-              <p className="text-xs text-gray-500">Cliquez pour ouvrir</p>
+          <div key="attachment">
+            <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
+              <Image 
+                src={attachment.icon}
+                alt="Attachment icon"
+                width={20}
+                height={20}
+                className="object-contain"
+              />
+              <div>
+                <p className="font-medium text-sm text-gray-900">{attachment.name}</p>
+                <p className="text-xs text-gray-500">Cliquez pour ouvrir</p>
+              </div>
             </div>
           </div>
         )}
@@ -154,7 +160,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
   };
 
   return (
-    <div className="max-w-3xl">
+    <div className={`max-w-3xl ${contentAlignment === 'center' ? 'lg:ml-[calc(50%-540px)]' : ''}`}>
       {renderContent()}
     </div>
   );

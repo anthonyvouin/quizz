@@ -11,7 +11,7 @@ export interface QuizData {
 } 
 
 
-export interface Email {
+export type Email = {
   id: string;
   name: string;
   sender: string;
@@ -22,6 +22,7 @@ export interface Email {
   imageWidth?: number;
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
+  contentAlignment?: 'left' | 'center' | 'right';
   time: string;
   questionId: string;
   attachment?: {
@@ -29,7 +30,7 @@ export interface Email {
     type: string;
     icon: string;
   };
-}
+};
 
 
 export interface EmailItemProps {
