@@ -73,7 +73,7 @@
       "sender": "support-client@amazon-verification.net",
       "subject": "Votre compte Amazon a été bloqué pour des raisons de sécurité",
       "preview": "Nous avons détecté des connexions inhabituelles sur votre compte. Veuillez vérifier vos informations pour réactiver votre compte",
-      "content": "Cher(e) client(e),\n\nNous avons remarqué des connexions inhabituelles sur votre compte Amazon. Par mesure de sécurité, nous avons temporairement désactivé votre compte.\n\nPour confirmer que vous êtes le propriétaire du compte, veuillez cliquer sur le lien ci-dessous et suivre les instructions :\n\n{{Réactiver mon compte}}\n\nSi aucune action n'est entreprise dans les 48 heures, votre compte sera définitivement bloqué.\n\nMerci de votre compréhension.\n\n{{small}}L'équipe Amazon Sécurité{{small}}",
+      "content": "Cher(e) client(e),\n\nNous avons remarqué des connexions inhabituelles sur votre compte Amazon. Par mesure de sécurité, nous avons temporairement désactivé votre compte.\n\nPour confirmer que vous êtes le propriétaire du compte, veuillez cliquer sur le lien ci-dessous et suivre les instructions :\n\n{{Réactiver mon compte}}\n\nSi aucune action n'est entreprise dans les 48 heures, votre compte sera définitivement bloqué.\n\nMerci de votre compréhension.\n\n L' équipe Amazon ",
       "time": "16:18",
       "questionId": "amazon-security"
     },
@@ -133,6 +133,19 @@
       "imageHeight": 100,
       "time": "10:27",
       "questionId": "societe-generale"
+    },
+    {
+      "id": "notion-research",
+      "name": "Notion Research Team",
+      "sender": "noreply@qemailserver.com",
+      "subject": "Aidez-nous à améliorer Notion !",
+      "preview": "Je m'appelle Makenna et je travaille au sein de l'équipe de recherche de Notion. Nous vous envoyons ce sondage d'environ 10 minutes pour recueillir vos commentaires sur l'amélioration de Notion.",
+      "content": "{{IMAGE}}\n\nBonjour,\n\nJe m'appelle Makenna et je travaille au sein de l'équipe de recherche de Notion. Nous vous envoyons ce sondage d'environ 10 minutes pour recueillir vos commentaires sur l'amélioration de Notion.\n\nCiquez sur le lien ci-dessous pour accéder au sondage.\n\nRépondre au sondage\n\nVos réponses nous aideront à hiérarchiser nos priorités, et à améliorer Notion. Merci d'avance pour votre temps et votre participation !\n\nBonne journée,\nMakenna\n\n {{IMAGE}}\n\nNotion — l'espace de travail{{small}}\n\ntout-en-un pour vos documents{{small}}\n\nprojets et connaissances{{small}}",
+      "image": "/Notion-logo.svg.png",
+      "imageWidth": 30,
+      "imageHeight": 30,
+      "time": "10:31",
+      "questionId": "notion-research"
     }
   ]
 } 

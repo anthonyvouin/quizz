@@ -43,6 +43,17 @@ const EmailContent: React.FC<EmailContentProps> = ({
           </p>
         );
       }
+      if (paragraph === 'Répondre au sondage') {
+        return (
+          <p key={index} className="mb-4 bg-cyan-500 text-white px-4 py-2 rounded-md text-center w-52 cursor-pointer hover:bg-cyan-600">
+            {paragraph}
+          </p>
+        );
+      }
+
+      
+
+
 
     if (paragraph.includes('{{IMAGE}}')) {
       return (

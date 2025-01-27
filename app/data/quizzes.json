@@ -59,6 +59,12 @@
       "explanation": "- Le mail d'expéditeur n'est pas un mail officiel de la Société Générale : il finit par @support-sociale-generale.com.\n- Le logo de l'entreprise n'est pas le bon.\n- Le mail joue sur la peur d'être arnaqué, il faut d'autant plus renforcé sa vigilance quand ce sujet est abordé.",
       "whatToDo": "- Ne clique jamais sur un lien sur ce type de mail.\n- Si tu veux te renseigner sur un véritable service de sécurité de ta banque, consulte directement ton banquier ou la plateforme de ta banque.\n- Supprime ce mail.",
       "isCorrect": false
+    },
+    "notion-research": {
+      "question": "J'ai un compte Notion, puis-je donner mon avis ?",
+      "explanation": "• Le mail d'expéditeur ne correspond pas à Notion : il finit par @qemailserver.com et non @notion.com.\n• Le mail est envoyé par Qualtrics qui est un logiciel légitime pour établir des questionnaires clients.\n• Le mail ne demande pas d'informations sensibles.",
+      "isCorrect": true,
+      "whatToDo": "• Tu es libre de donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail.\n• Vérifie toujours l'adresse email de l'expéditeur."
     }
   }
 }
