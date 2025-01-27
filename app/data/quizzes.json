@@ -65,6 +65,12 @@
       "explanation": "• Le mail d'expéditeur ne correspond pas à Notion : il finit par @qemailserver.com et non @notion.com.\n• Le mail est envoyé par Qualtrics qui est un logiciel légitime pour établir des questionnaires clients.\n• Le mail ne demande pas d'informations sensibles.",
       "isCorrect": true,
       "whatToDo": "• Tu es libre de donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail.\n• Vérifie toujours l'adresse email de l'expéditeur."
+    },
+    "amende-stationnement": {
+      "question": "Dois-je régler l'amende et cliquer sur le lien ?",
+      "explanation": "- Le mail d'expéditeur n'est pas un mail officiel du gouvernement, malgré les termes qui paraissent officiel. Le seul mail pouvant adresser un mail de contravention en France fini par @antai.fr\n- Le mail joue sur le sentiment d'urgence. Même si tu as une amende en attente cela peut être une coïncidence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
+      "whatToDo": "En France, le site pour payer ses amendes est www.amendes.gouv.fr ou www.stationnement.gouv.fr.\nIl est rare de recevoir une amende par mail, cependant c'est possible dans les cas suivants :\n- si tu as donné ton mail à l'agent qui t'a verbalisé ;\n- ou si la personne qui t'a prêté la voiture t'a désigné comme étant l'auteur de l'infraction et a transmis ton mail à l'Agence nationale de traitement automatisé des infractions.\n- Supprime ce mail.",
+      "isCorrect": false
     }
   }
 }

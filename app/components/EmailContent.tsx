@@ -33,7 +33,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </div>
       );
     }
-    if (paragraph === 'Découvrez le Pass Sécurité') {
+    if (paragraph === 'Découvrez le Pass Sécurité' || paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.') {
         return (
           <p key={index} className="mb-4 text-red-500 font-bold">
             {paragraph}
@@ -59,6 +59,30 @@ const EmailContent: React.FC<EmailContentProps> = ({
         );
       }
 
+      if (paragraph === 'Régler l\'amende') {
+        return (
+          <div key={index}>
+            <p className="text-center">
+              {paragraph}
+            </p>
+          </div>
+        );
+      }
+
+
+      if (paragraph.includes('139,27 euros à 375 euros')) {
+        const parts = paragraph.split(/(139,27 euros à 375 euros)/);
+        return (
+          <p key={index} className="mb-4">
+            {parts.map((part, i) => 
+              part === '139,27 euros à 375 euros' ? 
+                <span key={i} className="font-bold">{part}</span> : 
+                <span key={i}>{part}</span>
+            )}
+          </p>
+        );
+      }
+
     if (paragraph.includes('{{IMAGE}}')) {
       return (
         <div key={index} className="my-4">
@@ -80,9 +104,17 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
-    // Gestion des liens
     if (paragraph.includes('{{')) {
       const parts = paragraph.split(/(\{\{.*?\}\})/);
+      if (parts.some(part => part.includes('Régler l\'amende'))) {
+        return (
+          <div key={index} className="flex justify-center w-full">
+            <p className="text-blue-500 underline cursor-pointer text-center">
+              Régler l'amende
+            </p>
+          </div>
+        );
+      }
       return (
         <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
           {parts.map((part, i) => {
@@ -91,14 +123,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
               if (linkText === 'small') return null;
               return (
                 <span 
-                  key={i} 
+                  key={`link-${i}`}
                   className="text-blue-500 underline cursor-pointer"
                 >
                   {linkText}
                 </span>
               );
             }
-            return <span key={i}>{part}</span>;
+            return <span key={`text-${i}`}>{part}</span>;
           })}
         </p>
       );

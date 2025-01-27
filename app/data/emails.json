@@ -148,6 +148,18 @@
       "imageHeight": 30,
       "time": "10:31",
       "questionId": "notion-research"
+    },
+    {
+      "id": "amende-stationnement",
+      "name": "Olina Lu",
+      "sender": "olina.lu@education.nsw.gov.au",
+      "subject": "451-ANT-G762 | Rappel de votre PV en ligne N°:8627982",
+      "preview": "Nous devons mentionner qu'une contravention pour stationnement inapproprié a été enregistrée",
+      "content": "Bonjour,\n\nNous devons mentionner qu'une contravention pour stationnement inapproprié a été enregistrée dans votre dossier par l'Agence Nationale de Gestion des Infractions (ANTAI), à compter du 27 décembre, votre contravention passera de 139,27 euros à 375 euros.\n\nNous vous prions de bien vouloir accéder au site sécurisé indiqué ci-après pour compléter votre procès-verbal.\n\n{{Régler l'amende}}\n\n\n\nGrâce à une mise à jour et une synchronisation automatiques, vous améliorerez l'accès à vos factures, ce qui allégera leur gestion et leur traitement.\n\nLe non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d'autres sanctions possibles.\n\nSelon l'article R417-10, III, 1°, le fait de stationner un véhicule devant les entrées carrossables des bâtiments voisins est considéré comme inapproprié, que l'on soit locataire ou propriétaire du garage concerné.\n\nCordialement.",
+      "time": "13:35",
+      "questionId": "amende-stationnement",
+      "contentAlignment": "center"
     }
   ]
 } 
+
