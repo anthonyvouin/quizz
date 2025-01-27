@@ -41,6 +41,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Air France : il ne finit pas par airfrance mais gov65816.com.\n• Le texte \"Ce mail a été certifié par Google\" a été rajouté dans le mail et non par Google.",
       "isCorrect": false,
       "whatToDo": "• En cas de doute, accède directement à la plateforme via leur site officiel et accède à ton compte.\n• Contacte le support officiel.\n• Ne clique jamais sur un lien sur ce type de mail.\n• Supprime ce mail"
+    },
+    "arthur-duroy": {
+      "question": "Je n'ai engagé aucun prestataire du nom de Arthur, dois-je ouvrir la facture en pièce jointe ?",
+      "explanation": "- Si tu ne connais pas la personne, il n'y a pas de raison de télécharger la facture.\n- Le mail joue sur le sentiment d'urgence, fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.\n- L'heure d'envoi est suspecte.",
+      "whatToDo": "- Ne télécharge jamais de pièce jointe dont tu n'es pas sûr de l'origine.",
+      "isCorrect": false
     }
   }
 }

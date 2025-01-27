@@ -54,7 +54,7 @@
       "name": "Gendarmerie Nationale",
       "sender": "cdebolle010@gmail.com",
       "subject": "CONVOCATION EN JUSTICE",
-      "preview": "Convention de stage - VOUIN Anthony - Bonjour Monsieur Bour, Veuillez trouver ci-joint la convention de st...",
+      "preview": "Prévisualisation de la pièce jointe",
       "content": "{{IMAGE}}",
       "image": "/gendarmerie.png",
       "imageWidth": 150,
@@ -90,6 +90,21 @@
       "imageAlignment": "center",
       "time": "11:33",
       "questionId": "airfrance-annulation"
+    },
+    {
+      "id": "arthur-duroy",
+      "name": "Arthur Duroy",
+      "sender": "arthurduroy64@gmail.com",
+      "subject": "FACTURE À RÉGLER",
+      "preview": "Bonjour Christine, Ceci est le dernier rappel avant que je n'envisage des poursuites.",
+      "content": "Bonjour Christine,\n\nCeci est le dernier rappel avant que je n'envisage des poursuites. Je me permets de vous contacter concernant la facture f6446343, émise le 02/01/2024, qui reste à ce jour impayée.\n\nSauf erreur de ma part, son échéance était fixée au 02/02/2024.\n\nBien cordialement,\n\nArthur.",
+      "time": "23:24",
+      "questionId": "arthur-duroy",
+      "attachment": {
+        "name": "f6446343.pdf",
+        "type": "pdf",
+        "icon": "/trombone.png"
+      }
     }
   ]
 } 
