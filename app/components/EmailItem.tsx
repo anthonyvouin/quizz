@@ -15,10 +15,12 @@ export default function EmailItem({
     <div 
       onClick={onClick}
       className={`flex gap-4 px-4 py-2 cursor-pointer hover:shadow-md border-b transition-all duration-200 ${
-        isCompleted ? 'bg-gray-50' : 'bg-white'
+        isCompleted ? 'bg-gray-100 opacity-60' : 'bg-white'
       }`}
     >
-      <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-sm">
+      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 text-sm ${
+        isCompleted ? 'bg-gray-400' : 'bg-blue-500'
+      }`}>
         {name[0]}
       </div>
       <div className="min-w-0 flex-grow">
