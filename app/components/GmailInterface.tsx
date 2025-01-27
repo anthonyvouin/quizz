@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Confetti from 'react-confetti';
 import { Email } from '../types';
+import EmailContent from './EmailContent';
 
 
 
@@ -229,94 +230,6 @@ export default function GmailInterface() {
     };
   }, []);
 
-  const renderEmailContent = (content: string) => {
-    let isSmallText = false;
-
-    return content.split('\n\n').map((paragraph, index) => {
-      if (paragraph.includes('{{small}}')) {
-        isSmallText = true;
-        paragraph = paragraph.replace('{{small}}', '');
-      }
-
-      if (paragraph.includes('{{small}}')) {
-        isSmallText = false;
-        paragraph = paragraph.replace('{{small}}', '');
-      }
-
-      if (paragraph.includes('{{IMAGE}}')) {
-        return selectedEmail?.image ? (
-          <div key={index} className="my-4">
-            {selectedEmail.attachment && (
-              <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
-                <Image 
-                  src={selectedEmail.attachment.icon}
-                  alt="Attachment icon"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
-                <div>
-                  <p className="font-medium text-sm text-gray-900">{selectedEmail.attachment.name}</p>
-                  <p className="text-xs text-gray-500">Cliquez pour ouvrir</p>
-                </div>
-              </div>
-            )}
-            <div className={`flex ${
-              selectedEmail.imageAlignment === 'center' ? 'justify-center' :
-              selectedEmail.imageAlignment === 'right' ? 'justify-end' : 'justify-start'
-            }`}>
-              <Image 
-                src={selectedEmail.image} 
-                alt="Email image"
-                width={selectedEmail.imageWidth || 200}
-                height={selectedEmail.imageHeight || 100}
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        ) : null;
-      }
-
-      if (paragraph.includes('{{')) {
-        const parts = paragraph.split(/(\{\{.*?\}\})/);
-        return (
-          <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
-            {parts.map((part, i) => {
-              if (part.startsWith('{{') && part.endsWith('}}')) {
-                const linkText = part.slice(2, -2);
-                if (linkText === 'small') return null;
-                return (
-                  <span 
-                    key={i} 
-                    className="text-blue-500 underline cursor-pointer"
-                  >
-                    {linkText}
-                  </span>
-                );
-              }
-              return <span key={i}>{part}</span>;
-            })}
-          </p>
-        );
-      }
-
-      // Gérer les listes avec puces
-      if (paragraph.includes('•')) {
-        return (
-          <div key={index} className="mb-4">
-            {paragraph.split('\n').map((line, lineIndex) => (
-              <p key={lineIndex} className={`mb-1 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
-                {line}
-              </p>
-            ))}
-          </div>
-        );
-      }
-
-      return <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>{paragraph}</p>;
-    });
-  };
-
   return (
     <div className="h-screen bg-[#f6f8fc]">
       {showIntro && (
@@ -409,7 +322,6 @@ export default function GmailInterface() {
                     {...email}
                     isCompleted={completedEmails.includes(email.id)}
                     onClick={() => handleEmailClick(email)}
-                    attachment={email.attachment}
                   />
                 ))}
               </div>
@@ -442,9 +354,9 @@ export default function GmailInterface() {
                     </div>
                     <div className="min-w-0">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
-                        <span className="font-semibold truncate">{selectedEmail.sender}</span>
+                        <span className="font-semibold truncate">{selectedEmail.name}</span>
                         <span className="text-xs sm:text-sm text-gray-500 truncate">
-                          &lt;{selectedEmail.sender.toLowerCase().replace(/\s+/g, '.')}&gt;
+                          &lt;{selectedEmail.sender}&gt;
                         </span>
                       </div>
                       <div className="text-sm text-gray-500">à moi</div>
@@ -454,9 +366,14 @@ export default function GmailInterface() {
                 </div>
 
                 <div className="p-6 pb-20 sm:pb-6">
-                  <div className="max-w-3xl">
-                    {renderEmailContent(selectedEmail.content)}
-                  </div>
+                  <EmailContent 
+                    content={selectedEmail.content}
+                    image={selectedEmail.image}
+                    imageWidth={selectedEmail.imageWidth}
+                    imageHeight={selectedEmail.imageHeight}
+                    imageAlignment={selectedEmail.imageAlignment}
+                    attachment={selectedEmail.attachment}
+                  />
                 </div>
               </div>
             </div>

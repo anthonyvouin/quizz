@@ -13,16 +13,17 @@ export interface QuizData {
 
 export interface Email {
   id: string;
+  name: string;
   sender: string;
   subject: string;
   preview: string;
   content: string;
-  time: string;
-  questionId: string;
   image?: string;
   imageWidth?: number;
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
+  time: string;
+  questionId: string;
   attachment?: {
     name: string;
     type: string;
@@ -33,6 +34,7 @@ export interface Email {
 
 export interface EmailItemProps {
   id: string;
+  name: string;
   sender: string;
   subject: string;
   preview: string;

@@ -2,6 +2,7 @@
   "emails": [
     {
       "id": "hostinger-facture",
+      "name": "Hostinger",
       "sender": "contact-hostinger@svnhgklsfh.de",
       "subject": "Suspension de services en raison d'une facture en attente",
       "preview": "Malgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.",
@@ -9,12 +10,12 @@
       "image": "/hostinger.png",
       "imageWidth": 400,
       "imageHeight": 200,
-      "imageAlignment": "center",
       "time": "11:26",
       "questionId": "hostinger-security"
     },
     {
       "id": "urssaf-message",
+      "name": "URSSAF",
       "sender": "dcl.normandie@urssaf.fr",
       "subject": "Message de votre Urssaf",
       "preview": "autoentrepreneur.urssaf.fr/portail/accueil.html Cordialement. Merci de ne pas r&eacute;pondre &agrave",
@@ -27,15 +28,17 @@
     },
     {
       "id": "bug-comptabilite",
+      "name": "Alfredo Brien",
       "sender": "alfredobrien14@gmail.com",
       "subject": "Re:prestation",
       "preview": "Suite à un bug informatique survenu sur notre logiciel de comptabilité",
-      "content": "Bonjour madame,\n\nJ'espère que vous allez bien.\n\nSuite à un bug informatique survenu sur notre logiciel de comptabilité, 2600 euros ont été virés sur votre compte bancaire par erreur au lieu de 600 euros. Notre comptable vient de s'en rendre compte car les 2600 euros étaient la facture qu'on devrait envoyer à notre gestionnaire de communauté. Nos avoirs étant déjà débité, je suis tout confus !\n\nJe vous présente mes sincères excuses.\n\nPour nous aider, vous allez posséder à l'ajout de notre RIB dans vos bénéficiaires afin de nous effectuée un virement de la différence après réception des2600€.\n\nDans l'attente de vos lire.\n\nTrès sincèrement",
+      "content": "Bonjour madame,\n\nJ'espère que vous allez bien.\n\nSuite à un bug informatique survenu sur notre logiciel de comptabilité, 2600 euros ont été virés sur votre compte bancaire par erreur au lieu de 600 euros.\n\n Notre comptable vient de s'en rendre compte car les 2600 euros étaient la facture qu'on devrait envoyer à notre gestionnaire de communauté. Nos avoirs étant déjà débité, je suis tout confus !\n\nJe vous présente mes sincères excuses.\n\nPour nous aider, vous allez posséder à l'ajout de notre RIB dans vos bénéficiaires afin de nous effectuée un virement de la différence après réception des 2600€.\n\nDans l'attente de vos lire.\n\nTrès sincèrement",
       "time": "9:41",
       "questionId": "bug-comptabilite"
     },
     {
       "id": "max-piccinini",
+      "name": "Max Piccinini",
       "sender": "contact@maxpiccinini.com",
       "subject": "Êtes-vous intéressé par une session stratégique offerte Christine ?",
       "preview": "Ici la Team Max Piccinini. Êtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?",
@@ -48,6 +51,7 @@
     },
     {
       "id": "gendarmerie-convocation",
+      "name": "Gendarmerie Nationale",
       "sender": "cdebolle010@gmail.com",
       "subject": "CONVOCATION EN JUSTICE",
       "preview": "Convention de stage - VOUIN Anthony - Bonjour Monsieur Bour, Veuillez trouver ci-joint la convention de st...",
@@ -65,6 +69,7 @@
     },
     {
       "id": "amazon-security",
+      "name": "Amazon",
       "sender": "support-client@amazon-verification.net",
       "subject": "Votre compte Amazon a été bloqué pour des raisons de sécurité",
       "preview": "Nous avons détecté des connexions inhabituelles sur votre compte. Veuillez vérifier vos informations pour réactiver votre compte",
@@ -74,12 +79,13 @@
     },
     {
       "id": "airfrance-annulation",
+      "name": "Air France",
       "sender": "suport@airfrance.gov65816.com",
       "subject": "Annulation de votre vol",
       "preview": "Madame, Monsieur, Nous vous informons que votre vol a été annulé.",
       "content": "Ce mail a été certifié par Google\n\n{{IMAGE}}\n\nMadame, Monsieur,\n\nNous vous informons que votre vol N°545b36 a été annulé.\n\nNous sommes désolés des désagréments liés à cet aléa.\n\nPour vous faire rembourser ou échanger votre vol, veuillez compléter ce formulaire sur votre profil {{Cliquer ici}}\n\nAir France",
       "image": "/airfrance.png",
-      "imageWidth": 400,
+      "imageWidth": 200,
       "imageHeight": 100,
       "imageAlignment": "center",
       "time": "11:33",
