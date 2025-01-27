@@ -174,6 +174,21 @@
       "imageHeight": 50,
       "time": "20:05",
       "questionId": "sncf-suppression"
+    },
+    {
+      "id": "impots-remboursement",
+      "name": "Service Remboursements",
+      "sender": "ifo@impotgov.ccsend.com",
+      "subject": "Validation requise : remboursement en attente",
+      "preview": "Madame, Monsieur, Nous vous informons qu'un remboursement est en attente de validation dans nos systèmes.",
+      "content": "{{IMAGE}}\n\nMadame, Monsieur,\n\nNous vous informons qu'un remboursement est en attente de validation dans nos systèmes.\n\nDétails de l'opération :\n• Montant : 358,40 EUR\n• Référence : N°3520-SD\n\nPour finaliser cette procédure, nous vous invitons à compléter le formulaire en ligne avant le 25 janvier 2025.\n\nVous pouvez accéder aux instructions et au formulaire via le lien suivant :\n{{https://urls.fr/GT9KPV}}\n\nNous attirons votre attention sur le fait qu'un retard de traitement pourrait survenir si certaines informations sont manquantes ou incorrectes.\n\nPour toute information complémentaire, n'hésitez pas à nous contacter. Nous restons à votre disposition pour vous accompagner dans cette démarche.\n\nCordialement,\nL'équipe de gestion des remboursements\n\n{{small}}Équipe de Livraison | 6715 Rookery Lake Dr | Bradenton, FL 34212 US\n\nUnsubscribe | Update Profile | Constant Contact Data Notice{{small}}",
+      "image": "/impots.png",
+      "imageWidth": 200,
+      "imageHeight": 100,
+      "time": "00:20",
+      "contentAlignment": "center",
+      "imageAlignment": "left",
+      "questionId": "impots-remboursement"
     }
   ]
 } 

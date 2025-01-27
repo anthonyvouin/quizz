@@ -77,6 +77,12 @@
       "explanation": "• Le mail d'expéditeur correspond bien à la SNCF.\n\n• Le mail ne demande pas d'informations sensibles et renvoie vers les canaux officiels (SNCF Connect ou agence agréée).\n\n• Les alternatives proposées sont cohérentes avec les pratiques habituelles de la SNCF en cas de suppression de train.",
       "isCorrect": true,
       "whatToDo": "• Suivre les alternatives proposées pour changer son billet.\n\n• En cas de doute, accéder directement à la plateforme via leur site officiel ou leur application officielle."
+    },
+    "impots-remboursement": {
+      "question": "Dois-je me faire rembourser en accédant au lien ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel des impôts français.\n\n• L'adresse de la société est indiquée aux USA, inutile de préciser que les impôts français ne sont pas hébergés là-bas.\n\n• L'horaire d'envoi est suspecte.",
+      "isCorrect": false,
+      "whatToDo": "• En cas de doute, accède directement à la plateforme des impôts via leur site officiel.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
     }
   }
 }

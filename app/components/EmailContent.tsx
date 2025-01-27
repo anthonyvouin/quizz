@@ -33,6 +33,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </div>
       );
     }
+    
     if (paragraph === 'Découvrez le Pass Sécurité' || paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.') {
         return (
           <p key={index} className="mb-4 text-red-500 font-bold">
@@ -40,6 +41,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
           </p>
         );
       }
+
       if (paragraph === 'Cliquez ici pour activer ce service') {
         return (
           <div key={index}>
