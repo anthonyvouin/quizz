@@ -105,7 +105,7 @@
     "hostinger-password": {
       "question": "Je viens de modifier mon mot de passe, puis-je cliquer sur le lien du mail ?",
       "isCorrect": true,
-      "explanation": "• Le mail d'expéditeur correspond bien à Hostinger.\n\n• Si tu viens de changé ton mot de passe, il est normal de recevoir ce mail.\n\n• Tu es libre de te reconnecter à Hostinger.\n\n• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel.",
+      "explanation": "• Le mail d'expéditeur correspond bien à Hostinger.\n\n• Si tu viens de changé ton mot de passe, il est normal de recevoir ce mail.",
       "whatToDo": "• Tu peux cliquer sur le lien pour te connecter.\n\n• En cas de doute, tu peux aussi te rendre directement sur le site de Hostinger."
     } 
   }

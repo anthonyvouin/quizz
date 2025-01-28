@@ -130,23 +130,32 @@ const EmailContent: React.FC<EmailContentProps> = ({
       }
 
     if (paragraph.includes('{{IMAGE}}')) {
+      const isHostingerEmail = content.includes('Votre mot de passe a été modifié avec succès');
       return (
-        <div key={index} className="my-4">
+        <div key={index} className={`my-4 flex flex-col md:flex-row items-center ${
+          imageAlignment === 'center' ? 'justify-center' :
+          imageAlignment === 'right' ? 'justify-end' : 'justify-start'
+        }`}>
           {image && (
-            <div className={`flex ${
-              imageAlignment === 'center' ? 'justify-center' :
-              imageAlignment === 'right' ? 'justify-end' : 'justify-start'
-            }`}>
-              <Image 
-                src={image} 
-                alt="Email image"
-                width={imageWidth}
-                height={imageHeight}
-                className="rounded-lg"
-              />
-            </div>
+            <Image 
+              src={image} 
+              alt="Email image"
+              width={imageWidth}
+              height={imageHeight}
+              className="rounded-lg"
+            />
           )}
+          {isHostingerEmail && <span className="text-[#673DE6] font-semibold mt-4 ml-4 md:mt-0 md:ml-80">Trois. Deux. En ligne</span>}
         </div>
+      );
+    }
+
+    if (paragraph === 'Trois. Deux. En ligne') {
+      const isHostingerEmail = content.includes('Votre mot de passe a été modifié avec succès');
+      return isHostingerEmail ? null : (
+        <p key={index} className="text-[#673DE6] mb-4 font-semibold">
+          {paragraph}
+        </p>
       );
     }
 
@@ -264,6 +273,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </div>
       );
     }
+
+
 
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
