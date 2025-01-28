@@ -365,7 +365,7 @@ export default function GmailInterface() {
                   <span className="text-xs sm:text-sm text-gray-500 ml-2 whitespace-nowrap">{selectedEmail.time}</span>
                 </div>
 
-                <div className="p-6 pb-20 sm:pb-6" style={{ backgroundColor: selectedEmail.containerBackgroundColor || 'white' }}>
+                <div className="p-6 pb-20 sm:pb-6 h-full" style={{ backgroundColor: selectedEmail.containerBackgroundColor || 'white' }}>
                   <EmailContent 
                     content={selectedEmail.content}
                     image={selectedEmail.image}

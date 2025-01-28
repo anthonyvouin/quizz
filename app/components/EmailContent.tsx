@@ -15,6 +15,7 @@ interface EmailContentProps {
   };
 }
 
+// Composant qui gère l'affichage du contenu des emails avec différents styles et formatages
 const EmailContent: React.FC<EmailContentProps> = ({
   content,
   image,
@@ -25,7 +26,10 @@ const EmailContent: React.FC<EmailContentProps> = ({
   backgroundColor,
   attachment
 }) => {
+
+  // Fonction qui gère le rendu de chaque paragraphe selon son contenu
   const renderParagraph = (paragraph: string, index: number, isSmallText: boolean) => {
+    // Style spécial pour le message de certification Google (fond vert)
     if (paragraph === 'Ce mail a été certifié par Google') {
       return (
         <div key={index}>
@@ -36,11 +40,24 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
     
-    if (paragraph === 'Découvrez le Pass Sécurité' || paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.') {
+    // Style pour les messages d'alerte (texte rouge en gras)
+    if (paragraph === 'Découvrez le Pass Sécurité' ||
+       paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.' 
+      || paragraph === 'Des frais de livraison peuvent s\'appliquer') {
         return (
           <p key={index} className="mb-4 text-red-500 font-bold">
             {paragraph}
           </p>
+        );
+      }
+
+      if (paragraph === 'Planifier La Livraison Maintenant') {
+        return (
+          <div key={index}>
+            <p className="mb-4  bg-red-500 text-white p-3 rounded-md text-center max-w-md mx-auto cursor-pointer  ">
+              {paragraph}
+            </p>
+          </div>
         );
       }
 
@@ -53,6 +70,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
           </div>
         );
       }
+
+      // Style pour le bouton de sondage (fond cyan)
       if (paragraph === 'Répondre au sondage') {
         return (
           <div key={index}>
@@ -63,7 +82,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
         );
       }
 
-      if (paragraph === 'Régler l\'amende') {
+      // Style pour le bouton de règlement d'amende (centré)
+      if (paragraph === 'Régler l\'amende' ) {
         return (
           <div key={index}>
             <p className="text-center">
@@ -73,13 +93,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
         );
       }
 
-
-      if (paragraph.includes('139,27 euros à 375 euros')) {
-        const parts = paragraph.split(/(139,27 euros à 375 euros)/);
+      // Style spécial pour les montants d'amende (texte en gras)
+      if (paragraph.includes('139,27 euros à 375 euros' ) || paragraph.includes('LIVRAISON DU COLIS SUSPENDU !')) {
+        const pattern = paragraph.includes('139,27 euros à 375 euros') ? /(139,27 euros à 375 euros)/ : /(LIVRAISON DU COLIS SUSPENDU !)/;
+        const parts = paragraph.split(pattern);
         return (
           <p key={index} className="mb-4">
             {parts.map((part, i) => 
-              part === '139,27 euros à 375 euros' ? 
+              part === '139,27 euros à 375 euros' || part === 'LIVRAISON DU COLIS SUSPENDU !' ? 
                 <span key={i} className="font-bold">{part}</span> : 
                 <span key={i}>{part}</span>
             )}
@@ -159,10 +180,12 @@ const EmailContent: React.FC<EmailContentProps> = ({
     );
   };
 
+  // Fonction principale qui gère le rendu de tout le contenu de l'email
   const renderContent = () => {
     let isSmallText = false;
     const contentElements = (
       <>
+        {/* Affichage de la pièce jointe si elle existe */}
         {attachment && (
           <div key="attachment">
             <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
@@ -180,7 +203,10 @@ const EmailContent: React.FC<EmailContentProps> = ({
             </div>
           </div>
         )}
+
+        {/* Traitement du contenu principal de l'email */}
         {content.split('\n\n').map((paragraph, index) => {
+          // Gestion du texte en petit format avec les balises {{small}}
           if (paragraph.includes('{{small}}')) {
             isSmallText = true;
             paragraph = paragraph.replace('{{small}}', '');
@@ -194,10 +220,10 @@ const EmailContent: React.FC<EmailContentProps> = ({
       </>
     );
 
-    // Si une couleur de fond est définie, on wrap le contenu
+    // Application d'une couleur de fond si spécifiée
     if (backgroundColor) {
       return (
-        <div style={{ backgroundColor }} className="p-6 rounded-lg">
+        <div style={{ backgroundColor }} className="p-6 rounded-lg h-full">
           {contentElements}
         </div>
       );
@@ -206,6 +232,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
     return contentElements;
   };
 
+  // Rendu final avec gestion de l'alignement du contenu
   return (
     <div className={`max-w-3xl ${contentAlignment === 'center' ? 'lg:ml-[calc(50%-540px)]' : ''}`}>
       {renderContent()}

@@ -83,6 +83,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel des impôts français.\n\n• L'adresse de la société est indiquée aux USA, inutile de préciser que les impôts français ne sont pas hébergés là-bas.\n\n• L'horaire d'envoi est suspecte.",
       "isCorrect": false,
       "whatToDo": "• En cas de doute, accède directement à la plateforme des impôts via leur site officiel.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
+    },
+    "dhl-security": {
+      "question": "J'attends un colis, dois-je replanifier ma livraison sur le lien indiqué ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de DHL malgré la mention \"envoyé par DHL\" tout le monde peut afficher cette mention.\n\n• Le logo de l'entreprise n'est pas le bon.\n\n• Le mail joue sur le sentiment d'urgence. Même si tu attends un colis cela peut être une coïncidence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
+      "whatToDo": "• Attends un peu ? Si oui vérifie si le code suivi correspond, puis consulte la plateforme officiel de DHL.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail.",
+      "isCorrect": false
     }
   }
 }

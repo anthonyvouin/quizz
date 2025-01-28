@@ -6,7 +6,7 @@
       "sender": "contact-hostinger@svnhgklsfh.de",
       "subject": "Suspension de services en raison d'une facture en attente",
       "preview": "Malgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.",
-      "content": "Cher client Christine Coaching,\n\nMalgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.\n\nNous vous rappelons que cette facture est rattachée à ces services :\n\n• Nom de domaine : christine-coaching.com\n• Adresse mail : contact@christine-coaching.com\n\nConformément à nos termes contractuels, nous avons procédé à la suspension des prestations mentionnées ci-dessus.\n\nLa régularisation de votre facture entraînera le déblocage de vos services sous quelques heures. Vous pourrez régler cette dernière en cliquant sur le lien suivant :\n\n{{[Régler votre facture]}}\n\nSans paiement de votre part sous trois (3) jours à compter de la réception de cet e-mail, vos services seront définitivement suspendus.\n\nNous restons à votre disposition pour tout complément d'information.\n\nL'équipe Hostinger\n\nPour obtenir de l'aide : retrouvez toutes nos solutions en ligne sur notre Centre d'aide : {{https://help.hostinger.fr}}{{IMAGE}}",
+      "content": "Cher client Christine Coaching,\n\nMalgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.\n\nNous vous rappelons que cette facture est rattachée à ces services :\n\n• Nom de domaine : christine-coaching.com\n• Adresse mail : contact@christine-coaching.com\n\nConformément à nos termes contractuels, nous avons procédé à la suspension des prestations mentionnées ci-dessus.\n\nLa régularisation de votre facture entraînera le déblocage de vos services sous quelques heures. Vous pourrez régler cette dernière en cliquant sur le lien suivant :\n\n{{Régler votre facture}}\n\nSans paiement de votre part sous trois (3) jours à compter de la réception de cet e-mail, vos services seront définitivement suspendus.\n\nNous restons à votre disposition pour tout complément d'information.\n\nL'équipe Hostinger\n\nPour obtenir de l'aide : retrouvez toutes nos solutions en ligne sur notre Centre d'aide : {{https://help.hostinger.fr}}{{IMAGE}}",
       "image": "/hostinger.png",
       "imageWidth": 400,
       "imageHeight": 200,
@@ -191,6 +191,23 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f3f4f6",
       "questionId": "impots-remboursement"
+    },
+    {
+      "id": "dhl-livraison",
+      "name": "DHL",
+      "sender": "edu@kqfk.m3.sdd.org.pl",
+      "subject": "Vous avez (1) colis en attente de livraison",
+      "preview": "=== DHL === LIVRAISON DU COLIS SUSPENDU ! Statut : Arrêté au centre de distribution (frais de douane impayés)",
+      "content": "{{IMAGE}}\n\nLIVRAISON DU COLIS SUSPENDU !\n\nStatut : Arrêté au centre de distribution (frais de douane impayés)\n\nDes frais de livraison peuvent s'appliquer\n\nVotre code de suivi :\n\n58381253\n\nPlanifier La Livraison Maintenant\n\nSi vous ne souhaitez plus recevoir ces e-mails,\nvous pouvez vous désabonner en cliquant",
+      "image": "/dhl.png",
+      "imageWidth": 200,
+      "imageHeight": 100,
+      "time": "18:11",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#ffeb3b",
+      "questionId": "dhl-security"
     }
   ]
 } 
