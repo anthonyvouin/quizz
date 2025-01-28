@@ -119,6 +119,13 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de LinkedIn : en effet il contient un l au lieu du i. D'autant plus le nom de domaine que LinkedIn utilise pour communiquer finit par .com.",
       "isCorrect": false,
       "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• En cas de doute, vérifie sur ton compte LinkedIn directement via leur plateforme.\n\n• Supprime ce mail."
+    },
+    "linkedin-security": {
+      "question": "Je viens de me reconnecter sur LinkedIn, est-ce un mail normal ?",
+      "answer": "Mail sûr",
+      "explanation": "• Le mail d'expéditeur correspond bien à LinkedIn.",
+      "isCorrect": true,
+      "whatToDo": "• Si c'est toi qui t'es connecté à ton compte, tu n'as rien à faire.\n\n• Si ce n'est pas toi, tu dois changer ton mot de passe LinkedIn."
     }
   }
 }
