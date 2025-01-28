@@ -101,6 +101,12 @@
       "isCorrect": false,
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de Shein : il finit par @gmail.com et non par @shein.com\n\n• Le logo de l'entreprise n'est pas le bon\n\n• Si tu n'as jamais donné ton mail à Shein, ils ne sont pas sensés l'avoir.",
       "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
-    }
+    },
+    "hostinger-password": {
+      "question": "Je viens de modifier mon mot de passe, puis-je cliquer sur le lien du mail ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à Hostinger.\n\n• Si tu viens de changé ton mot de passe, il est normal de recevoir ce mail.\n\n• Tu es libre de te reconnecter à Hostinger.\n\n• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel.",
+      "whatToDo": "• Tu peux cliquer sur le lien pour te connecter.\n\n• En cas de doute, tu peux aussi te rendre directement sur le site de Hostinger."
+    } 
   }
 }

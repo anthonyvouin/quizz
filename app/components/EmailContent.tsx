@@ -219,6 +219,24 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.includes('Se connecter')) {
+      return (
+        <p key={index} className="bg-[#673DE6] text-white p-3 mb-4 rounded-md cursor-pointer inline-block">
+          {paragraph}
+        </p>
+      );
+    }
+
+    if (paragraph.includes('Votre mot de passe a été modifié avec succès')) {
+      return (
+        <p key={index} className="font-bold text-2xl mb-4 text-[#673DE6]">
+          {paragraph}
+        </p>
+      );
+    }
+
+
+
     if (paragraph.includes('Cliquez ici pour répondre')) {
       return (
         <p key={index} className="text-center my-4 max-w-2xl mx-auto font-medium">
