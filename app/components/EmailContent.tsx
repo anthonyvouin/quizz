@@ -295,6 +295,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.startsWith('#Christine')) {
+      return (
+        <p key={index} className="text-2xl font-semibold text-center mb-4">
+          {paragraph.replace('#', '')}
+        </p>
+      );
+    }
+
   
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
