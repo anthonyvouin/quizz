@@ -89,6 +89,12 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de DHL malgré la mention \"envoyé par DHL\" tout le monde peut afficher cette mention.\n\n• Le logo de l'entreprise n'est pas le bon.\n\n• Le mail joue sur le sentiment d'urgence. Même si tu attends un colis cela peut être une coïncidence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
       "whatToDo": "• Attends un peu ? Si oui vérifie si le code suivi correspond, puis consulte la plateforme officiel de DHL.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail.",
       "isCorrect": false
+    },
+    "anna-facture": {
+      "question": "J'ai acheté une prestation réalisée par Anna, puis-je télécharger la facture en pièce jointe ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à Anna.\n\n• Si tu attends une facture d'Anna suite à une prestation, tout est normal.",
+      "whatToDo": "• Tu peux télécharger la pièce jointe."
     }
   }
 }

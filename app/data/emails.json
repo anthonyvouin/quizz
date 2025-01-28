@@ -209,6 +209,26 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#ffeb3b",
       "questionId": "dhl-security"
+    },
+    {
+      "id": "anna-facture",
+      "name": "Anna Giraud",
+      "sender": "bonjour@annagiraud.fr",
+      "subject": "Facture configuration",
+      "preview": "Bonjour Christine, voici la facture pour la configuration du tunnel de vente.",
+      "content": "Bonjour Christine,\n\nVoici la facture pour la configuration du tunnel de vente.\n\nBonne journée\n\n--\n{{IMAGE}}\nAnna Giraud\nFreelance\nWeb designer\n\n{{small}}",
+      "image": "/anna.png",
+      "imageWidth": 400,
+      "imageHeight": 200,
+      "time": "15:10",
+      "contentAlignment": "left",
+      "imageAlignment": "left",
+      "attachment": {
+        "name": "F-202501—02.pdf",
+        "type": "pdf",
+        "icon": "/trombone.png"
+      },
+      "questionId": "anna-facture"
     }
   ]
 } 
