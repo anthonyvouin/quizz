@@ -113,7 +113,12 @@
       "explanation": "• Le mail d'expéditeur correspond bien à Boulanger : @email.boulanger.com\n\n• Le design et le contenu sont cohérents avec une campagne de soldes légitime.\n\n• Les dates correspondent aux périodes officielles des soldes.",
       "isCorrect": true,
       "whatToDo": "• Tu peux cliquer sur le lien pour accéder aux soldes.\n\n• En cas de doute, tu peux aussi te rendre directement sur le site de Boulanger."
+    },
+    "linkedin-email": {
+      "question": "Je ne suis pas à l'origine du changement de mail, dois-je cliquer sur le lien pour contredire l'action ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de LinkedIn : en effet il contient un l au lieu du i. D'autant plus le nom de domaine que LinkedIn utilise pour communiquer finit par .com.",
+      "isCorrect": false,
+      "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• En cas de doute, vérifie sur ton compte LinkedIn directement via leur plateforme.\n\n• Supprime ce mail."
     }
- 
   }
 }

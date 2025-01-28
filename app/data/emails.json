@@ -280,6 +280,24 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f5f5f5",
       "questionId": "boulanger-soldes"
+    },
+    {
+      "id": "linkedin-email",
+      "name": "LinkedIn",
+      "sender": "support@linkedin.fr",
+      "subject": "Ajout d'une nouvelle adresse e-mail",
+      "preview": "Confirmer la nouvelle adresse mail de votre compte.",
+      "content": "{{IMAGE}}\n\nBonjour Christine,\n\nVous avez ajouté une nouvelle adresse e-mail à votre compte LinkedIn.\n\nPour confirmer cette adresse veuillez cliquer sur {{ce lien}} ou le coller dans votre navigateur :\n\n{{https://www.linkedin.com/psettings/sign-in-and-security}}\n\nNous vous demanderons ensuite de vous identifier. Assurez-vous d'utiliser l'adresse e-mail sur laquelle vous souhaitez recevoir les messages, les invitations et les demandes.\n\nMerci d'utiliser LinkedIn !\n\nL'équipe LinkedIn\n\nSi vous n'êtes pas à l'origine de ce changement, veuillez cliquer sur {{ce lien}}{{small}}",
+      "image": "/linkedin.png",
+      "imageWidth": 200,
+      "imageHeight": 100,
+      "time": "09:27",
+      "contentAlignment": "center",
+
+      "imageAlignment": "left",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f5f5f5",
+      "questionId": "linkedin-email"
     }
   ]
 } 

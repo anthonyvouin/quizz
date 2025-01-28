@@ -203,7 +203,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
-    if (paragraph.includes('Nous sommes à l\'écoute !' ) || paragraph.includes('Christine')) {
+    if (paragraph.includes('Nous sommes à l\'écoute !' ) ) {
       return (
         <h1 key={index} className="text-2xl font-bold text-center my-6">
           {paragraph}
