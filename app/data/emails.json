@@ -229,6 +229,22 @@
         "icon": "/trombone.png"
       },
       "questionId": "anna-facture"
+    },
+    {
+      "id": "shein-box",
+      "name": "SheIn",
+      "sender": "ccfclob@gmail.com",
+      "subject": "Re: box",
+      "preview": "Les commentaires des clients nous ont toujours aidés à améliorer l'expérience SHEIN.",
+      "content": "{{IMAGE}}\n\nNous sommes à l'écoute !\n\nLes commentaires des clients nous ont toujours\naidés à améliorer l'expérience SHEIN.\n\nCliquez ici pour répondre à un sondage rapide\nde 2 minutes et recevoir un prix fantastique.\nDites-nous ce que vous pensez vraiment !\n\nCe prix fantastique peut être le vôtre !\n\nSHEIN Boîte mystère\n\nCOMMENCEZ C'EST GRATUIT !\n\n{{small}} {{Désabonnez-vous ici}} \n\n Click {{Here}} to remove yourself from our email list{{small}}",
+      "image": "/shein.jpg",
+      "imageWidth": 400,
+      "imageHeight": 100,
+      "time": "12:21",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "textAlignment": "center",
+      "questionId": "shein-box"
     }
   ]
 } 

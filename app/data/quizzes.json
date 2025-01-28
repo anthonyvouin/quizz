@@ -95,6 +95,12 @@
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à Anna.\n\n• Si tu attends une facture d'Anna suite à une prestation, tout est normal.",
       "whatToDo": "• Tu peux télécharger la pièce jointe."
+    },
+    "shein-box": {
+      "question": "Dois-je cliquer sur le lien pour gagner ma boîte mystère ?",
+      "isCorrect": false,
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de Shein : il finit par @gmail.com et non par @shein.com\n\n• Le logo de l'entreprise n'est pas le bon\n\n• Si tu n'as jamais donné ton mail à Shein, ils ne sont pas sensés l'avoir.",
+      "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
     }
   }
 }

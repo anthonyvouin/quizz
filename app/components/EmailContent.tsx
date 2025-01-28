@@ -162,7 +162,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
         );
       }
       return (
-        <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
+        <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
           {parts.map((part, i) => {
             if (part.startsWith('{{') && part.endsWith('}}')) {
               const linkText = part.slice(2, -2);
@@ -190,6 +190,59 @@ const EmailContent: React.FC<EmailContentProps> = ({
               {line}
             </p>
           ))}
+        </div>
+      );
+    }
+
+    if (paragraph.includes('Nous sommes à l\'écoute !')) {
+      return (
+        <h1 key={index} className="text-2xl font-bold text-center my-6">
+          {paragraph}
+        </h1>
+      );
+    }
+
+    if (paragraph.includes('SHEIN Boîte mystère')) {
+      return (
+        <h2 key={index} className="text-xl font-semibold text-center my-4">
+          {paragraph}
+        </h2>
+      );
+    }
+
+ 
+    if (paragraph.includes('Les commentaires des clients')) {
+      return (
+        <p key={index} className="text-gray-700 text-center my-4 max-w-2xl mx-auto">
+          {paragraph}
+        </p>
+      );
+    }
+
+    if (paragraph.includes('Cliquez ici pour répondre')) {
+      return (
+        <p key={index} className="text-center my-4 max-w-2xl mx-auto font-medium">
+          {paragraph}
+        </p>
+      );
+    }
+
+    if (paragraph.includes('Désabonnez-vous')) {
+      return (
+        <div key={index} className="mt-8 pt-4 border-t border-gray-200 flex flex-col items-center">
+          <p className="text-xs text-gray-500 text-center w-full">
+            {paragraph}
+          </p>
+        </div>
+      );
+    }
+
+    if (paragraph.includes('COMMENCEZ C\'EST GRATUIT !')) {
+      return (
+        <div key={index} className="flex justify-center w-full my-6">
+          <button className="bg-black  text-white px-8 py-4 rounded-md text-lg font-medium transition-colors  cursor-pointer text-center">
+            COMMENCEZ C'EST GRATUIT !
+          </button>
         </div>
       );
     }
