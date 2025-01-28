@@ -263,6 +263,23 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f8fafc",
       "questionId": "hostinger-password"
+    },
+    {
+      "id": "boulanger-soldes",
+      "name": "Boulanger",
+      "sender": "boulanger@email.boulanger.com",
+      "subject": "SOLDES : 2ème démarque ⭐",
+      "preview": "Du 8 janvier au 4 février 2025 SOLDES & bons plans",
+      "content": "{{IMAGE}}\n\nChristine,\n\nLes Soldes continuent, et c'est le moment de craquer ! 🛍️\n\nEn profiter",
+      "image": "/boulanger.jpg",
+      "imageWidth": 600,
+      "imageHeight": 300,
+      "time": "13:43",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f5f5f5",
+      "questionId": "boulanger-soldes"
     }
   ]
 } 

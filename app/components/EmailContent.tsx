@@ -203,7 +203,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
-    if (paragraph.includes('Nous sommes à l\'écoute !')) {
+    if (paragraph.includes('Nous sommes à l\'écoute !' ) || paragraph.includes('Christine')) {
       return (
         <h1 key={index} className="text-2xl font-bold text-center my-6">
           {paragraph}
@@ -274,8 +274,28 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.includes('En profiter')) {
+      const isBoulangerEmail = content.includes('Les Soldes continuent');
+      if (isBoulangerEmail) {
+        return (
+          <div key={index} className="flex justify-center w-full my-4">
+            <button className="bg-[#E1000F] text-white px-8 py-3 rounded-full text-lg font-medium cursor-pointer text-center hover:bg-red-700">
+              En profiter
+            </button>
+          </div>
+        );
+      }
+    }
 
+    if (paragraph.includes('Les Soldes continuent')) {
+      return (
+        <div key={index} className="text-center mb-6">
+          <p className="text-lg mb-2">{paragraph}</p>
+        </div>
+      );
+    }
 
+  
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
         {paragraph}

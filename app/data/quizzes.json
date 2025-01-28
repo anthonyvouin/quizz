@@ -107,6 +107,13 @@
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à Hostinger.\n\n• Si tu viens de changé ton mot de passe, il est normal de recevoir ce mail.",
       "whatToDo": "• Tu peux cliquer sur le lien pour te connecter.\n\n• En cas de doute, tu peux aussi te rendre directement sur le site de Hostinger."
-    } 
+    },
+    "boulanger-soldes": {
+      "question": "Dois-je cliquer sur le bouton pour profiter des soldes ?",
+      "explanation": "• Le mail d'expéditeur correspond bien à Boulanger : @email.boulanger.com\n\n• Le design et le contenu sont cohérents avec une campagne de soldes légitime.\n\n• Les dates correspondent aux périodes officielles des soldes.",
+      "isCorrect": true,
+      "whatToDo": "• Tu peux cliquer sur le lien pour accéder aux soldes.\n\n• En cas de doute, tu peux aussi te rendre directement sur le site de Boulanger."
+    }
+ 
   }
 }
