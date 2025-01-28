@@ -7,6 +7,7 @@ interface EmailContentProps {
   imageHeight?: number;
   imageAlignment?: 'left' | 'center' | 'right';
   contentAlignment?: 'left' | 'center' | 'right';
+  textAlignment?: 'left' | 'center' | 'right';
   backgroundColor?: string;
   attachment?: {
     name: string;
@@ -23,6 +24,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
   imageHeight = 100,
   imageAlignment = 'left',
   contentAlignment = 'left',
+  textAlignment = 'left',
   backgroundColor,
   attachment
 }) => {
@@ -43,13 +45,32 @@ const EmailContent: React.FC<EmailContentProps> = ({
     // Style pour les messages d'alerte (texte rouge en gras)
     if (paragraph === 'Découvrez le Pass Sécurité' ||
        paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.' 
-      || paragraph === 'Des frais de livraison peuvent s\'appliquer') {
+   ) {
         return (
           <p key={index} className="mb-4 text-red-500 font-bold">
             {paragraph}
           </p>
         );
       }
+
+      if ( paragraph === 'Des frais de livraison peuvent s\'appliquer') {
+         return (
+           <p key={index} className="mb-4 text-red-500 font-bold text-center">
+             {paragraph}
+           </p>
+         );
+       }
+
+
+       if ( paragraph === 'LIVRAISON DU COLIS SUSPENDU !') {
+        return (
+          <p key={index} className="mb-4 text-center font-bold text-lg">
+            {paragraph}
+          </p>
+        );
+      }
+
+ 
 
       if (paragraph === 'Planifier La Livraison Maintenant') {
         return (
@@ -94,13 +115,13 @@ const EmailContent: React.FC<EmailContentProps> = ({
       }
 
       // Style spécial pour les montants d'amende (texte en gras)
-      if (paragraph.includes('139,27 euros à 375 euros' ) || paragraph.includes('LIVRAISON DU COLIS SUSPENDU !')) {
-        const pattern = paragraph.includes('139,27 euros à 375 euros') ? /(139,27 euros à 375 euros)/ : /(LIVRAISON DU COLIS SUSPENDU !)/;
+      if (paragraph.includes('139,27 euros à 375 euros' ) ) {
+        const pattern = /(139,27 euros à 375 euros)/;
         const parts = paragraph.split(pattern);
         return (
           <p key={index} className="mb-4">
             {parts.map((part, i) => 
-              part === '139,27 euros à 375 euros' || part === 'LIVRAISON DU COLIS SUSPENDU !' ? 
+              part === '139,27 euros à 375 euros'? 
                 <span key={i} className="font-bold">{part}</span> : 
                 <span key={i}>{part}</span>
             )}
@@ -174,7 +195,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
     }
 
     return (
-      <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''}`}>
+      <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
         {paragraph}
       </p>
     );

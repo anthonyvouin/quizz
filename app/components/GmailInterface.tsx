@@ -373,6 +373,7 @@ export default function GmailInterface() {
                     imageHeight={selectedEmail.imageHeight}
                     imageAlignment={selectedEmail.imageAlignment}
                     contentAlignment={selectedEmail.contentAlignment}
+                    textAlignment={selectedEmail.textAlignment}
                     backgroundColor={selectedEmail.backgroundColor}
                     attachment={selectedEmail.attachment}
                   />
