@@ -368,6 +368,24 @@
       "imageAlignment": "center",
       "textAlignment": "center",
       "questionId": "carrefour-cadeau"
+    },
+    {
+      "id": "paypal-transaction",
+      "name": "PayPal",
+      "sender": "support@paypal.com",
+      "subject": "Votre reçu pour un paiement envoyé à Michel",
+      "preview": "Bonjour Christine, Vous avez envoyé un paiement de 45,00 EUR à Michel. Consultez les détails de la transaction dans votre compte",
+      "content": "{{IMAGE}}\n\nBonjour Christine,\n\nVous avez envoyé un paiement de 45,00 EUR à Michel.\n\nVoici les détails de la transaction :\n\nMontant : 45,00 EUR\nDestinataire : Michel\nEmail du destinataire : Michel@gmail.com\nID de la transaction : 1234ABCD5678EFGH\n\nVous pouvez consulter les détails complets de cette transaction dans votre compte PayPal.\n\nSi vous ne reconnaissez pas cette transaction, veuillez signaler un problème immédiatement en vous connectant à votre compte PayPal via le site officiel (www.paypal.com).\n\nMerci d'avoir choisi PayPal pour vos paiements en ligne.\n\nL'équipe PayPal",
+      "time": "14:52",
+      "questionId": "paypal-transaction",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f5f5f5",
+      "image": "/paypal.png",
+      "imageWidth": 100,
+      "imageHeight": 50
     }
 
 
