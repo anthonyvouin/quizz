@@ -324,8 +324,46 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
-  
+    if (paragraph === 'Détails de la transaction') {
       return (
+        <p key={index} className="text-3xl font-bold mb-4 text-center">
+          {paragraph}
+        </p>
+      );
+    }
+
+    if (paragraph === 'Vous me voyez pas l\'argent sur votre compte ?') {
+      return (
+        <p key={index} className="font-bold text-center mt-4 mb-4 text-xl">
+          {paragraph}
+        </p>
+      );
+    }
+
+   
+
+    if (paragraph.includes('Aide et Contact | Sécurité | À propos')) {
+      return (
+        <div key={index} className="mt-8 text-center text-sm text-blue-600 mb-4" >
+          {paragraph.split('|').map((item, i) => (
+            <span key={i}>
+              {i > 0 && <span className="mx-2">|</span>}
+              <a href="#" className="hover:underline">{item.trim()}</a>
+            </span>
+          ))}
+        </div>
+      );
+    }
+
+    if (paragraph.includes('PayPal (Europe)')) {
+      return (
+        <p key={index} className="text-xs text-gray-500 text-center mt-4">
+          {paragraph}
+        </p>
+      );
+    }
+
+    return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
             {paragraph}
       </p>
