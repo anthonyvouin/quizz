@@ -138,6 +138,14 @@
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à la marque d'Audrey",
       "whatToDo": "•  Si tu t’es inscrit à un événement d’Audrey, il est normal de recevoir ses mails. Tu peux rejoindre la masterclass les yeux fermés."
+    },
+    
+      "carrefour-cadeau": {
+        "question": "Puis-je réclamer mon tupperware en cliquant sur le lien ?",
+        "isCorrect": false,
+        "explanation": "• Le mail d’expéditeur n’est pas un mail officiel de Carrefour : il finit par @yu9t.yu9t.nl et non carrefour.fr\n\n• Si tu n'as jamais donné ton mail à Carrefour, ils ne peuvent pas t'envoyer de mail sans ton consentement préalable.",
+        "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
+      }
     }
+
   }
-}
