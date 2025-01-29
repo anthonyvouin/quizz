@@ -315,6 +315,24 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f5f5f5",
       "questionId": "linkedin-security"
+    },
+    {
+      "id": "google-play-annulation",
+      "name": "Google Play",
+      "sender": "googleplay-noreply@google.com",
+      "subject": "Paiement refusé pour l’abonnement à “Google One”",
+      "preview": "Bonjour Christine, La transaction a été refusée. ",
+      "content": "{{IMAGE}}\n\n⚠️ Votre abonnement sera annulé\n\nMETTEZ À JOUR LE MODE DE PAIEMENT\n\nBonjour Christine,\n\nLa transaction a été refusée [OR-PFGVEM-18].\n\n Si vous ne mettez pas à jour votre mode de paiement, vous perdrez tous les avantages qu'offre l'2 TB (Google One), Par exemple :\n\n• Espace de stockage plus important dans Drive, Gmail et Photos\n• Assistance directe de la part des experts Google\n• Avantages réservés aux membres\n\nPour conserver ces avantages et éviter la perte de vos données, vous devez maintenir votre abonnement actif.\nMettez à jour votre mode de paiement IMMÉDIATEMENT ou utilisez-en un autre.\n\n\n\nRÉSUMÉ\n\nMontant dû 9,99 €\n\nDélai de paiement 24h maximum\n\nMETTRE À JOUR LE MODE DE PAIEMENT MAINTENANT\n\nEn savoir plus\n\nMerci,\n\nL'équipe Google Play Support",
+      "image": "/google-play.png",
+
+      "imageWidth": 200,
+      "imageHeight": 100,
+      "time": "14:07",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f5f5f5",
+      "questionId": "google-play-annulation"
     }
   ]
 } 

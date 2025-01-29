@@ -303,10 +303,31 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph === 'METTEZ À JOUR LE MODE DE PAIEMENT' || paragraph === 'METTRE À JOUR LE MODE DE PAIEMENT MAINTENANT') {
+      return (
+        <div key={index} className="flex justify-center w-full mb-4">
+          <button className="bg-[#008374] hover:bg-[#006d61] text-white px-6 py-2.5 rounded text-sm font-medium cursor-pointer transition-colors duration-200">
+            {paragraph}
+          </button>
+        </div>
+      );
+    }
+
+    if (paragraph === '⚠️ Votre abonnement sera annulé') {
+      return (
+        <div key={index} className="w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-gray-100 p-3 flex items-center gap-2 mb-4">
+          <div className="max-w-3xl mx-auto w-full flex items-center gap-2 px-4">
+            <span className="text-yellow-600">⚠️</span>
+            <span className="text-[15px] font-semibold lg:text-lg">Votre abonnement sera annulé</span>
+          </div>
+        </div>
+      );
+    }
+
   
-    return (
+      return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
-        {paragraph}
+            {paragraph}
       </p>
     );
   };
@@ -364,7 +385,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
   };
 
   // Rendu final avec gestion de l'alignement du contenu
-  return (
+    return (
     <div className={`max-w-3xl ${contentAlignment === 'center' ? 'lg:ml-[calc(50%-540px)]' : ''}`}>
       {renderContent()}
     </div>

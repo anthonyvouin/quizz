@@ -126,6 +126,13 @@
       "explanation": "• Le mail d'expéditeur correspond bien à LinkedIn.",
       "isCorrect": true,
       "whatToDo": "• Si c'est toi qui t'es connecté à ton compte, tu n'as rien à faire.\n\n• Si ce n'est pas toi, tu dois changer ton mot de passe LinkedIn."
+    },
+    "google-play-annulation": {
+      "question": "Je possède un compte Google One, dois-je mettre à jour mon mode de paiement via le lien ?",
+      "isCorrect": false,
+      "explanation": "• Le mail d'expéditeur correspond bien à Google.\n\n• Si j'ai un compteGoogle One et que ma carte bleue expire bientôt alors ce type de mail est normal.",
+      "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres mpyens sur le site officiel."
     }
+
   }
 }
