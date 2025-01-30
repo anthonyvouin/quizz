@@ -362,6 +362,35 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </p>
       );
     }
+    if (paragraph.includes('Bonjour Madame, Monsieur')) {
+      return (
+        <p key={index} className="text-2xl font-bold text-yellow-400  mt-4
+        mb-4">
+          {paragraph}
+        </p>
+      );
+    }
+
+    if (paragraph.includes('Répondre au questionnaire >')) {
+      return (
+        <div key={index} className="flex justify-center w-full my-6">
+          <button className="text-xl font-semibold bg-yellow-400 text-white px-8 py-4 rounded-sm hover:bg-yellow-500 cursor-pointer max-w-md">
+            {paragraph}
+          </button>
+        </div>
+      );
+    }
+
+    if (paragraph.includes('Donner votre avis permet d\'améliorer nos services.')) {
+      return (
+        <div key={index} className="flex justify-center w-full my-6">
+          <button className="text-lg font-semibold text-yellow-500 ">
+            {paragraph}
+          </button>
+        </div>
+      );
+    }
+
 
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
