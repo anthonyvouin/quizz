@@ -139,37 +139,35 @@
       "explanation": "• Le mail d'expéditeur correspond bien à la marque d'Audrey",
       "whatToDo": "•  Si tu t’es inscrit à un événement d’Audrey, il est normal de recevoir ses mails. Tu peux rejoindre la masterclass les yeux fermés."
     },
-    
-      "carrefour-cadeau": {
-        "question": "Puis-je réclamer mon tupperware en cliquant sur le lien ?",
-        "isCorrect": false,
-        "explanation": "• Le mail d’expéditeur n’est pas un mail officiel de Carrefour : il finit par @yu9t.yu9t.nl et non carrefour.fr\n\n• Si tu n'as jamais donné ton mail à Carrefour, ils ne peuvent pas t'envoyer de mail sans ton consentement préalable.",
-        "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
-      },
-      
-        "paypal-transaction": {
-          "question": "J'ai effectué un paiement à Michel récemment, est-ce que ce mail me confirme cette transaction ?",
-          "isCorrect": true,
-          "explanation": "• L'adresse email de l'expéditeur correspond à Paypal puisqu'elle se termine par @paypal.com.\n\n• Les détails correspondent à une transaction que vous avez réellement effectuée (vérifiez dans votre compte PayPal si nécessaire)",
-          "whatToDo": "• Si tu reconnais cette transaction, il n'y a rien à faire.\n\n• Si tu ne reconnais pas cette transaction, connecte-toi à ton compte PayPal et contacte le support.\n\n• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
-        },
-        
-          "laposte-satisfaction": {
-            "question": "J'ai reçu un colis récemment, puis-je donner mon avis via le lien ?",
-            "isCorrect": true,
-            "explanation": "• Le mail d'expéditeur correspond bien à La Poste puisqu'il finit par @laposte.info.\n\n• Même s'il n'y a aucune personnalisation : c'est le ton habituel utilisé par La Poste.",
-            "whatToDo": "• Tu es libre de pouvoir donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
-          },
-          
-            "laposte-colissimo": {
-              "question": "J'attends un colis, puis-je suivre mon colis ?",
-              "isCorrect": true,
-              "explanation": "• Le mail d'expéditeur correspond bien à colissimo.\n\n• Le mail n'incite pas à une action urgente mais reste informatif.",
-              "whatToDo": "• Si tu attends un colis, tu es libre de suivre ton colis."
-            }
-          }
-        }
-      
-    
-
-  
+    "carrefour-cadeau": {
+      "question": "Puis-je réclamer mon tupperware en cliquant sur le lien ?",
+      "isCorrect": false,
+      "explanation": "• Le mail d’expéditeur n’est pas un mail officiel de Carrefour : il finit par @yu9t.yu9t.nl et non carrefour.fr\n\n• Si tu n'as jamais donné ton mail à Carrefour, ils ne peuvent pas t'envoyer de mail sans ton consentement préalable.",
+      "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
+    },
+    "paypal-transaction": {
+      "question": "J'ai effectué un paiement à Michel récemment, est-ce que ce mail me confirme cette transaction ?",
+      "isCorrect": true,
+      "explanation": "• L'adresse email de l'expéditeur correspond à Paypal puisqu'elle se termine par @paypal.com.\n\n• Les détails correspondent à une transaction que vous avez réellement effectuée (vérifiez dans votre compte PayPal si nécessaire)",
+      "whatToDo": "• Si tu reconnais cette transaction, il n'y a rien à faire.\n\n• Si tu ne reconnais pas cette transaction, connecte-toi à ton compte PayPal et contacte le support.\n\n• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
+    },
+    "laposte-satisfaction": {
+      "question": "J'ai reçu un colis récemment, puis-je donner mon avis via le lien ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à La Poste puisqu'il finit par @laposte.info.\n\n• Même s'il n'y a aucune personnalisation : c'est le ton habituel utilisé par La Poste.",
+      "whatToDo": "• Tu es libre de pouvoir donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
+    },
+    "laposte-colissimo": {
+      "question": "J'attends un colis, puis-je suivre mon colis ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à colissimo.\n\n• Le mail n'incite pas à une action urgente mais reste informatif.",
+      "whatToDo": "• Si tu attends un colis, tu es libre de suivre ton colis."
+    },
+    "shine-security": {
+      "question": "Ce mail de Shine demandant votre avis est-il sûr ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d’expéditeur correspond bien à Shine.\n\n• Même s’il y a des erreurs sur le logo et l’alignement du texte, ce genre d’erreur est possible même pour une société bancaire.",
+      "whatToDo": "• Si tu as bien un compte Shine, tu es libre de donner ton avis\n\n• Ne donne aucune information bancaire via le lien."
+    }
+  }
+}

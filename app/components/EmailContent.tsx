@@ -391,10 +391,9 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
-
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
-            {paragraph}
+        {paragraph}
       </p>
     );
   };
@@ -402,9 +401,82 @@ const EmailContent: React.FC<EmailContentProps> = ({
   // Fonction principale qui gère le rendu de tout le contenu de l'email
   const renderContent = () => {
     let isSmallText = false;
+
+    // Style spécial pour les emails Shine
+    if (content.includes('L\'équipe Shine')) {
+      return (
+        <div className="bg-white rounded-lg shadow-sm max-w-2xl mx-auto p-8">
+          {/* Logo Shine */}
+          <div className="flex justify-center mb-8">
+            {image && (
+              <Image 
+                src={image}
+                alt="Shine Logo"
+                width={80}
+                height={80}
+                className="rounded-lg"
+              />
+            )}
+          </div>
+
+          {/* Titre principal */}
+          <h1 className="text-xl font-semibold text-center mb-6">
+            Votre avis est précieux, partagez-le 😊
+          </h1>
+
+          {/* Contenu principal */}
+          <div className="space-y-4 text-gray-700">
+            <p>
+              Anna, vous utilisez activement votre compte Shine depuis plusieurs 
+              semaines et votre expérience nous intéresse.
+            </p>
+            <p>
+              Votre avis nous permet d'améliorer continuellement notre produit et nos services.
+            </p>
+            <p className="flex items-center gap-2">
+              <span>👉</span>
+              En 3 questions rapides, dites-nous en plus sur votre utilisation et 
+              vos attentes de Shine.
+            </p>
+          </div>
+
+          {/* Bouton d'action */}
+          <div className="mt-8 mb-8 flex justify-center">
+            <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-500 transition-colors">
+              Je donne mon avis
+            </button>
+          </div>
+
+          {/* Signature */}
+          <p className="text-center mb-8">
+            Merci par avance, nous avons hâte de lire vos retours !
+            <br />
+            <span className="font-medium">L'équipe Shine ✨</span>
+          </p>
+
+          {/* Footer */}
+          <div className="text-xs bg text-gray-500 border-t pt-6">
+            <p className="mb-2">
+              Shine, société par actions simplifiée au capital de 3.010.000 euros 
+              immatriculée au RCS de Paris sous le numéro 828 791 557, exerçant 
+              le rôle d'intermédiaire.
+            </p>
+            <p className="mb-4">
+              Shine, agréée par l'Autorité de Contrôle Prudentiel et de Résolution 
+              (« ACPR ») et régulièrement enregistrée dans le Registre des agents 
+              financiers - www.regafi.fr et sont durablement les agents sous le 
+              numéro 71755
+            </p>
+            <p className="text-center hover:underline cursor-pointer">
+              Se désabonner de la liste
+            </p>
+          </div>
+        </div>
+      );
+    }
+
     const contentElements = (
       <>
-        {/* Affichage de la pièce jointe si elle existe */}
         {attachment && (
           <div key="attachment">
             <div className="mb-4 p-3 bg-gray-50 rounded-lg flex items-center gap-3 max-w-fit cursor-pointer hover:bg-gray-100">
@@ -423,9 +495,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
           </div>
         )}
 
-        {/* Traitement du contenu principal de l'email */}
         {content.split('\n\n').map((paragraph, index) => {
-          // Gestion du texte en petit format avec les balises {{small}}
           if (paragraph.includes('{{small}}')) {
             isSmallText = true;
             paragraph = paragraph.replace('{{small}}', '');
@@ -439,7 +509,6 @@ const EmailContent: React.FC<EmailContentProps> = ({
       </>
     );
 
-    // Application d'une couleur de fond si spécifiée
     if (backgroundColor) {
       return (
         <div style={{ backgroundColor }} className="p-6 rounded-lg h-full">

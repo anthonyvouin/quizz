@@ -45,7 +45,7 @@
       "content": "Bonjour Christine,\n\nIci la Team Max Piccinini.\n\nÊtes-vous toujours intéressé à dépasser les 10K€ de revenus par mois ?\n\nQuelques places viennent de se libérer pour réserver un appel stratégique avec nous, et faire un bilan de votre entreprise.\n\nVoulez-vous profiter de cet appel offert ?\n\nRépondez-nous \"Oui\" à cet email et nous reviendrons vers vous très rapidement !\n\n{{IMAGE}}\n\n{{small}}Max Piccinini\nEntrepreneur & Coach d'Excellence\nAuteur Best-seller du livre \"{{Réussite Maximum}}\"\n\nMax Piccinini Coaching DMCC, Jewellery & Gemplex, DMCC, Jumeirah Lakes Tower, Dubai,Emirats Arabes Unis{{small}}\n\n{{small}}{{Gérer vos préférences}} pour choisir les communications que vous souhaitez recevoir.\n\nSi vous ne souhaitez plus recevoir de communications de notre part, vous pouvez vous {{désabonner}}.{{small}}",
       "image": "/max-piccinini.png",
       "imageWidth": 400,
-      "imageHeight": 200,   
+      "imageHeight": 200,
       "time": "8:15",
       "questionId": "max-piccinini"
     },
@@ -204,7 +204,7 @@
       "imageHeight": 100,
       "time": "18:11",
       "contentAlignment": "center",
-      "imageAlignment" : "center",
+      "imageAlignment": "center",
       "textAlignment": "center",
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#ffeb3b",
@@ -298,7 +298,7 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f5f5f5",
       "questionId": "linkedin-email"
-    }, 
+    },
     {
       "id": "linkedin-security",
       "name": "LinkedIn",
@@ -419,12 +419,23 @@
       "imageAlignment": "center",
       "containerBackgroundColor": "#f2f2f2",
       "questionId": "laposte-colissimo"
+    },
+    {
+      "id": "shine-avis",
+      "name": "L'équipe Shine",
+      "sender": "hello@shine.fr",
+      "subject": "Que pensez-vous de votre compte pro Shine ?",
+      "preview": "Votre avis est précieux, partagez-le 😊",
+      "content": "{{IMAGE}}\n\nVotre avis est précieux, partagez-le 😊\n\nAnna, vous utilisez activement votre compte Shine depuis plusieurs semaines et votre expérience nous intéresse.\n\nVotre avis nous permet d'améliorer continuellement notre produit et nos services.\n\n👉 En 3 questions rapides, dites-nous en plus sur votre utilisation et vos attentes de Shine.\n\n{{Je donne mon avis}}\n\nMerci par avance, nous avons hâte de lire vos retours !\n\nL'équipe Shine ✨\n\n{{small}}Shine, société par actions simplifiée au capital de 3.010.000 euros immatriculée au RCS de Paris sous le numéro 828 791 557, exerçant le rôle d'intermédiaire.\n\nShine, agréée par l'Autorité de Contrôle Prudentiel et de Résolution (« ACPR ») et régulièrement enregistrée dans le Registre des agents financiers - www.regafi.fr et sont durablement les agents sous le numéro 71755\n\nSe désabonner de la liste{{small}}",
+      "image": "/image.png",
+      "imageWidth": 700,
+      "imageHeight": 400,
+      "time": "12:26",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f0f7ff",
+      "questionId": "shine-security"
     }
-
-
-
-    
   ]
-} 
-
-
+}
