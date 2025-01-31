@@ -403,6 +403,22 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f5f5f5",
       "questionId": "laposte-satisfaction"
+    },
+    {
+      "id": "laposte-colissimo",
+      "name": "La Poste-Colissimo",
+      "sender": "noreply@notif-colissimo.laposte.info",
+      "subject": "Votre Colissimo confié par INDIEVIDUALS sera livré vendredi 24 janvier.",
+      "preview": "Informations importantes pour votre livraison Mon espace client La Poste SUIVRE MON COLIS Votre Colissimo sera livré vendredi 24 janvier.",
+      "content": "{{IMAGE}}",
+      "image": "/logo_colissimo.png",
+      "imageWidth":   800,
+      "imageHeight": 400,
+      "time": "21:39",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "containerBackgroundColor": "#f2f2f2",
+      "questionId": "laposte-colissimo"
     }
 
 

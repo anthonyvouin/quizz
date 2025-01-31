@@ -159,9 +159,17 @@
             "isCorrect": true,
             "explanation": "• Le mail d'expéditeur correspond bien à La Poste puisqu'il finit par @laposte.info.\n\n• Même s'il n'y a aucune personnalisation : c'est le ton habituel utilisé par La Poste.",
             "whatToDo": "• Tu es libre de pouvoir donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
+          },
+          
+            "laposte-colissimo": {
+              "question": "J'attends un colis, puis-je suivre mon colis ?",
+              "isCorrect": true,
+              "explanation": "• Le mail d'expéditeur correspond bien à colissimo.\n\n• Le mail n'incite pas à une action urgente mais reste informatif.",
+              "whatToDo": "• Si tu attends un colis, tu es libre de suivre ton colis."
+            }
           }
         }
-      }
+      
     
 
   
