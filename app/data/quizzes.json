@@ -62,9 +62,9 @@
     },
     "notion-research": {
       "question": "J'ai un compte Notion, puis-je donner mon avis ?",
-      "explanation": "• Le mail d'expéditeur ne correspond pas à Notion : il finit par @qemailserver.com et non @notion.com.\n\n• Le mail est envoyé par Qualtrics qui est un logiciel légitime pour établir des questionnaires clients.\n\n• Le mail ne demande pas d'informations sensibles.",
+      "explanation": "• Le mail d’expéditeur ne correspond pas à Notion cependant, il est utilisé par Qualtrics qui est un logiciel pour établir des questionnaire clients.",
       "isCorrect": true,
-      "whatToDo": "• Tu es libre de donner ton avis.\n\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail.\n\n• Vérifie toujours l'adresse email de l'expéditeur."
+      "whatToDo": "• Tu es libre de donner ton avis.\n\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
     },
     "amende-stationnement": {
       "question": "Dois-je régler l'amende et cliquer sur le lien ?",
