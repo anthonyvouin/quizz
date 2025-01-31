@@ -391,6 +391,15 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.includes('Statut : Arrêté au centre de distribution (frais de douane impayés)')) {
+      return (
+        <div key={index} className="text-center font-semibold text-lg mb-4 ">
+            {paragraph}
+        </div>
+      );
+    }
+
+
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
         {paragraph}
