@@ -195,7 +195,7 @@
     {
       "id": "dhl-livraison",
       "name": "DHL",
-      "sender": "edu@kqfk.m3.sdd.org.pl",
+      "sender": "edu@kqfk.m3.sdd.org.pl(envoyé par DHL)",
       "subject": "Vous avez (1) colis en attente de livraison",
       "preview": "=== DHL === LIVRAISON DU COLIS SUSPENDU ! Statut : Arrêté au centre de distribution (frais de douane impayés)",
       "content": "{{IMAGE}}\n\nLIVRAISON DU COLIS SUSPENDU !\n\nStatut : Arrêté au centre de distribution (frais de douane impayés)\n\nDes frais de livraison peuvent s'appliquer\n\nVotre code de suivi :\n\n58381253\n\nPlanifier La Livraison Maintenant\n\nSi vous ne souhaitez plus recevoir ces e-mails,\nvous pouvez vous désabonner en cliquant{{small}}",
@@ -204,7 +204,7 @@
       "imageHeight": 100,
       "time": "18:11",
       "contentAlignment": "center",
-      "imageAlignment": "center",
+      "imageAlignment" : "center",
       "textAlignment": "center",
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#ffeb3b",
