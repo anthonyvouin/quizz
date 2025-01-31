@@ -444,10 +444,10 @@ export default function GmailInterface() {
 
       {showResult && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 transition-all duration-700 ease-in-out">
-          <div className={`bg-transparent rounded-lg max-w-2xl w-full mx-4 overflow-hidden transform transition-all duration-1000 ease-in-out ${
+          <div className={`bg-transparent rounded-lg w-full mx-2 sm:mx-4 max-w-2xl overflow-hidden transform transition-all duration-1000 ease-in-out ${
             showResult ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-4'
           }`}>
-            <div className={`p-6 transition-all duration-1000 ease-in-out transform ${
+            <div className={`p-3 sm:p-6 transition-all duration-1000 ease-in-out transform ${
               userAnswer === currentQuestion.isCorrect 
                 ? 'bg-success-050'
                 : 'bg-error-050'
@@ -456,7 +456,7 @@ export default function GmailInterface() {
                 !showResultText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'
               }`}>
                 <div className="flex flex-col items-center bg-transparent">
-                  <div className="w-32 h-32">
+                  <div className="w-24 sm:w-32 h-24 sm:h-32">
                     <DotLottieReact
                       src={userAnswer === currentQuestion.isCorrect 
                         ? "https://lottie.host/ff04965a-2edb-4f93-80ef-01eb70b5bab9/SABZwP6GPK.lottie"
@@ -465,7 +465,7 @@ export default function GmailInterface() {
                     />
                   </div>
                   <div className={`transform ${showAnimationText ? 'opacity-100' : 'opacity-0'}`}>
-                    <p className={`text-xl font-medium mt-4 text-center ${
+                    <p className={`text-base sm:text-xl font-medium mt-2 sm:mt-4 text-center ${
                       userAnswer === currentQuestion.isCorrect 
                         ? 'text-green-800'
                         : 'text-red-800'
@@ -483,36 +483,36 @@ export default function GmailInterface() {
               }`}>
                 {showResultText && (
                   <>
-                    <div className={`space-y-4 ${
+                    <div className={`space-y-2 sm:space-y-4 ${
                       userAnswer === currentQuestion.isCorrect 
                         ? 'text-green-800'
                         : 'text-red-800'
                     }`}>
-                      <h2 className="font-bold text-xl mb-6 flex items-center gap-2">
-                        <span className="text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
+                      <h2 className="font-bold text-base sm:text-xl mb-3 sm:mb-6 flex items-center gap-2">
+                        <span className="text-xl sm:text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                         {userAnswer === currentQuestion.isCorrect 
                           ? 'Bonne réponse, le mail était sûr !'
                           : 'Mauvaise réponse, le mail était frauduleux !'}
                       </h2>
-                      <div className="text-lg whitespace-pre-line">
+                      <div className="text-sm sm:text-lg whitespace-pre-line">
                         {currentQuestion.explanation}
                       </div>
-                      <div className="mt-6">
-                        <div className="flex flex-col gap-2">
+                      <div className="mt-3 sm:mt-6">
+                        <div className="flex flex-col gap-1 sm:gap-2">
                           <div className="flex items-center gap-2">
                             <span>👉</span>
-                            <h3 className="text-lg font-medium">Ce qu'il faut faire</h3>
+                            <h3 className="text-base sm:text-lg font-medium">Ce qu'il faut faire</h3>
                           </div>
-                          <div className="ml-7 text-lg whitespace-pre-line">
+                          <div className="ml-7 text-sm sm:text-lg whitespace-pre-line">
                             {currentQuestion.whatToDo}
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-4 sm:mt-6">
                       <button
                         onClick={handleNextEmail}
-                        className="px-8 py-3 bg-blue-500 text-white font-medium rounded-full w-full transition-all duration-500 ease-in-out "
+                        className="px-6 sm:px-8 py-2 sm:py-3 bg-blue-500 text-white font-medium rounded-full w-full transition-all duration-500 ease-in-out text-sm sm:text-base"
                       >
                         {selectedEmail && 
                          randomizedEmails.filter(email => !completedEmails.includes(email.id) || email.id === selectedEmail.id).length === 1
