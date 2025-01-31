@@ -129,9 +129,9 @@
     },
     "google-play-annulation": {
       "question": "Je possède un compte Google One, dois-je mettre à jour mon mode de paiement via le lien ?",
-      "isCorrect": false,
-      "explanation": "• Le mail d'expéditeur correspond bien à Google.\n\n• Si j'ai un compteGoogle One et que ma carte bleue expire bientôt alors ce type de mail est normal.",
-      "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres mpyens sur le site officiel."
+      "isCorrect": true,
+      "explanation": "• Le mail d'expéditeur correspond bien à Google.\n\n• Si j'ai un compte Google One et que ma carte bleue expire bientôt alors ce type de mail est normal.",
+      "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
     },
     "audrey-masterclass": {
       "question": "Puis-je cliquer sur le bouton pour m'inscrire à la masterclass ?",
