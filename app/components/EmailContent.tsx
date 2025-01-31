@@ -145,7 +145,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
               className="rounded-lg"
             />
           )}
-          {isHostingerEmail && <span className="text-[#673DE6] font-semibold mt-4 ml-4 md:mt-0 md:ml-80">Trois. Deux. En ligne</span>}
+          {isHostingerEmail && <span className="text-[#673DE6] text-2xl font-semibold mt-4 ml-4 md:mt-0 md:ml-80">Trois. Deux. En ligne</span>}
         </div>
       );
     }
@@ -238,7 +238,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
 
     if (paragraph.includes('Votre mot de passe a été modifié avec succès')) {
       return (
-        <p key={index} className="font-bold text-2xl mb-4 text-[#673DE6]">
+        <p key={index} className="font-bold text-4xl mb-4 text-[#2f1c69]">
           {paragraph}
         </p>
       );
