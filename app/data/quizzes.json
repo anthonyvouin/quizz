@@ -7,7 +7,7 @@
       "whatToDo": "• En cas de doute, accède directement à la plateforme (en l'occurrence Hostinger) via leur site officiel et accède à ton tableau de bord.\n\n• Contacte le support officiel.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
     },
     "urssaf-message": {
-      "question": "Est-ce un message officiel de l'urssaf ?",
+      "question": "Mon entreprise est domiciliée en Normandie, est-ce un message officiel de l’Urssaf ?",
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à l'Urssaf de ma région.\n\n• Même si des erreurs sur le logo et la description sont à noter, ce genre d'erreur est possible même pour un organisme officiel.",
       "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
@@ -56,7 +56,7 @@
     },
     "societe-generale": {
       "question": "Dois-je activer mon pass sécurité ?",
-      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la Société Générale : il finit par @support-sociale-generale.com.\n\n• Le logo de l'entreprise n'est pas le bon.\n\n• Le mail joue sur la peur d'être arnaqué, il faut d'autant plus renforcé sa vigilance quand ce sujet est abordé.",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la Société Générale : il finit par @support-sociale-generale.com.\n\n• Le logo de l'entreprise n'est pas le bon.\n\n• Le mail joue sur la peur d'être arnaqué, il faut d'autant plus renforcer sa vigilance quand ce sujet est abordé.",
       "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Si tu veux te renseigner sur un véritable service de sécurité de ta banque, consulte directement ton banquier ou la plateforme de ta banque.\n\n• Supprime ce mail.",
       "isCorrect": false
     },
