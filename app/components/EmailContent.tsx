@@ -391,6 +391,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.includes('Pour votre sécurité, ne répondez jamais à un courriel vous demandant votre numéro de carte bancaire.')) {
+      return (
+        <div key={index} className="bg-gray-300">
+            {paragraph}
+        </div>
+      );
+    }
+
     if (paragraph.includes('Statut : Arrêté au centre de distribution (frais de douane impayés)')) {
       return (
         <div key={index} className="text-center font-semibold text-lg mb-4 ">
