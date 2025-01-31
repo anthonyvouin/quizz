@@ -471,8 +471,12 @@ export default function GmailInterface() {
                         : 'text-red-800'
                     }`}>
                       {userAnswer === currentQuestion.isCorrect 
-                        ? 'Bonne réponse, le mail était sûr !'
-                        : 'Mauvaise réponse, le mail était frauduleux !'}
+                        ? (currentQuestion.isCorrect 
+                            ? 'Bonne réponse ! Ce mail est bien légitime.'
+                            : 'Bonne réponse ! Ce mail est bien frauduleux.')
+                        : (currentQuestion.isCorrect 
+                            ? 'Mauvaise réponse ! Ce mail est en fait légitime.'
+                            : 'Mauvaise réponse ! Ce mail est en fait frauduleux.')}
                     </p>
                   </div>
                 </div>
@@ -491,8 +495,12 @@ export default function GmailInterface() {
                       <h2 className="font-bold text-base sm:text-xl mb-3 sm:mb-6 flex items-center gap-2">
                         <span className="text-xl sm:text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                         {userAnswer === currentQuestion.isCorrect 
-                          ? 'Bonne réponse, le mail était sûr !'
-                          : 'Mauvaise réponse, le mail était frauduleux !'}
+                          ? (currentQuestion.isCorrect 
+                              ? 'Bonne réponse ! Ce mail est bien légitime.'
+                              : 'Bonne réponse ! Ce mail est bien frauduleux.')
+                          : (currentQuestion.isCorrect 
+                              ? 'Mauvaise réponse ! Ce mail est en fait légitime.'
+                              : 'Mauvaise réponse ! Ce mail est en fait frauduleux.')}
                       </h2>
                       <div className="text-sm sm:text-lg whitespace-pre-line">
                         {currentQuestion.explanation}
