@@ -76,7 +76,7 @@
       "question": "J'ai réservé mon train auprès de la SNCF, est-ce que l'information est véridique ?",
       "explanation": "• Le mail d'expéditeur correspond bien à la SNCF.\n\n• Le mail ne demande pas d'informations sensibles et renvoie vers les canaux officiels (SNCF Connect ou agence agréée).\n\n• Les alternatives proposées sont cohérentes avec les pratiques habituelles de la SNCF en cas de suppression de train.",
       "isCorrect": true,
-      "whatToDo": "• Suivre les alternatives proposées pour changer son billet.\n\n• En cas de doute, accéder directement à la plateforme via leur site officiel ou leur application officielle."
+      "whatToDo": "• Suivre les alternatives proposées pour changer son billet.\n\n• En cas de doute, accède directement à la plateforme via leur site officiel ou leur application officielle."
     },
     "impots-remboursement": {
       "question": "Dois-je me faire rembourser en accédant au lien ?",
