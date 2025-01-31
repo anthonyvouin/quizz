@@ -69,7 +69,7 @@
     "amende-stationnement": {
       "question": "Dois-je régler l'amende et cliquer sur le lien ?",
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel du gouvernement, malgré les termes qui paraissent officiel. Le seul mail pouvant adresser un mail de contravention en France fini par @antai.fr\n\n• Le mail joue sur le sentiment d'urgence. Même si tu as une amende en attente cela peut être une coïncidence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
-      "whatToDo": "• En France, le site pour payer ses amendes est www.amendes.gouv.fr ou www.stationnement.gouv.fr.\n\n• Il est rare de recevoir une amende par mail, cependant c'est possible dans les cas suivants :\n\n• si tu as donné ton mail à l'agent qui t'a verbalisé ;\n\n• ou si la personne qui t'a prêté la voiture t'a désigné comme étant l'auteur de l'infraction et a transmis ton mail à l'Agence nationale de traitement automatisé des infractions.\n\n• Supprime ce mail.",
+      "whatToDo": "• En France, le site pour payer ses amendes est www.amendes.gouv.fr ou www.stationnement.gouv.fr.\n\n• Il est rare de recevoir une amende par mail, cependant c'est possible dans les cas suivants : si tu as donné ton mail à l'agent qui t'a verbalisé ; ou si la personne qui t'a prêté la voiture t'a désigné comme étant l'auteur de l'infraction et a transmis ton mail à l'Agence nationale de traitement automatisé des infractions.\n\n• Supprime ce mail.",
       "isCorrect": false
     },
     "sncf-suppression": {
