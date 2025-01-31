@@ -15,8 +15,8 @@
     "bug-comptabilite": {
       "question": "Mon client m'envoie ce mail, l'argent sera reçu par chèque, dois-je le rembourser tout de suite ?",
       "isCorrect": false,
-      "explanation": "• Même si tu eu contact avec ce client, c'est potentiellement une arnaque. Les chèques ne sont pas un moyen de paiement pouvant être vérifié tout de suite.",
-      "whatToDo": "• Contacte ton client autrement que par mail pour vérifier qu'il est bien à l'origine de l'envoi de ce mail.\n\n• Attends la validation et l'authentification du chèque avant de le rembourser.\n\n• Demande l'avis à ton banquier.\n\n• Enregistre chaque échange envers ce \"client\" en vue de porter plainte."
+      "explanation": "• Même si tu eu contact avec ce client, c'est potentiellement une arnaque. Demander la différence immédiatement à cause d’une erreur comptable est une arnaque commune. ",
+      "whatToDo": "• Contacte ton client autrement que par mail pour vérifier qu'il est bien à l'origine de l'envoi de ce mail.\n\n• Attends la validation et l'authentification du chèque avant de le rembourser.\n\n• Demande l'avis à ton banquier.\n\n• Enregistre chaque échange envers ce \"client\" en vue de porter plainte si c'est une arnaque avérée."
     },
     "max-piccinini": {
       "question": "J'ai participé à un événement de Max PICCININI (célèbre coach francophone), puis-je répondre \"oui\" à ce mail ?",
