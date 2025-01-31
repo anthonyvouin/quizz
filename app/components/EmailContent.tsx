@@ -244,6 +244,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph.includes('Ce message a été envoyé par Carrefour')) {
+      return (
+        <p key={index} className="bg-green-100 ">
+          {paragraph}
+        </p>
+      );
+    }
+
 
 
     if (paragraph.includes('Cliquez ici pour répondre')) {

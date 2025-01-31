@@ -359,7 +359,7 @@
       "sender": "918842@yu9t.yu9t.nl",
       "subject": "Votre Cadeau de Noel est pret christine",
       "preview": "Ce message a été envoyé par : Carrefour Programme de fidélité Carrefour Réclamez GRATUITEMENT",
-      "content": "{{IMAGE}}\n\n Si vous ne souhaitez plus recevoir ces emails Carrefour, veuillez cliquer sur le lien ci-dessous pour vous désabonner. {{small}}\n\n{{https://www.carrefour.fr/newsletter/desabonnement}} {{small}}",
+      "content": "Ce message a été envoyé par Carrefour\n\n {{IMAGE}}\n\n Si vous ne souhaitez plus recevoir ces emails Carrefour, veuillez cliquer sur le lien ci-dessous pour vous désabonner. {{small}}\n\n{{https://www.carrefour.fr/newsletter/desabonnement}} {{small}}",
       "image": "/carrefour.png",
 
       "imageWidth": 400,
