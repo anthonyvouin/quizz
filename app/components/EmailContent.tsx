@@ -96,7 +96,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
       if (paragraph === 'Répondre au sondage') {
         return (
           <div key={index}>
-            <p className="mb-4 bg-cyan-500 text-white px-4 py-2 rounded-md w-52 cursor-pointer">
+            <p className="mb-4 bg-cyan-700 text-white px-4 py-2 rounded-md w-52 cursor-pointer text-center">
               {paragraph}
             </p>
           </div>
