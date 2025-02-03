@@ -433,9 +433,10 @@ const EmailContent: React.FC<EmailContentProps> = ({
     let isSmallText = false;
 
     // Style spécial pour les emails Shine
-    if (content.includes('{{IMAGE}}') && sender?.includes('shine.fr')) {
-      const userName = content.replace('{{IMAGE}}\n\n', '');
+    if (content.includes('{{IMAGE}}') && (sender?.includes('shine.fr') || sender?.includes('shine@suppport-56631465.com'))) {
+      const contentParts = content.replace('{{IMAGE}}\n\n', '').split('\n\n');
       return (
+
         <div className="bg-white rounded-lg shadow-sm max-w-2xl mx-auto p-8">
           {/* Logo Shine */}
           <div className="flex justify-center mb-8">
@@ -450,45 +451,45 @@ const EmailContent: React.FC<EmailContentProps> = ({
             )}
           </div>
 
-          {/* Titre principal */}
-          <h1 className="text-xl font-semibold text-center mb-6">
-            Votre avis est précieux, partagez-le 😊
-          </h1>
-
           {/* Contenu principal */}
           <div className="space-y-4 text-gray-700">
-            <p>
-              {userName}, vous utilisez activement votre compte Shine depuis plusieurs 
-              semaines et votre expérience nous intéresse.
-            </p>
-            <p>
-              Votre avis nous permet d'améliorer continuellement notre produit et nos services.
-            </p>
-            <p className="flex items-center gap-2">
-              <span>👉</span>
-              En 3 questions rapides, dites-nous en plus sur votre utilisation et 
-              vos attentes de Shine.
-            </p>
+            {contentParts.map((part, index) => {
+              if (part.includes('Je donne mon avis') || part.includes('Changer ma carte')) {
+                const buttonText = part.includes('Je donne mon avis') ? 'Je donne mon avis' : 'Changer ma carte';
+                return (
+                  <div key={index} className="mt-8 mb-8 flex justify-center">
+                    <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-500 transition-colors">
+                      {buttonText}
+                    </button>
+                  </div>
+                );
+              }
+              if (part.startsWith('👉')) {
+                return (
+                  <p key={index} className="flex items-center gap-2 font-semibold">
+                    <span>👉</span>
+                    {part.replace('👉 ', '')}
+                  </p>
+                );
+              }
+              if (part.includes('✨')) {
+                return (
+                  <p key={index} className="pt-4">
+                    {part}
+                  </p>
+                );
+              }
+              if (part.includes('Votre avis est précieux')) {
+                return (
+                  <h1 key={index} className="text-xl font-semibold text-center mb-6">
+                    {part}
+                  </h1>
+                );
+              }
+              return <p key={index}>{part}</p>;
+            })}
           </div>
-
-          {/* Bouton d'action */}
-          <div className="mt-8 mb-8 flex justify-center">
-            <button className="bg-yellow-400 text-black px-6 py-3 rounded-full font-medium hover:bg-yellow-500 transition-colors">
-              Je donne mon avis
-            </button>
-          </div>
-
-          {/* Signature */}
-          <p >
-            Merci par avance, nous avons hâte de lire vos retours !
-            <br />
-            <br />
-
-            <span className="pt-4">L'équipe Shine ✨</span>
-          </p>
         </div>
-
-
       );
     }
 

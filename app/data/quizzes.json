@@ -168,6 +168,12 @@
       "isCorrect": true,
       "explanation": "• Le mail d’expéditeur correspond bien à Shine.\n\n• Même s’il y a des erreurs sur le logo et l’alignement du texte, ce genre d’erreur est possible même pour une société bancaire.",
       "whatToDo": "• Si tu as bien un compte Shine, tu es libre de donner ton avis\n\n• Ne donne aucune information bancaire via le lien."
+    },
+    "shine-card-expiration": {
+      "question": "Dois-je cliquer sur le lien pour changer ma carte ?",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de Shine : il finit par @suppport-56631465.com et non @shine.fr.\n\n• Le nom utilisé n'est pas un prénom mais \"Christine Coaching\".",
+      "isCorrect": false,
+      "whatToDo": "• En cas de doute, accède directement à la plateforme de Shine via leur site officiel et accède à ton profil.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
     }
   }
 }

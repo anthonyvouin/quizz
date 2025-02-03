@@ -423,13 +423,14 @@
       "questionId": "laposte-colissimo"
     },
  
+
     {
       "id": "shine-avis",
       "name": "L'équipe Shine",
       "sender": "hello@shine.fr",
       "subject": "Que pensez-vous de votre compte pro Shine ?",
       "preview": "Votre avis est précieux, partagez-le 😊",
-      "content": "{{IMAGE}}\n\n Christine",
+      "content": "{{IMAGE}}\n\nVotre avis est précieux, partagez-le 😊\n\nChristine, vous utilisez activement votre compte Shine depuis plusieurs semaines et votre expérience nous intéresse.\n\nVotre avis nous permet d'améliorer continuellement notre produit et nos services.\n\n👉 En 3 questions rapides, dites-nous en plus sur votre utilisation et vos attentes de Shine.\n\n{{Je donne mon avis}}\n\nMerci par avance, nous avons hâte de lire vos retours !\n\nL'équipe Shine ✨",
       "image": "/image.png",
       "imageWidth": 80,
       "imageHeight": 80,
@@ -439,6 +440,23 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f0f7ff",
       "questionId": "shine-security"
+    },
+    {
+      "id": "shine-card-expiration",
+      "name": "Shine",
+      "sender": "shine@suppport-56631465.com",
+      "subject": "Votre carte arrive à expiration",
+      "preview": "Votre carte arrive à expiration, veuillez la changer avant le prochain renouvellement à date du 05/02/2025.",
+      "content": "{{IMAGE}}\n\nBonjour Christine Coaching,\n\nVotre carte est arrivé à expiration, veuillez la changer avant le prochain renouvellement à date du 05/02/2025.\n\nDois-je cliquer sur le lien pour changer ma carte ?\n\nEn cas de non respect des conditions générales, nous serons dans l'obligation de suspendre votre compte.\n\n{{Changer ma carte}}\n\nL'équipe Shine",
+      "image": "/image.png",
+      "imageWidth": 80,
+      "imageHeight": 80,
+      "time": "18:14",
+      "contentAlignment": "center",
+      "imageAlignment": "center",
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#f0f7ff",
+      "questionId": "shine-card-expiration"
     }
   ]
 }
