@@ -8,8 +8,9 @@
       "preview": "Malgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.",
       "content": "Cher client Christine Coaching,\n\nMalgré notre précédente relance, la facture hb_2555057 en date du 01/12/2024 reste en attente de règlement dans votre espace client.\n\nNous vous rappelons que cette facture est rattachée à ces services :\n\n• Nom de domaine : christine-coaching.com\n• Adresse mail : contact@christine-coaching.com\n\nConformément à nos termes contractuels, nous avons procédé à la suspension des prestations mentionnées ci-dessus.\n\nLa régularisation de votre facture entraînera le déblocage de vos services sous quelques heures. Vous pourrez régler cette dernière en cliquant sur le lien suivant :\n\n{{Régler votre facture}}\n\nSans paiement de votre part sous trois (3) jours à compter de la réception de cet e-mail, vos services seront définitivement suspendus.\n\nNous restons à votre disposition pour tout complément d'information.\n\nL'équipe Hostinger\n\nPour obtenir de l'aide : retrouvez toutes nos solutions en ligne sur notre Centre d'aide : {{https://help.hostinger.fr}}{{IMAGE}}",
       "image": "/hostinger.png",
-      "imageWidth": 400,
-      "imageHeight": 200,
+      "imageWidth": 200,
+      "imageHeight": 100,
+
       "time": "11:26",
       "questionId": "hostinger-security"
     },
@@ -421,16 +422,17 @@
       "containerBackgroundColor": "#f2f2f2",
       "questionId": "laposte-colissimo"
     },
+ 
     {
       "id": "shine-avis",
       "name": "L'équipe Shine",
       "sender": "hello@shine.fr",
       "subject": "Que pensez-vous de votre compte pro Shine ?",
       "preview": "Votre avis est précieux, partagez-le 😊",
-      "content": "{{IMAGE}}\n\nVotre avis est précieux, partagez-le 😊\n\nChristine, vous utilisez activement votre compte Shine depuis plusieurs semaines et votre expérience nous intéresse.\n\nVotre avis nous permet d'améliorer continuellement notre produit et nos services.\n\n👉 En 3 questions rapides, dites-nous en plus sur votre utilisation et vos attentes de Shine.\n\n{{Je donne mon avis}}\n\nMerci par avance, nous avons hâte de lire vos retours !\n\nL'équipe Shine ✨\n\n{{small}}Shine, société par actions simplifiée au capital de 3.010.000 euros immatriculée au RCS de Paris sous le numéro 828 791 557, exerçant le rôle d'intermédiaire.\n\nShine, agréée par l'Autorité de Contrôle Prudentiel et de Résolution (« ACPR ») et régulièrement enregistrée dans le Registre des agents financiers - www.regafi.fr et sont durablement les agents sous le numéro 71755\n\nSe désabonner de la liste{{small}}",
+      "content": "{{IMAGE}}\n\n Christine",
       "image": "/image.png",
-      "imageWidth": 700,
-      "imageHeight": 400,
+      "imageWidth": 80,
+      "imageHeight": 80,
       "time": "12:26",
       "contentAlignment": "center",
       "imageAlignment": "center",

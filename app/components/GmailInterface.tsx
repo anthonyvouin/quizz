@@ -376,7 +376,30 @@ export default function GmailInterface() {
                     textAlignment={selectedEmail.textAlignment}
                     backgroundColor={selectedEmail.backgroundColor}
                     attachment={selectedEmail.attachment}
+                    sender={selectedEmail.sender}
                   />
+                  {/* Footer Shine */}
+                  {selectedEmail.sender?.includes('shine.fr') && (
+                    <div className="text-xs bg-[#f0f7ff] mt-6">
+                      <p className="mb-2">
+                        Shine, SAS au capital de 4049,49€, 122 Amelot 75 011 Paris, immatriculée             <br />
+                        <br />
+
+                        au RCS de Paris sous le numéro 828 701 557, exploitant le nom commercial            <br />
+                        <br />
+                        Shine, agréée par l'Autorité de Contrôle Prudentiel et de Résolution 
+                        (« ACPR ») 
+                        <br />
+                        <br />
+                        (agréée consultable dans le Registre des agents financiers - www.regafi.fr)   en tant            <br />
+                        <br />
+                      qu'établissements de paiment sous le numéro 71758
+                      </p>
+                      <p className=" hover:underline cursor-pointer">
+                        Se désabonner de la liste
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

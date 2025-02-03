@@ -14,6 +14,7 @@ interface EmailContentProps {
     type: string;
     icon: string;
   };
+  sender?: string;
 }
 
 // Composant qui gère l'affichage du contenu des emails avec différents styles et formatages
@@ -26,7 +27,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
   contentAlignment = 'left',
   textAlignment = 'left',
   backgroundColor,
-  attachment
+  attachment,
+  sender
 }) => {
 
   // Fonction qui gère le rendu de chaque paragraphe selon son contenu
@@ -415,6 +417,9 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+ 
+
+   
 
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
@@ -428,7 +433,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
     let isSmallText = false;
 
     // Style spécial pour les emails Shine
-    if (content.includes('L\'équipe Shine')) {
+    if (content.includes('{{IMAGE}}') && sender?.includes('shine.fr')) {
+      const userName = content.replace('{{IMAGE}}\n\n', '');
       return (
         <div className="bg-white rounded-lg shadow-sm max-w-2xl mx-auto p-8">
           {/* Logo Shine */}
@@ -452,7 +458,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
           {/* Contenu principal */}
           <div className="space-y-4 text-gray-700">
             <p>
-              Anna, vous utilisez activement votre compte Shine depuis plusieurs 
+              {userName}, vous utilisez activement votre compte Shine depuis plusieurs 
               semaines et votre expérience nous intéresse.
             </p>
             <p>
@@ -473,30 +479,16 @@ const EmailContent: React.FC<EmailContentProps> = ({
           </div>
 
           {/* Signature */}
-          <p className="text-center mb-8">
+          <p >
             Merci par avance, nous avons hâte de lire vos retours !
             <br />
-            <span className="font-medium">L'équipe Shine ✨</span>
-          </p>
+            <br />
 
-          {/* Footer */}
-          <div className="text-xs bg text-gray-500 border-t pt-6">
-            <p className="mb-2">
-              Shine, société par actions simplifiée au capital de 3.010.000 euros 
-              immatriculée au RCS de Paris sous le numéro 828 791 557, exerçant 
-              le rôle d'intermédiaire.
-            </p>
-            <p className="mb-4">
-              Shine, agréée par l'Autorité de Contrôle Prudentiel et de Résolution 
-              (« ACPR ») et régulièrement enregistrée dans le Registre des agents 
-              financiers - www.regafi.fr et sont durablement les agents sous le 
-              numéro 71755
-            </p>
-            <p className="text-center hover:underline cursor-pointer">
-              Se désabonner de la liste
-            </p>
-          </div>
+            <span className="pt-4">L'équipe Shine ✨</span>
+          </p>
         </div>
+
+
       );
     }
 
