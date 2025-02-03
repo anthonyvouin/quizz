@@ -384,10 +384,11 @@ const EmailContent: React.FC<EmailContentProps> = ({
     if (paragraph.includes('Répondre au questionnaire >')) {
       return (
         <div key={index} className="flex justify-center w-full my-6">
-          <button className="text-xl font-semibold bg-yellow-400 text-white px-8 py-4 rounded-sm hover:bg-yellow-500 cursor-pointer max-w-md">
+          <button className="text-xl font-semibold bg-yellow-400 text-black px-8 py-4 rounded-sm hover:bg-yellow-500 cursor-pointer max-w-md">
             {paragraph}
           </button>
         </div>
+
       );
     }
 

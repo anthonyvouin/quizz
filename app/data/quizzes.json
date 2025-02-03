@@ -26,7 +26,7 @@
     },
     "gendarmerie-convocation": {
       "question": "Dois-je me renseigner et télécharger la pièce jointe ?",
-      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la gendarmerie nationale.\n\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de la gendarmerie nationale : il finit par @gmail.com.\n\n• Le mail joue sur le sentiment d'urgence. Fait attention, plus une action est précipitée, moins tu as le temps de réfléchir.",
       "isCorrect": false,
       "whatToDo": "• Ne télécharge jamais une pièce jointe sur ce type de mail.\n\n• Supprime ce mail."
     },
@@ -155,7 +155,7 @@
       "question": "J'ai reçu un colis récemment, puis-je donner mon avis via le lien ?",
       "isCorrect": true,
       "explanation": "• Le mail d'expéditeur correspond bien à La Poste puisqu'il finit par @laposte.info.\n\n• Même s'il n'y a aucune personnalisation : c'est le ton habituel utilisé par La Poste.",
-      "whatToDo": "• Tu es libre de pouvoir donner ton avis.\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
+      "whatToDo": "• Tu es libre de pouvoir donner ton avis.\n\n• En cas de doute, ne donne jamais ton mot de passe via les liens donnés par mail."
     },
     "laposte-colissimo": {
       "question": "J'attends un colis, puis-je suivre mon colis ?",
