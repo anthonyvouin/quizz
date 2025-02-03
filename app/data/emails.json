@@ -410,7 +410,7 @@
       "id": "laposte-colissimo",
       "name": "La Poste-Colissimo",
       "sender": "noreply@notif-colissimo.laposte.info",
-      "subject": "Votre Colissimo confié par INDIEVIDUALS sera livré vendredi 24 janvier.",
+      "subject": "Votre colis arrive !",
       "preview": "Informations importantes pour votre livraison Mon espace client La Poste SUIVRE MON COLIS Votre Colissimo sera livré vendredi 24 janvier.",
       "content": "{{IMAGE}}",
       "image": "/logo_colissimo.png",

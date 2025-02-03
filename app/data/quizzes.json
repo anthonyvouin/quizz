@@ -38,7 +38,7 @@
     },
     "airfrance-annulation": {
       "question": "J'ai un vol de prévu, dois-je cliquer sur le lien pour échanger mes billets ?",
-      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Air France : il ne finit pas par airfrance mais gov65816.com.\n\n• Le texte \"Ce mail a été certifié par Google\" a été rajouté dans le mail et non par Google.",
+      "explanation": "• Le mail d'expéditeur n'est pas un mail officiel d'Air France : il ne finit pas par airfrance mais gov65816.com.\n\n• Le texte \"Ce mail a été certifié par Google\" a été rajouté dans le mail et non par Google. C'est extrêmement suspicieux.",
       "isCorrect": false,
       "whatToDo": "• En cas de doute, accède directement à la plateforme via leur site officiel et accède à ton compte.\n\n• Contacte le support officiel.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail"
     },
@@ -160,7 +160,7 @@
     "laposte-colissimo": {
       "question": "J'attends un colis, puis-je suivre mon colis ?",
       "isCorrect": true,
-      "explanation": "• Le mail d'expéditeur correspond bien à colissimo.\n\n• Le mail n'incite pas à une action urgente mais reste informatif.",
+      "explanation": "• Le mail d'expéditeur correspond bien à Colissimo.\n\n• Le mail n'incite pas à une action urgente mais reste informatif.",
       "whatToDo": "• Si tu attends un colis, tu es libre de suivre ton colis."
     },
     "shine-security": {
