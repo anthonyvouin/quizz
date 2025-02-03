@@ -164,10 +164,10 @@
       "whatToDo": "• Si tu attends un colis, tu es libre de suivre ton colis."
     },
     "shine-security": {
-      "question": "Ce mail de Shine demandant votre avis est-il sûr ?",
+      "question": "J’ai un compte bancaire Shine, puis-je donner mon avis avec le lien ?",
       "isCorrect": true,
       "explanation": "• Le mail d’expéditeur correspond bien à Shine.\n\n• Même s’il y a des erreurs sur le logo et l’alignement du texte, ce genre d’erreur est possible même pour une société bancaire.",
-      "whatToDo": "• Si tu as bien un compte Shine, tu es libre de donner ton avis\n\n• Ne donne aucune information bancaire via le lien."
+      "whatToDo": "• Si tu as bien un compte Shine, tu es libre de donner ton avis.\n\n• Ne donne aucune information bancaire via le lien."
     },
     "shine-card-expiration": {
       "question": "Dois-je cliquer sur le lien pour changer ma carte ?",

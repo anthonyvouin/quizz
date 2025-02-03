@@ -495,11 +495,11 @@ export default function GmailInterface() {
                     }`}>
                       {userAnswer === currentQuestion.isCorrect 
                         ? (currentQuestion.isCorrect 
-                            ? 'Bonne réponse ! Ce mail est bien légitime.'
-                            : 'Bonne réponse ! Ce mail est bien frauduleux.')
+                            ? 'Bonne réponse ! Ce mail est sûr.'
+                            : 'Bonne réponse ! Ce mail est frauduleux')
                         : (currentQuestion.isCorrect 
-                            ? 'Mauvaise réponse ! Ce mail est en fait légitime.'
-                            : 'Mauvaise réponse ! Ce mail est en fait frauduleux.')}
+                            ? 'Mauvaise réponse ! Ce mail est sûr.'
+                            : 'Mauvaise réponse ! Ce mail est frauduleux.')}
                     </p>
                   </div>
                 </div>
@@ -519,11 +519,11 @@ export default function GmailInterface() {
                         <span className="text-xl sm:text-2xl">{userAnswer === currentQuestion.isCorrect ? '✓' : '✕'}</span>
                         {userAnswer === currentQuestion.isCorrect 
                           ? (currentQuestion.isCorrect 
-                              ? 'Bonne réponse ! Ce mail est bien légitime.'
-                              : 'Bonne réponse ! Ce mail est bien frauduleux.')
+                              ? 'Bonne réponse ! Ce mail est sûr.'
+                              : 'Bonne réponse ! Ce mail est frauduleux.')
                           : (currentQuestion.isCorrect 
-                              ? 'Mauvaise réponse ! Ce mail est en fait légitime.'
-                              : 'Mauvaise réponse ! Ce mail est en fait frauduleux.')}
+                              ? 'Mauvaise réponse ! Ce mail est sûr.'
+                              : 'Mauvaise réponse ! Ce mail est frauduleux.')}
                       </h2>
                       <div className="text-sm sm:text-lg whitespace-pre-line">
                         {currentQuestion.explanation}
