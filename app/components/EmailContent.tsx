@@ -445,6 +445,21 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
+    if (paragraph === 'Gérer le compte') {
+      return (
+        <div key={index} className="relative mb-4">
+          <Image 
+            src="/adobeclassic.png"
+            alt="Adobe Classic Line"
+            width={150}
+            height={8}
+            className="mb-2"
+          />
+          <p className="text-gray-700">{paragraph}</p>
+        </div>
+      );
+    }
+
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
         {paragraph}
@@ -512,6 +527,100 @@ const EmailContent: React.FC<EmailContentProps> = ({
               }
               return <p key={index}>{part}</p>;
             })}
+          </div>
+        </div>
+      );
+    }
+
+    // Style spécial pour les emails Adobe Creative Cloud
+    if (sender?.includes('message@adobe.com')) {
+      return (
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#E4E4E4] min-h-screen p-8">
+            <div className="bg-white rounded-lg p-8">
+              {/* Logo Adobe */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center">
+                  {image && (
+                    <Image 
+                      src={image}
+                      alt="Adobe Logo"
+                      width={300}
+                      height={100}
+                      className="mr-4"
+                    />
+
+                  )}
+                </div>
+              </div>
+
+              {/* Contenu principal */}
+              <div className="space-y-6">
+                {content.split('\n\n').map((paragraph, index) => {
+                  if (paragraph.includes('{{IMAGE}}')) return null;
+
+                  if (paragraph === 'Rappel') {
+                    return (
+                      <h1 key={index} className="text-2xl font-bold mb-4">
+                        {paragraph}
+                      </h1>
+                    );
+                  }
+
+                  if (paragraph === 'Détails de l\'abonnement') {
+                    return (
+                      <div key={index} className="bg-gray-200 p-4 rounded-lg my-6">
+                        <h2 className="font-semibold mb-2">{paragraph}</h2>
+                        <p className="text-gray-600">Tout Creative Cloud</p>
+                      </div>
+                    );
+                  }
+
+                  if (paragraph.includes('{{')) {
+                    const parts = paragraph.split(/(\{\{.*?\}\})/);
+                    return (
+                      <p key={index} className="mb-4">
+                        {parts.map((part, i) => {
+                          if (part.startsWith('{{') && part.endsWith('}}')) {
+                            const linkText = part.slice(2, -2);
+                            return (
+                              <span 
+                                key={i}
+                                className="text-blue-500 hover:underline cursor-pointer"
+                              >
+                                {linkText}
+                              </span>
+                            );
+                          }
+                          return <span key={i}>{part}</span>;
+                        })}
+                      </p>
+                    );
+                  }
+
+                  if (paragraph === 'Gérer le compte') {
+                    return (
+                      <div key={index} className="relative mb-4">
+                        <Image 
+                          src="/adobeclassic.png"
+                          alt="Adobe Classic Line"
+                          width={30}
+                          height={20}
+                          className="mb-2"
+                        />
+                        <p className="text-gray-700">{paragraph}</p>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <p key={index} className="mb-4 text-gray-700">
+                      {paragraph}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       );

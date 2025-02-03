@@ -459,6 +459,24 @@
       "backgroundColor": "#ffffff",
       "containerBackgroundColor": "#f0f7ff",
       "questionId": "shine-card-expiration"
+    },
+    {
+      "id": "adobe-payment-expiration",
+      "name": "Adobe Creative Cloud",
+      "sender": "message@adobe.com",
+      "subject": "Avertissement : Mode de paiement bientôt périmé",
+      "preview": "Votre mode de paiement principal arrive bientôt à expiration.",
+      "content": "{{IMAGE}}\n\nRappel\n\nBonjour Christine,\n\nVotre mode de paiement principal arrive bientôt à expiration. Pensez à {{mettre à jour vos informations de paiement}} pour éviter toute interruption du service. Une fois que vous aurez effectué la mise à jour depuis la page Gestion de compte, nous tenterons à nouveau de prélever vos paiements en attente (si nécessaire) dans un délai de 24 heures.\n\nDétails de l'abonnement\n\nGérer le compte\n\nService client\n\nForums\n\nAdobe, le logo Adobe, Creative Cloud, le logo Creative Cloud et Document Cloud sont des marques ou des marques déposées d'Adobe aux États-Unis et/ou dans d'autres pays.\n\nCette liste de marques Adobe n'est pas exhaustive. Pour obtenir la liste complète, reportez-vous aux {{Directives sur les marques commerciales d'Adobe}}. Toutes les autres marques citées sont la propriété de leurs détenteurs respectifs.\n\nSiège social : Adobe Systems Software Ireland Limited, 4-6 Riverwalk, Citywest Business Park, Dublin 24, Irlande. Immatriculation : 344992",
+      "image": "/adobe.png",
+      "imageWidth": 40,
+      "imageHeight": 40,
+      "backgroundColor": "#ffffff",
+      "containerBackgroundColor": "#E4E4E4",
+      "contentAlignment": "center",
+      "textColor": "#000000",
+      "time": "08:41",
+      "questionId": "adobe-payment-expiration"
     }
+  
   ]
 }

@@ -174,6 +174,13 @@
       "explanation": "• Le mail d'expéditeur n'est pas un mail officiel de Shine : il finit par @suppport-56631465.com et non @shine.fr.\n\n• Le nom utilisé n'est pas un prénom mais \"Christine Coaching\".",
       "isCorrect": false,
       "whatToDo": "• En cas de doute, accède directement à la plateforme de Shine via leur site officiel et accède à ton profil.\n\n• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
+    },
+    "adobe-payment-expiration": {
+      "question": "Je possède un compte Adobe, dois-je changer ma carte ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d’expéditeur correspond bien à Adobe.\n\n• Si je possède un compte Adobe et que ma carte expire bientôt, tous les signaux sont verts.",
+      "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel d'Adobe."
+
     }
   }
 }
