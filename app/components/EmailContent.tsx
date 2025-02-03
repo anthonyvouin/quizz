@@ -43,7 +43,8 @@ const EmailContent: React.FC<EmailContentProps> = ({
         </div>
       );
     }
-    
+
+
     // Style pour les messages d'alerte (texte rouge en gras)
     if (paragraph === 'Découvrez le Pass Sécurité' ||
        paragraph === 'Le non-respect des règles peut entraîner une perte de 3 points sur votre permis de conduire, ainsi que d\'autres sanctions possibles.' 
@@ -194,6 +195,22 @@ const EmailContent: React.FC<EmailContentProps> = ({
     }
 
     if (paragraph.includes('•')) {
+      const specificBulletPoints = [
+        'Attirer tes clients idéaux sans subir les montagnes russes du "manque de prospects".',
+        'Reprendre le contrôle sur ton temps et te libérer des tâches répétitives.',
+        'Te démarquer et enfin voir ton unicité briller dans un marché bruyant.'
+      ];
+
+      const textWithoutBullet = paragraph.replace('• ', '').trim();
+      if (specificBulletPoints.some(point => textWithoutBullet === point)) {
+        return (
+          <p key={index} className="mb-4">
+            • <span className="font-bold">{textWithoutBullet}</span>
+          </p>
+
+        );
+      }
+
       return (
         <div key={index} className="mb-4">
           {paragraph.split('\n').map((line, lineIndex) => (
@@ -418,9 +435,15 @@ const EmailContent: React.FC<EmailContentProps> = ({
       );
     }
 
- 
+    
+    if (paragraph.includes('à la hauteur de tes ambitions')) {
+      return (
+        <p key={index} className="mb-4">
+          Pas juste belle, non : <span className="font-bold">à la hauteur de tes ambitions</span>.
+        </p>
 
-   
+      );
+    }
 
     return (
       <p key={index} className={`mb-4 ${isSmallText ? 'text-xs text-gray-500' : ''} text-${textAlignment}`}>
