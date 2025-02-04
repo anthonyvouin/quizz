@@ -562,7 +562,7 @@ const EmailContent: React.FC<EmailContentProps> = ({
                   {emailContent}
                 </p>
                 <div className="bg-gray-100 p-4 rounded-lg my-6">
-                  <h2 className="font-semibold mb-2">Détails de l'abonnement</h2>
+                  <h2 className="font-bold mb-2">Détails de l'abonnement</h2>
                   <p className="text-gray-600">Tout Creative Cloud</p>
                 </div>
               </div>
