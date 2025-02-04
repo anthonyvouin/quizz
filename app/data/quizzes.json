@@ -174,7 +174,12 @@
       "isCorrect": true,
       "explanation": "• Le mail d’expéditeur correspond bien à Adobe.\n\n• Si je possède un compte Adobe et que ma carte expire bientôt, tous les signaux sont verts.",
       "whatToDo": "• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel d'Adobe."
-
+    },
+    "zcal-reprogrammer": {
+      "question": "J’ai reprogrammé un rendez-vous avec Anna, est-ce un mail sûr ?",
+      "isCorrect": true,
+      "explanation": "• Le mail d’expéditeur correspond bien à zcal, une plateforme pour gérer ses rendez-vous.\n\n• Si tu as reprogrammé le rendez-vous, il est normal d’avoir ce type de mail.",
+      "whatToDo": "• Rejoindre la personne à la nouvelle heure prévue.\n\n•  Si jamais, tu n’es pas responsable de la reprogrammation de l’événement, demande plus de détails directement à ton contact."
     }
   }
 }

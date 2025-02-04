@@ -352,10 +352,36 @@ const EmailContent: React.FC<EmailContentProps> = ({
     }
 
 
-  
+
+
+    if (paragraph.startsWith('Lundi, 17 Févr, 15:30 - 16:30 CET')) {
+      return (
+        <p key={index} className="text-green-600 mb-4">
+          {paragraph}
+        </p>
+      );
+    }
+
    
+    if (
+      sender?.includes('zcal.co') &&
+      (paragraph.startsWith('Date reprogrammée') ||
+        paragraph.startsWith('Date originale') ||
+        paragraph.startsWith('Nom de l\'invité') ||
+        paragraph.startsWith('Email de l\'invité') ||
+        paragraph.startsWith('Hôtes de l\'équipe') ||
+        paragraph.startsWith('Lieu') ||
+        paragraph.startsWith('Résumé'))
+    ) {
+      return (
+        <p key={index} className="text-gray-400 mb-4">
+          {paragraph}
+        </p>
+      );
+    }
 
   
+
 
   
     
@@ -427,6 +453,14 @@ const EmailContent: React.FC<EmailContentProps> = ({
           />
           <p className="text-gray-700">{paragraph}</p>
         </div>
+      );
+    }
+
+    if (paragraph.includes('Mercredi, 5 Févr, 15:00 CET')) {
+      return (
+        <p key={index} className="line-through  mb-4">
+          {paragraph}
+        </p>
       );
     }
 

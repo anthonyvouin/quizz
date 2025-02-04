@@ -459,6 +459,18 @@
       "textColor": "#000000",
       "time": "08:41",
       "questionId": "adobe-payment-expiration"
+    },
+    {
+      "id": "zcal-reprogrammer",
+      "name": "Zcal",
+      "sender": "notifications@zcal.co",
+      "subject": "Reprogrammé : Christine et Anna Giraud : Thé virtuel 🍵",
+      "preview": "The following event has been rescheduled. Nous avons mis à jour l'événement sur votre calendrier Google.",
+      "content": "The following event has been rescheduled. Nous avons mis à jour l'événement sur votre calendrier Google.\n\nRésumé\n\nR2 - tunnel de vente : Chiara & Audrey & Anna\n\nDate reprogrammée\n\nLundi, 17 Févr, 15:30 - 16:30 CET\n\nDate originale\n\nMercredi, 5 Févr, 15:00 CET\n\nNom de l'invité\n\nChiara\n\nEmail de l'invité\n\nchiara@artitinerrance.com\n\nHôtes de l'équipe\n\nAnna Giraud - bonjour@annagiraud.fr\n\nAudrey Philippine - audreyphilippine.copy@gmail.com\n\nLieu\n\nGoogle Meet - {{Rejoindre la réunion}}\n\n{{Voir cet événement sur zcal}}",
+      "time": "16:32",
+
+      "questionId": "zcal-reprogrammer",
+      "contentAlignment":"center"
     }
   
   ]
