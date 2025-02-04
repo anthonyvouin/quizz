@@ -374,24 +374,6 @@
       "questionId": "carrefour-cadeau"
     },
     {
-      "id": "paypal-transaction",
-      "name": "PayPal",
-      "sender": "support@paypal.com",
-      "subject": "Votre reçu pour un paiement envoyé à Michel",
-      "preview": "Bonjour Christine, Vous avez envoyé un paiement de 45,00 EUR à Michel. Consultez les détails de la transaction dans votre compte",
-      "content": "{{IMAGE}}\n\nBonjour Christine,\n\nVous avez envoyé un paiement de 45,00 EUR à Michel.\n\nDétails de la transaction\n\nNuméro de transaction : 1234ABCD5678EFGH\nDate de la transaction : 5 janvier 2024\n\nMontant reçu : 45,00 EUR\n\nVous me voyez pas l'argent sur votre compte ?\n\nPatient, la transaction peut n'apparaître qu'au bout de quelques minutes.\n\n{{En savoir plus}}\n\n{{IMAGE}}\n\n{{small}}Aide et Contact | Sécurité | À propos\n\nNous vous suggérons d'utiliser notre service d'envoi d'emails. Les emails PayPal contiennent toujours votre nom complet.\n\nApprenez à identifier les tentatives de phishing.\n\nVous ne savez pas pourquoi vous avez reçu cet email ? En savoir plus\n\nCopyright © 1999-2024 PayPal. Tous droits réservés.\n\nPayPal (Europe) S.à r.l. et Cie, S.C.A. Société en Commandite par Actions Siège social : 22-24 Boulevard Royal L-2449 Luxembourg RCS Luxembourg B 118 349{{small}}",
-       "time": "14:52",
-      "questionId": "paypal-transaction",
-      "contentAlignment": "center",
-      "imageAlignment": "center",
-      "textAlignment": "center",
-      "backgroundColor": "#ffffff",
-      "containerBackgroundColor": "#f5f5f5",
-      "image": "/paypal.png",
-      "imageWidth": 100,
-      "imageHeight": 50
-    },
-    {
       "id": "laposte-satisfaction",
       "name": "La Poste",
       "sender": "nepasrepondre@regardclient-colis.laposte.info",

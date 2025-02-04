@@ -145,12 +145,6 @@
       "explanation": "• Le mail d’expéditeur n’est pas un mail officiel de Carrefour : il finit par @yu9t.yu9t.nl et non carrefour.fr\n\n• Si tu n'as jamais donné ton mail à Carrefour, ils ne peuvent pas t'envoyer de mail sans ton consentement préalable.",
       "whatToDo": "• Ne clique jamais sur un lien sur ce type de mail.\n\n• Supprime ce mail."
     },
-    "paypal-transaction": {
-      "question": "J'ai effectué un paiement à Michel récemment, est-ce que ce mail me confirme cette transaction ?",
-      "isCorrect": true,
-      "explanation": "• L'adresse email de l'expéditeur correspond à Paypal puisqu'elle se termine par @paypal.com.\n\n• Les détails correspondent à une transaction que vous avez réellement effectuée (vérifiez dans votre compte PayPal si nécessaire)",
-      "whatToDo": "• Si tu reconnais cette transaction, il n'y a rien à faire.\n\n• Si tu ne reconnais pas cette transaction, connecte-toi à ton compte PayPal et contacte le support.\n\n• En cas de doute, préfère toujours te rendre par tes propres moyens sur le site officiel."
-    },
     "laposte-satisfaction": {
       "question": "J'ai reçu un colis récemment, puis-je donner mon avis via le lien ?",
       "isCorrect": true,
