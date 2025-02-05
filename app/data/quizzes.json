@@ -136,7 +136,7 @@
     "audrey-masterclass": {
       "question": "Puis-je cliquer sur le bouton pour m'inscrire à la masterclass ?",
       "isCorrect": true,
-      "explanation": "• Le mail d'expéditeur correspond bien à la marque d'Audrey",
+      "explanation": "• Le mail d'expéditeur correspond bien à la marque d'Audrey.",
       "whatToDo": "•  Si tu t’es inscrit à un événement d’Audrey, il est normal de recevoir ses mails. Tu peux rejoindre la masterclass les yeux fermés."
     },
     "carrefour-cadeau": {
